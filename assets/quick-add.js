@@ -243,6 +243,11 @@ if (!customElements.get('quick-add-modal')) {
         super();
         this.modalContent = this.querySelector('[id^="QuickAddInfo-"]');
 
+        if (this.hasAttribute('data-ripeness-static')) {
+          this.modalContent.innerHTML = '';
+          this.removeAttribute('data-ripeness-static');
+        }
+
         this.addEventListener('product-info:loaded', ({ target }) => {
           target.addPreProcessCallback(this.preprocessHTML.bind(this));
         });
