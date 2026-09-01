@@ -6,9 +6,9 @@ const asset = path.resolve(__dirname, '..', 'assets', 'cart-rules-guard.js');
 if (!fs.existsSync(asset)) throw new Error('cart-rules-guard.js is required');
 
 const listeners = new Map();
-let observerCallback;
+const observerCallbacks = [];
 class MockObserver {
-  constructor(callback) { observerCallback = callback; }
+  constructor(callback) { observerCallbacks.push(callback); }
   observe() {}
 }
 function makeButton(id, describedBy, valid) {
@@ -34,14 +34,36 @@ function makeButton(id, describedBy, valid) {
 const buttons = [];
 const document = {
   documentElement: {},
+  head: { appendChild() {} },
+  readyState: 'complete',
   addEventListener(type, handler, capture) { listeners.set(`${type}:${capture}`, handler); },
-  querySelectorAll() { return buttons; },
+  querySelector() { return null; },
+  querySelectorAll(selector = '') {
+    if (
+      selector.includes('quantity-input') ||
+      selector.includes('product-form') ||
+      selector.includes('cart-items') ||
+      selector.includes('cart-drawer-items')
+    ) return [];
+    return buttons;
+  },
+  createElement() {
+    return {
+      id: '',
+      textContent: '',
+      className: '',
+      dataset: {},
+      setAttribute() {},
+      classList: { toggle() {} },
+    };
+  },
   getElementById(id) {
+    if (id === 'FreshClubQuantityLimitStyles') return null;
     const button = buttons.find((item) => item.getAttribute('aria-describedby') === id);
     return button?._rules || null;
   },
 };
-const context = { document, MutationObserver: MockObserver, window: {}, console };
+const context = { document, MutationObserver: MockObserver, window: {}, console, setTimeout, clearTimeout };
 vm.createContext(context);
 vm.runInContext(fs.readFileSync(asset, 'utf8'), context, { filename: asset });
 
@@ -54,7 +76,7 @@ if (!invalid.disabled || invalid.getAttribute('aria-disabled') !== 'true') throw
 invalid.disabled = false;
 invalid.removeAttribute('disabled');
 invalid.classList.remove('dingdoong-disabled-checkout');
-observerCallback([{ type: 'attributes', target: invalid, attributeName: 'disabled' }]);
+observerCallbacks[0]([{ type: 'attributes', target: invalid, attributeName: 'disabled' }]);
 if (!invalid.disabled || invalid.getAttribute('aria-disabled') !== 'true') throw new Error('DingDoong mutation bypassed invalid merchant rule');
 
 let clickBlocked = false;
@@ -88,5 +110,7 @@ valid.classList.remove('dingdoong-disabled-checkout');
 valid.disabled = true;
 context.window.FreshClubCartRulesGuard.sync(valid);
 if (valid.disabled || valid.dataset.cartRulesDisabled) throw new Error('valid checkout did not release merchant-owned disable state');
+
+if (!context.window.FreshClubQuantityLimits) throw new Error('shared quantity limit controller was not initialized');
 
 console.log('Cart rules app-mutation guard behavior passed');

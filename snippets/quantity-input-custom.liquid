@@ -10,7 +10,24 @@
   {% render 'quantity-input' variant: variant %}
 {% endcomment %}
 
-<quantity-input-custom class="quantity-custom cart-quantity{% if modal_id != blank %} no-js-hidden{% endif %}{% if modal_id != blank %} ripeness-quick-add-trigger{% endif %}">
+{%- liquid
+  assign maximum_product_quantity = 10
+  assign stock_cart_quantity = cart | item_count_for_variant: variant.id
+  assign stock_confirmation_enabled = false
+  if variant.inventory_management == 'shopify' and variant.inventory_policy != 'continue'
+    assign stock_confirmation_enabled = true
+  endif
+-%}
+
+<quantity-input-custom
+  class="quantity-custom cart-quantity{% if modal_id != blank %} no-js-hidden{% endif %}{% if modal_id != blank %} ripeness-quick-add-trigger{% endif %}"
+  data-stock-cart-quantity="{{ stock_cart_quantity }}"
+  data-product-cart-quantity="{{ stock_cart_quantity }}"
+  data-product-quantity-limit="{{ maximum_product_quantity }}"
+  {% if stock_confirmation_enabled %}
+    data-stock-limit="{{ variant.inventory_quantity }}"
+  {% endif %}
+>
   <div class="quantity-input">
     <button class="quantity__button" name="minus" type="button" data-target="decrement-{{ variant.id }}">
       <span class="visually-hidden">
@@ -25,7 +42,7 @@
       name="updates[{{ variant_id }}]"
       {% # theme-check-disable %}
       value="{{ min | at_least: 1 }}"
-      data-cart-quantity="{{ cart | item_count_for_variant: variant.id }}"
+      data-cart-quantity="{{ stock_cart_quantity }}"
       min="{{ min }}"
       data-min="{{ variant.quantity_rule.min }}"
       {% if variant.quantity_rule.max != null %}
