@@ -252,42 +252,62 @@ if (!customElements.get('quick-add-modal')) {
         const cartNotification = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
         if (cartNotification) cartNotification.setActiveElement(this.openedBy);
 
-        if (this.hasAttribute('data-ripeness-static')) {
-          this.modalContent.querySelector('form')?.reset();
-          const errorWrapper = this.modalContent.querySelector('.product-form__error-message-wrapper');
-          if (errorWrapper) errorWrapper.hidden = true;
-        } else {
-          this.modalContent.innerHTML = '';
-        }
+        this.modalContent.innerHTML = '';
 
         if (preventFocus) this.openedBy = null;
         super.hide();
       }
 
+      getProductUrl(opener) {
+        const directUrl = opener.getAttribute('data-product-url');
+        if (directUrl) return directUrl;
+
+        const productLink = opener
+          .closest('.card-wrapper')
+          ?.querySelector('.card__heading a[href], a.full-unstyled-link[href]');
+        return productLink?.getAttribute('href') || null;
+      }
+
+      getRequestedQuantity(opener) {
+        const value = opener.closest('quantity-input-custom')?.querySelector('.quantity__input')?.value;
+        const quantity = parseInt(value, 10);
+        return Number.isFinite(quantity) && quantity > 0 ? quantity : null;
+      }
+
+      syncRequestedQuantity(quantity) {
+        if (!quantity) return;
+        const input = this.modalContent.querySelector('input[name="quantity"]:not([type="hidden"])');
+        if (!input) return;
+
+        const minimum = Math.max(parseInt(input.min, 10) || 1, 1);
+        const maximum = input.max ? parseInt(input.max, 10) : Number.POSITIVE_INFINITY;
+        const increment = Math.max(parseInt(input.step, 10) || 1, 1);
+        const bounded = Math.min(Math.max(quantity, minimum), maximum);
+        const normalized = minimum + Math.floor(Math.max(bounded - minimum, 0) / increment) * increment;
+
+        input.value = String(normalized);
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
       show(opener) {
-        if (this.hasAttribute('data-ripeness-static')) {
-          const sourceQuantity = opener.closest('quantity-input-custom')?.querySelector('.quantity__input')?.value;
-          const modalQuantity = this.querySelector('[data-ripeness-modal-quantity]');
+        const productUrl = this.getProductUrl(opener);
+        if (!productUrl) return;
 
-          if (sourceQuantity && modalQuantity) modalQuantity.value = sourceQuantity;
-
-          super.show(opener);
-          this.querySelector('[id^="ModalClose-Ripeness-"]')?.focus();
-          return;
-        }
-
+        const requestedQuantity = this.getRequestedQuantity(opener);
         opener.setAttribute('aria-disabled', true);
         opener.classList.add('loading');
-        opener.querySelector('.loading__spinner').classList.remove('hidden');
+        opener.querySelector('.loading__spinner')?.classList.remove('hidden');
 
-        fetch(opener.getAttribute('data-product-url'))
+        fetch(productUrl)
           .then((response) => response.text())
           .then((responseText) => {
             const responseHTML = new DOMParser().parseFromString(responseText, 'text/html');
             const productElement = responseHTML.querySelector('product-info');
+            if (!productElement) throw new Error('Quick Add product information was not found.');
 
             this.preprocessHTML(productElement);
             HTMLUpdateUtility.setInnerHTML(this.modalContent, productElement.outerHTML);
+            this.syncRequestedQuantity(requestedQuantity);
 
             if (window.Shopify && Shopify.PaymentButton) {
               Shopify.PaymentButton.init();
@@ -296,10 +316,11 @@ if (!customElements.get('quick-add-modal')) {
 
             super.show(opener);
           })
+          .catch((error) => console.error(error))
           .finally(() => {
             opener.removeAttribute('aria-disabled');
             opener.classList.remove('loading');
-            opener.querySelector('.loading__spinner').classList.add('hidden');
+            opener.querySelector('.loading__spinner')?.classList.add('hidden');
           });
       }
 
