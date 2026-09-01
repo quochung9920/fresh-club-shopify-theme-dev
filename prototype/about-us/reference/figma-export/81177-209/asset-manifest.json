@@ -1,0 +1,29 @@
+{
+  "frame": "About Us — Mobile",
+  "nodeId": "81177:209",
+  "fileKey": "hW2EgKV2kCsp1pYLQHSdiR",
+  "note": "These are temporary Figma-hosted asset URLs pulled from the design on 2026-08-24. Figma keeps them live for about 7 days from that date, then they expire. See ../README.md for why binary files could not be downloaded directly in this session and how to fetch them.",
+  "assets": [
+    { "name": "ellipse5", "usage": "badge circle background (white, behind each of the 4 value-card icons)", "format": "png", "url": "https://www.figma.com/api/mcp/asset/b6c4ff8a-188b-4e9e-9f46-8653af5aa52b.png" },
+    { "name": "image13", "usage": "icon glyph — 'Freshness You Can Trust' card", "format": "png", "url": "https://www.figma.com/api/mcp/asset/bfd2e4e6-d985-4ec9-970f-300460f7d773.png" },
+    { "name": "image14", "usage": "icon glyph — 'Honest, Transparent Pricing' card", "format": "png", "url": "https://www.figma.com/api/mcp/asset/6b4d9429-2a8c-47c7-b052-af5569894644.png" },
+    { "name": "image15", "usage": "icon glyph — 'Quality Over Quantity' card", "format": "png", "url": "https://www.figma.com/api/mcp/asset/ac48708c-2c65-4d13-b724-02cdc7c526b1.png" },
+    { "name": "image16", "usage": "icon glyph — 'Local & Accountable' card", "format": "png", "url": "https://www.figma.com/api/mcp/asset/4cca3ed8-244b-4f36-b89c-f053aa4b266f.png" },
+    { "name": "image8 (logo-header)", "usage": "FreshClub logo in header", "format": "png", "url": "https://www.figma.com/api/mcp/asset/85d7fcd0-aff8-4004-888c-c08780fd8525.png" },
+    { "name": "frame1686557480 (hero-base)", "usage": "hero image, base photo layer (produce market photo)", "format": "png", "url": "https://www.figma.com/api/mcp/asset/867a2f48-50f9-46b7-af20-aa7d0b9a895e.png" },
+    { "name": "frame1686557481 (hero-overlay)", "usage": "hero image, second photo layer composited on top of hero-base", "format": "png", "url": "https://www.figma.com/api/mcp/asset/83d82313-6172-476a-b483-e441ccd78f4a.png" },
+    { "name": "frame1686557485 (story-photo)", "usage": "'Built by people...' section photo", "format": "png", "url": "https://www.figma.com/api/mcp/asset/1269df41-e99d-43ea-b935-79d73ce757d8.png" },
+    { "name": "frame1686557495 (cta-bg)", "usage": "background photo behind 'Join The Club' CTA banner (dark teal overlay applied on top)", "format": "png", "url": "https://www.figma.com/api/mcp/asset/b1fe10eb-0604-45f4-9ea8-2adc71680ecb.png" },
+    { "name": "image9 (logo-footer)", "usage": "FreshClub logo in footer (white variant)", "format": "png", "url": "https://www.figma.com/api/mcp/asset/e4161868-51ed-4ea7-995f-903fa73bf6b7.png" },
+    { "name": "ellipse4", "usage": "thin outline ring behind badge icons (paired with ellipse5)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/560414e4-30be-4ae4-b040-a91e3f884143.svg" },
+    { "name": "icon-menu", "usage": "hamburger menu icon (mobile header only)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/3afa13be-eae6-45fe-be38-a16bce26b129.svg" },
+    { "name": "icon-cart (ion:cart)", "usage": "cart icon in header cart button", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/86eae9a2-7fe7-48f3-96ad-6b4492f88df5.svg" },
+    { "name": "ellipse2", "usage": "small pink circle behind cart item-count badge", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/e9da99ef-6d20-4213-befd-046d886a3654.svg" },
+    { "name": "icon-search (search-lg)", "usage": "magnifying-glass icon inside search input", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/64307e4f-ef29-4719-9a01-f08c04a184d7.svg" },
+    { "name": "social-linkedin", "usage": "footer social icon — LinkedIn (circle bg + glyph)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/e0b136ef-8873-4175-b728-4f9239d60507.svg" },
+    { "name": "social-instagram", "usage": "footer social icon — Instagram (circle bg + glyph)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/1878284b-b0ca-4c50-bae7-7beb215889d1.svg" },
+    { "name": "social-facebook", "usage": "footer social icon — Facebook (circle bg + glyph)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/cf624bc9-7f93-477c-b286-dd6b1c3f2b87.svg" },
+    { "name": "social-youtube-glyph", "usage": "footer social icon — YouTube glyph only (paired with ellipse1 for circle bg)", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/a853419d-2847-4695-9496-065cce1bb0f6.svg" },
+    { "name": "ellipse1", "usage": "circle background for YouTube social icon", "format": "svg", "url": "https://www.figma.com/api/mcp/asset/e52ae013-5452-4765-99cb-1250acdcd9e0.svg" }
+  ]
+}

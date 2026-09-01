@@ -1,0 +1,170 @@
+{{ 'fc-home-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-home-hero" aria-labelledby="HomeHeroHeading-{{ section.id }}">
+  <div class="fc-home-hero__inner">
+    <div class="fc-home-hero__content">
+      <div class="fc-home-hero__copy">
+        <h1 id="HomeHeroHeading-{{ section.id }}" class="fc-home-hero__heading">{{ section.settings.heading }}</h1>
+        <p class="fc-home-hero__text">{{ section.settings.text | escape }}</p>
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="fc-home-hero__actions">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'action' -%}
+                <div class="fc-home-hero__action-item" {{ block.shopify_attributes }}>
+                  {%- if block.settings.heading != blank and block.settings.link != blank -%}
+                    {%- if block.settings.style == 'primary' -%}
+                      <a class="button button--primary fc-home-hero__action" href="{{ block.settings.link | escape }}">
+                        {{- block.settings.heading | escape -}}
+                      </a>
+                    {%- else -%}
+                      <a class="button button--secondary fc-home-hero__action" href="{{ block.settings.link | escape }}">
+                        {{- block.settings.heading | escape -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="fc-home-hero__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1608
+          | image_tag:
+            class: 'fc-home-hero__image',
+            widths: '335, 536, 750, 1072, 1608',
+            sizes: '(min-width: 1024px) 536px, (min-width: 576px) 536px, calc(100vw - 40px)',
+            alt: section.settings.image_alt,
+            loading: 'eager',
+            fetchpriority: 'high'
+        }}
+      {%- else -%}
+        {%- assign fallback_asset = section.settings.fallback_asset | default: 'freshclub-home-hero-base.png' -%}
+        <img
+          class="fc-home-hero__image"
+          src="{{ fallback_asset | asset_url }}"
+          alt="{{ section.settings.image_alt | escape }}"
+          width="536"
+          height="448"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- endif -%}
+      <img
+        class="fc-home-hero__overlay"
+        src="{{ 'freshclub-home-hero-overlay.png' | asset_url }}"
+        alt=""
+        width="536"
+        height="448"
+        loading="eager"
+        aria-hidden="true"
+      >
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home — Hero",
+  "tag": "section",
+  "class": "section-fc-home-hero",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Sydney’s Most Affordable Fresh Produce Delivered to Your Business"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "FreshClub connects Sydney food businesses with the best wholesale fruit and veg prices — no middlemen, no surprises. We cap orders at 50 per day to guarantee freshness and unbeatable value. Know your price before you order, secure your delivery slot, and start saving on every box."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Fresh wholesale fruit and vegetables ready for delivery"
+    },
+    {
+      "type": "select",
+      "id": "fallback_asset",
+      "label": "Packaged fallback image",
+      "options": [
+        {
+          "value": "freshclub-home-hero-base.png",
+          "label": "Homepage produce"
+        }
+      ],
+      "default": "freshclub-home-hero-base.png"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "action",
+      "name": "Action",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Label",
+          "default": "Start Your Order"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home — Hero",
+      "blocks": [
+        {
+          "type": "action",
+          "settings": {
+            "heading": "Start Your Order",
+            "link": "shopify://collections/all",
+            "style": "primary"
+          }
+        },
+        {
+          "type": "action",
+          "settings": {
+            "heading": "Learn More About Us",
+            "link": "shopify://pages/about-us",
+            "style": "secondary"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collection_list_TrYfAr": {
+      "type": "collection_list",
+      "disabled": true,
+      "name": "Collection List",
+      "settings": {
+        "collection_list": [
+          "alliums",
+          "cruciferous",
+          "cucurbits",
+          "herbs-microgreens",
+          "leafy-greens",
+          "legumes",
+          "mushrooms",
+          "nightshades",
+          "salad-sprouts",
+          "stalk-stem"
+        ],
+        "enable_slider": true,
+        "items_per_row": 8,
+        "items_per_row_mobile": 4,
+        "item_gap": 12,
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "top_spacing": 40,
+        "bottom_spacing": 4
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "bulk",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_pnW7dG": {
+      "type": "fc-how-faq",
+      "blocks": {
+        "collapsible_row_UNRQ7z": {
+          "type": "faq",
+          "settings": {
+            "heading": "Is there a free trial available?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": true
+          }
+        },
+        "collapsible_row_NerwqP": {
+          "type": "faq",
+          "settings": {
+            "heading": "Can I change my plan later?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": false
+          }
+        },
+        "collapsible_row_wwMTFf": {
+          "type": "faq",
+          "settings": {
+            "heading": "What is your cancellation policy?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": false
+          }
+        },
+        "collapsible_row_z4JaF4": {
+          "type": "faq",
+          "settings": {
+            "heading": "Can other info be added to an invoice?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": false
+          }
+        },
+        "collapsible_row_VcdXGB": {
+          "type": "faq",
+          "settings": {
+            "heading": "How does billing work?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": false
+          }
+        },
+        "collapsible_row_wAn6Jg": {
+          "type": "faq",
+          "settings": {
+            "heading": "How do I change my account email?",
+            "answer": "Yes, you can try us for free for 30 days. If you want, we’ll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_UNRQ7z",
+        "collapsible_row_NerwqP",
+        "collapsible_row_wwMTFf",
+        "collapsible_row_z4JaF4",
+        "collapsible_row_VcdXGB",
+        "collapsible_row_wAn6Jg"
+      ],
+      "settings": {
+        "heading": "FAQ’s"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection_list_TrYfAr",
+    "product-grid",
+    "collapsible_content_pnW7dG"
+  ]
+}

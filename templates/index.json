@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "home_hero": {
+      "type": "fc-home-hero",
+      "blocks": {
+        "hero_primary": {"type": "action", "settings": {"heading": "Start Your Order", "link": "shopify://collections/all", "style": "primary"}},
+        "hero_secondary": {"type": "action", "settings": {"heading": "Learn More About Us", "link": "shopify://pages/about-us", "style": "secondary"}}
+      },
+      "block_order": ["hero_primary", "hero_secondary"],
+      "settings": {
+        "heading": "Sydney’s Most Affordable Fresh Produce Delivered to Your Business",
+        "text": "FreshClub connects Sydney food businesses with the best wholesale fruit and veg prices — no middlemen, no surprises. We cap orders at 50 per day to guarantee freshness and unbeatable value. Know your price before you order, secure your delivery slot, and start saving on every box.",
+        "image_alt": "A colourful display of fresh wholesale fruit and vegetables",
+        "fallback_asset": "freshclub-home-hero-base.png"
+      }
+    },
+    "home_benefits": {
+      "type": "fc-home-benefits",
+      "blocks": {
+        "benefit_prices": {"type": "benefit", "settings": {"heading": "Lowest Prices in Sydney", "text": "Our model guarantees the cheapest wholesale fruit & veg delivered direct to your business.", "fallback_asset": "01"}},
+        "benefit_freshness": {"type": "benefit", "settings": {"heading": "Limited Daily Orders = Fresher Stock", "text": "With only 50 orders a day, we keep quality high and waste low, ensuring you get the best produce available.", "fallback_asset": "02"}},
+        "benefit_transparency": {"type": "benefit", "settings": {"heading": "Total Transparency", "text": "See prices before you order, live photos of stock, and real-time product availability with our stock countdown.", "fallback_asset": "03"}},
+        "benefit_ordering": {"type": "benefit", "settings": {"heading": "Simple & Reliable Ordering", "text": "Preorder online, lock in your delivery slot, and get your produce delivered — no hassle, no surprises.", "fallback_asset": "04"}}
+      },
+      "block_order": ["benefit_prices", "benefit_freshness", "benefit_transparency", "benefit_ordering"],
+      "settings": {}
+    },
+    "home_story": {
+      "type": "fc-home-story",
+      "blocks": {
+        "story_smarter": {"type": "story", "settings": {"image_alt": "Fresh produce arranged in a wholesale market display", "heading": "Smarter ordering. Better prices. Fresher stock.", "text": "We've redesigned how restaurants, cafés, and caterers order fruit and veg - making it faster, clearer, and more affordable than ever. With capped daily orders, live pricing, and transparent stock updates, FreshClub helps your business stay fresh, organised, and profitable.", "button_label": "Learn About Our Guarantee", "button_link": "shopify://pages/how-does-it-work", "button_style": "primary", "image_side": "right", "fallback_asset": "story_01"}},
+        "story_experience": {"type": "story", "settings": {"image_alt": "A business customer selecting produce in a market", "heading": "A seamless experience for busy businesses", "text": "Say goodbye to calls and quote chasing. With FreshClub, you see live stock photos, accurate pricing, and real-time availability — so you know exactly what’s in stock before you order. Secure your delivery slot in minutes and keep your operations running smoothly.", "button_label": "See How It Works", "button_link": "shopify://pages/how-does-it-work", "button_style": "primary", "image_side": "left", "fallback_asset": "story_02"}},
+        "story_control": {"type": "story", "settings": {"image_alt": "A grocery buyer checking fresh produce in store", "heading": "Save more. Plan better. Stay in control.", "text": "We cap orders at 50 per day to keep quality high and costs low. You’ll always know the price before you order, with our freshness and value guarantee on every delivery across Metro Sydney.", "button_label": "Learn About Our Guarantee", "button_link": "shopify://pages/how-does-it-work", "button_style": "primary", "image_side": "right", "fallback_asset": "story_03"}}
+      },
+      "block_order": ["story_smarter", "story_experience", "story_control"],
+      "settings": {"heading": "Transforming the way Sydney food businesses buy fresh produce"}
+    },
+    "home_cta": {
+      "type": "fc-home-cta",
+      "settings": {
+        "heading": "Save More. Plan better. Stay in Control.",
+        "subheading": "Reliable supply. Transparent pricing. Consistent quality.",
+        "text": "Whether you run a restaurants, cafe, catering company, juice bar, grocer, or office-FreshClub deliver the same wholesale access, quality assurance, and simplicity trusted by Sydney’s leading business.",
+        "button_label": "Start Ordering Fresh",
+        "button_link": "shopify://collections/all",
+        "button_style": "primary"
+      }
+    }
+  },
+  "order": ["home_hero", "home_benefits", "home_story", "home_cta"]
+}

@@ -1,0 +1,509 @@
+{% liquid
+  assign section_id = 'multiple-steps-' | append: section.id
+%}
+
+<section
+  id="{{ section_id }}"
+  class="multiple-steps-section color-{{ section.settings.color_scheme }} gradient"
+  style="--ms-padding-top: {{ section.settings.padding_top }}px; --ms-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="multiple-steps page-width--narrow">
+    {%- if section.settings.heading != blank -%}
+      <{% if section.index == 1 %}h1{% else %}h2{% endif %} class="multiple-steps__heading {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </{% if section.index == 1 %}h1{% else %}h2{% endif %}>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <div class="multiple-steps__subheading rte {{ section.settings.subheading_size }}">
+        {{ section.settings.subheading }}
+      </div>
+    {%- endif -%}
+
+    <div class="multiple-steps__list">
+      {%- for block in section.blocks -%}
+        {%- assign step_number = forloop.index -%}
+        {%- if step_number < 10 -%}
+          {%- assign step_number = '0' | append: step_number -%}
+        {%- endif -%}
+
+        <article
+          class="multiple-steps__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          <div class="multiple-steps__number" style="background-color: {{ block.settings.number_bg }};">
+            <span>{{ step_number }}</span>
+          </div>
+
+          <div class="multiple-steps__content">
+            <div class="multiple-steps__title-wrap">
+              {%- if block.settings.icon_svg != blank -%}
+                <span class="multiple-steps__icon" aria-hidden="true">
+                  {{ block.settings.icon_svg }}
+                </span>
+              {%- endif -%}
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="multiple-steps__title {{ block.settings.title_size }}">{{ block.settings.title }}</h3>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.description != blank -%}
+              <div class="multiple-steps__description rte {{ block.settings.description_size }}">
+                {{ block.settings.description }}
+              </div>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #{{ section_id }} {
+  	padding-top: var(--ms-padding-top);
+  	padding-bottom: var(--ms-padding-bottom);
+  }
+
+  #{{ section_id }} .multiple-steps__heading {
+  	margin: 0 auto;
+  	margin-bottom: 1.6rem;
+  	color: rgb(var(--color-foreground));
+  	text-align: center;
+  }
+
+  #{{ section_id }} .multiple-steps__subheading {
+  	margin: 0 auto 5.4rem;
+  	color: rgba(var(--color-foreground), 0.75);
+  	text-align: center;
+  }
+
+  #{{ section_id }} .multiple-steps__subheading p {
+  	margin: 0;
+  }
+
+  #{{ section_id }} .multiple-steps__list {
+  	display: grid;
+  	gap: {{ section.settings.step_list_gap }}px;
+  }
+
+  #{{ section_id }} .multiple-steps__item {
+  	background: #fff;
+  	border-radius: {{ section.settings.step_corner_radius }}px;
+  	overflow: hidden;
+  	display: grid;
+  	grid-template-columns: 9rem minmax(0, 1fr);
+  	align-items: stretch;
+  	box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.02);
+  	gap: 2.6rem;
+  }
+
+  #{{ section_id }} .multiple-steps__number {
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	color: #fff;
+  	font-size: clamp(2.2rem, 2.5vw, 3rem);
+  	font-weight: 800;
+  	line-height: 1.6;
+  }
+
+  #{{ section_id }} .multiple-steps__content {
+  	padding: 2.6rem 2.8rem 2.6rem 0.4rem;
+  }
+
+  #{{ section_id }} .multiple-steps__title-wrap {
+  	display: flex;
+  	align-items: center;
+  	gap: 1rem;
+  	margin-bottom: 0.8rem;
+  }
+
+  #{{ section_id }} .multiple-steps__icon {
+  	width: 2.2rem;
+  	height: 2.2rem;
+  	display: inline-flex;
+  	flex: 0 0 2.2rem;
+  	align-items: center;
+  	justify-content: center;
+  }
+
+  #{{ section_id }} .multiple-steps__icon svg {
+  	width: 100%;
+  	height: 100%;
+  	display: block;
+  	object-fit: contain;
+  	stroke: rgb(var(--color-button));
+  	fill: none;
+  	stroke-width: 2;
+  }
+
+  #{{ section_id }} .multiple-steps__title {
+  	margin: 0;
+  	color: rgb(var(--color-foreground));
+  }
+
+  #{{ section_id }} .multiple-steps__description {
+  	color: rgba(var(--color-foreground), 0.75);
+  }
+
+  @media screen and (max-width: 749px) {
+  	#{{ section_id }} .multiple-steps__item {
+  		grid-template-columns: 6.4rem minmax(0, 1fr);
+  		gap: 1.6rem;
+  	}
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Multiple steps",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Four steps to fresher, cheaper produce"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading font size",
+      "default": "h1",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal text"
+        },
+        {
+          "value": "text-body",
+          "label": "Body"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "value": "hxl",
+          "label": "HXL"
+        },
+        {
+          "value": "hxxl",
+          "label": "HXXL"
+        },
+        {
+          "value": "h0",
+          "label": "H0"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Everything happens online, in minutes - built for busy kitchens that cannot afford to wait.</p>"
+    },
+    {
+      "type": "select",
+      "id": "subheading_size",
+      "label": "Subheading font size",
+      "default": "text-body",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal text"
+        },
+        {
+          "value": "text-body",
+          "label": "Body"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "value": "hxl",
+          "label": "HXL"
+        },
+        {
+          "value": "hxxl",
+          "label": "HXXL"
+        },
+        {
+          "value": "h0",
+          "label": "H0"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "step_list_gap",
+      "label": "Step list gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 26,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "step_corner_radius",
+      "label": "Step corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Browse live stock & prices"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title font size",
+          "default": "h2",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal text"
+            },
+            {
+              "value": "text-body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "hxl",
+              "label": "HXL"
+            },
+            {
+              "value": "hxxl",
+              "label": "HXXL"
+            },
+            {
+              "value": "h0",
+              "label": "H0"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>See real photos of today's produce and live wholesale prices, updated daily.</p>"
+        },
+        {
+          "type": "select",
+          "id": "description_size",
+          "label": "Description font size",
+          "default": "text-body",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal text"
+            },
+            {
+              "value": "text-body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "hxl",
+              "label": "HXL"
+            },
+            {
+              "value": "hxxl",
+              "label": "HXXL"
+            },
+            {
+              "value": "h0",
+              "label": "H0"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "number_bg",
+          "label": "Number area background",
+          "default": "#0F5B5F"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "Icon SVG",
+          "info": "Paste full SVG markup, for example: <svg viewBox=\"0 0 24 24\" ...>...</svg>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Multiple steps",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Browse live stock & prices",
+            "description": "<p>See real photos of today's produce and live wholesale prices, updated daily. You always know exactly what is fresh and what it costs before you commit.</p>",
+            "number_bg": "#0F5B5F"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Build your order",
+            "description": "<p>Add your fruit & veg (minimum $500 per order), plus eggs on top. A live stock countdown shows what is running low, so you never miss out on what you need.</p>",
+            "number_bg": "#216E70"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Lock in your delivery slot",
+            "description": "<p>We cap orders at 50 a day, six days a week, to keep quality high and waste low. Slots fill first-in, best-dressed. Secure yours and you are set for the next day.</p>",
+            "number_bg": "#1D8C89"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "We deliver fresh",
+            "description": "<p>Your produce arrives at your door, fresh and on time. You paid the price you saw. No markups, no middlemen, no surprises.</p>",
+            "number_bg": "#E91E63"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

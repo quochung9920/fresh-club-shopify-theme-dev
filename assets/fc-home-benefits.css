@@ -1,0 +1,206 @@
+.fc-home-benefits {
+  position: relative;
+  z-index: 0;
+  padding: 64px 20px;
+  overflow: hidden;
+  background: #f5faf3;
+}
+
+.fc-home-benefits__section-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fc-home-benefits__oval-stack {
+  display: none;
+}
+
+.fc-home-benefits__list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 16px;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.fc-home-benefits__card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-home-benefits__icon {
+  position: relative;
+  display: flex;
+  flex: 0 0 62px;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border: 1px solid #edf6e9;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 3px #f5faf3;
+}
+
+.fc-home-benefits__icon-image {
+  display: block;
+  object-fit: contain;
+}
+
+.fc-home-benefits__icon-image--01 {
+  width: 28.52px;
+  height: 29.76px;
+}
+
+.fc-home-benefits__icon-image--02 {
+  width: 24.8px;
+  height: 32.24px;
+}
+
+.fc-home-benefits__icon-image--03 {
+  width: 34.72px;
+  height: 24.8px;
+}
+
+.fc-home-benefits__icon-image--04 {
+  width: 31.62px;
+  height: 27.28px;
+}
+
+.fc-home-benefits__copy {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.fc-home-benefits__heading,
+.fc-home-benefits__text {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.fc-home-benefits__heading {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.7802px;
+}
+
+.fc-home-benefits__text {
+  color: #475467;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+@media (min-width: 750px) {
+  .fc-home-benefits__list {
+    column-gap: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fc-home-benefits {
+    --fc-home-benefits-oval-tail: min(80px, calc(6.25vw - 10px));
+    --fc-home-oval-overhang: min(361px, calc(28.203125vw - 45.125px));
+    --fc-home-oval-width: calc(100vw + var(--fc-home-oval-overhang));
+    --fc-home-oval-height: min(276px, calc(21.5625vw - 34.5px));
+
+    padding: 100px 80px calc(80px + var(--fc-home-benefits-oval-tail));
+    min-height: calc(414px + var(--fc-home-benefits-oval-tail));
+    container-type: inline-size;
+    background: #ffffff;
+  }
+
+  .fc-home-benefits::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: var(--fc-home-benefits-oval-tail);
+    left: 0;
+    background: #f5faf3;
+    content: '';
+  }
+
+  .fc-home-benefits__oval-stack {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: calc(50% - 0.5px + (100vw - 100cqw - 160px) / 2);
+    display: block;
+    width: var(--fc-home-oval-width);
+    height: var(--fc-home-oval-height);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .fc-home-benefits__oval-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fc-home-benefits__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .fc-home-benefits__card {
+    gap: 24px;
+  }
+
+  .fc-home-benefits__icon {
+    flex-basis: 100px;
+    width: 100px;
+    height: 100px;
+    box-shadow: inset 0 0 0 5px #f5faf3;
+  }
+
+  .fc-home-benefits__icon-image--01 {
+    width: 46px;
+    height: 48px;
+  }
+
+  .fc-home-benefits__icon-image--02 {
+    width: 40px;
+    height: 52px;
+  }
+
+  .fc-home-benefits__icon-image--03 {
+    width: 56px;
+    height: 40px;
+  }
+
+  .fc-home-benefits__icon-image--04 {
+    width: 51px;
+    height: 44px;
+  }
+
+  .fc-home-benefits__text {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}

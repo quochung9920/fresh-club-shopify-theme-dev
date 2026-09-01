@@ -1,0 +1,20 @@
+{
+  "new": [
+    "sections/fc-how-hero.liquid",
+    "sections/fc-how-steps.liquid",
+    "sections/fc-how-faq.liquid",
+    "sections/fc-how-cta.liquid",
+    "assets/fc-how-hero.css",
+    "assets/fc-how-steps.css",
+    "assets/fc-how-faq.css",
+    "assets/fc-how-cta.css",
+    "assets/freshclub-how-step-01.png",
+    "assets/freshclub-how-step-02.png",
+    "assets/freshclub-how-step-03.png",
+    "assets/freshclub-how-step-04.png",
+    "templates/page.how-does-it-work.json",
+    "scripts/validate_how_it_works.py"
+  ],
+  "reused": ["assets/freshclub-about-cta-bg.png", "assets/freshclub-about-cta-decoration.png", "global button/header/footer/search/cart/newsletter assets"],
+  "forbidden": ["layout/theme.liquid", "sections/header.liquid", "sections/footer.liquid", "assets/freshclub-global-shell.css", "assets/base.css"]
+}

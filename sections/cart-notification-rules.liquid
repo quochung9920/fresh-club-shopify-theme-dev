@@ -1,0 +1,38 @@
+{%- liquid
+  assign minimum_order_cents = 50000
+  assign maximum_product_quantity = 10
+  assign product_limit_exceeded = false
+  for product_item in cart.items
+    assign product_quantity_total = 0
+    for candidate_item in cart.items
+      if candidate_item.product.id == product_item.product.id
+        assign product_quantity_total = product_quantity_total | plus: candidate_item.quantity
+      endif
+    endfor
+    if product_quantity_total > maximum_product_quantity
+      assign product_limit_exceeded = true
+      break
+    endif
+  endfor
+  assign minimum_order_remaining = minimum_order_cents | minus: cart.items_subtotal_price
+  assign cart_rules_valid = true
+  if cart == empty or minimum_order_remaining > 0 or product_limit_exceeded
+    assign cart_rules_valid = false
+  endif
+-%}
+
+<div
+  class="cart__business-rules{% if cart_rules_valid %} cart__business-rules--valid{% else %} cart__business-rules--invalid{% endif %}"
+  data-cart-rules-valid="{{ cart_rules_valid }}"
+  role="status"
+  aria-live="polite"
+>
+  {% if minimum_order_remaining > 0 %}
+    <p>Add {{ minimum_order_remaining | money }} more to reach the $500 minimum.</p>
+  {% else %}
+    <p>Order minimum reached.</p>
+  {% endif %}
+  {% if product_limit_exceeded %}
+    <p>Maximum 10 units per product. Reduce the product quantity before checkout.</p>
+  {% endif %}
+</div>

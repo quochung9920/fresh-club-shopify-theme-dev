@@ -1,0 +1,315 @@
+/* Shared Figma product-card contract for Collection 80841:1119 and Product Detail 80846:250. */
+:is(.fc-collection-figma, .related-products) .grid__item {
+  border: 1px solid #d8ebd0;
+  border-radius: 0.8rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+:is(.fc-collection-figma, .related-products) .card-wrapper,
+:is(.fc-collection-figma, .related-products) .card {
+  height: 100%;
+}
+
+.fc-collection-figma .card__inner .card__media {
+  margin: 4rem 2.4rem 4.6rem;
+  width: calc(100% - 4.8rem);
+}
+
+.fc-collection-figma .card__inner .card__media img,
+.related-products .card__inner .card__media img {
+  object-fit: contain;
+}
+
+:is(.fc-collection-figma, .related-products) .card > .card__content {
+  height: 12rem;
+  min-height: 12rem;
+  padding: 0;
+  grid-template-rows: 0 4rem 0 8rem;
+}
+
+:is(.fc-collection-figma, .related-products) .quick-add__submit {
+  height: 4rem;
+  min-height: 4rem;
+}
+
+:is(.fc-collection-figma, .related-products) .card__information {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.8rem;
+  padding: 2rem 2rem 0;
+}
+
+:is(.fc-collection-figma, .related-products) .card__heading {
+  min-width: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.07802rem;
+}
+
+:is(.fc-collection-figma, .related-products) .unit-price {
+  color: #94969c;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+:is(.fc-collection-figma, .related-products) .card-information {
+  display: contents;
+}
+
+:is(.fc-collection-figma, .related-products) .card-information > .price {
+  grid-column: 2;
+  color: #333741;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+:is(.fc-collection-figma, .related-products) quick-add-bulk {
+  display: block;
+  margin: 0;
+  padding: 2rem;
+}
+
+:is(.fc-collection-figma, .related-products) .fc-product-card__wishlist {
+  position: absolute;
+  z-index: 2;
+  top: 2rem;
+  right: 2rem;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  color: #94969c;
+  pointer-events: none;
+}
+
+:is(.fc-collection-figma, .related-products) .fc-product-card__wishlist .svg-wrapper,
+:is(.fc-collection-figma, .related-products) .fc-product-card__wishlist svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.related-products quantity-input-custom {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  width: 100%;
+  min-height: 4rem;
+}
+
+:is(.fc-collection-figma, .related-products) quantity-input-custom .quantity-input {
+  display: flex;
+  flex: 1 1 0;
+  height: 4rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+:is(.fc-collection-figma, .related-products) quantity-input-custom .quantity__button {
+  width: 3.4rem;
+  min-width: 3.4rem;
+}
+
+:is(.fc-collection-figma, .related-products) quantity-input-custom .quantity__input {
+  width: 4.4rem;
+  min-width: 0;
+}
+
+:is(.fc-collection-figma, .related-products) quantity-input-custom .submit_btn {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  padding-inline: 2rem;
+  border: 1px solid #ea1a65;
+  border-radius: 0.8rem;
+  background: #ea1a65;
+  color: #fff;
+  cursor: pointer;
+}
+
+:is(.fc-collection-figma, .related-products) quantity-input-custom .submit_btn:focus-visible {
+  outline: 0.2rem solid #16494a;
+  outline-offset: 0.3rem;
+}
+
+/* Collection node 80841:1353: metadata left, quantity right, full-width Add below. */
+.fc-collection-figma .grid__item {
+  height: 40.6rem;
+}
+
+.fc-collection-figma .card__inner {
+  height: 23rem;
+  min-height: 23rem;
+  flex: 0 0 23rem;
+}
+
+.fc-collection-figma .card__inner > .card__content {
+  display: none;
+}
+
+.fc-collection-figma .card__inner .card__media {
+  top: 3.9rem;
+  right: auto;
+  bottom: auto;
+  left: 2.4rem;
+  width: calc(100% - 4.8rem);
+  height: 17rem;
+  margin: 0;
+}
+
+.fc-collection-figma .card__inner .fc-product-card__media--empty {
+  display: block;
+  background: transparent;
+}
+
+.fc-collection-figma .card.card--standard.card--text:not(.card--horizontal) > .card__content .card__heading:not(.card__heading--placeholder) {
+  display: block;
+}
+
+.fc-collection-figma .card__heading .full-unstyled-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.1;
+  min-height: 2.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+}
+
+.fc-collection-figma .card.card--standard > .card__content {
+  padding: 20px !important;
+}
+
+.fc-collection-figma .card > .card__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(0, 7.4rem) 4rem;
+  column-gap: 2.4rem;
+  row-gap: 2rem;
+  height: 17.4rem;
+  min-height: 17.4rem;
+  padding: 2rem;
+}
+
+.fc-collection-figma .card > .card__content > .card__information {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 0;
+}
+
+.fc-collection-figma .card-information {
+  display: block;
+  width: 100%;
+}
+
+.fc-collection-figma .card-information > .price {
+  display: block;
+  margin-top: 1rem !important;
+}
+
+.fc-collection-figma quick-add-bulk,
+.fc-collection-figma quantity-input-custom.cart-quantity {
+  display: contents;
+  margin: 0;
+  padding: 0;
+}
+
+.fc-collection-figma quantity-input-custom .quantity-input {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 10.6rem;
+  height: 3.2rem;
+  border: 1px solid #ececed;
+  border-radius: 0.6rem;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.fc-collection-figma quantity-input-custom .quantity__button {
+  width: 3.3rem;
+  min-width: 3.3rem;
+  padding: 0;
+}
+
+.fc-collection-figma quantity-input-custom .quantity__button:first-of-type {
+  border-right: 1px solid #ececed;
+  border-left: 0;
+  margin-left: 0;
+}
+
+.fc-collection-figma quantity-input-custom .quantity__button:last-of-type {
+  border-right: 0;
+  border-left: 1px solid #ececed;
+  margin-right: 0;
+}
+
+.fc-collection-figma quantity-input-custom .quantity__input {
+  width: 4rem;
+  min-width: 4rem;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.fc-collection-figma quantity-input-custom .submit_btn {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  min-height: 4rem;
+  padding-inline: 2rem;
+  border: 1px solid #ea1a65;
+  border-radius: 0.8rem;
+  background: #ea1a65;
+  color: #fff;
+  cursor: pointer;
+}
+
+.fc-collection-figma quantity-input-custom .submit_btn,
+.fc-collection-figma quick-add-bulk > .quick-add__submit {
+  height: 4rem;
+  min-height: 4rem;
+  border-radius: 0.8rem;
+  font-family: var(--font-body-family);
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.fc-collection-figma quantity-input-custom .submit_btn .atc-icon,
+.fc-collection-figma quantity-input-custom .submit_btn .atc-icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.fc-collection-figma quick-add-bulk > .quick-add__submit,
+.fc-collection-figma .quick-add {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-self: stretch;
+  width: 100%;
+  margin: 0;
+}

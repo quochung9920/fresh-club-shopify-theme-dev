@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "page": "collection",
+  "authority": {
+    "desktopFigma": "80841:1119",
+    "mobile": "user requirement: exactly one product per row"
+  },
+  "anchors": [
+    320,
+    375,
+    390,
+    430,
+    768,
+    989,
+    1024,
+    1440
+  ],
+  "breakpoints": {
+    "mobile": {
+      "range": "0-749",
+      "productColumns": 1,
+      "cardWidth": "100% of collection content box",
+      "horizontalOverflow": false
+    },
+    "tablet": {
+      "range": "750-989",
+      "productColumns": 2,
+      "status": "derived transition"
+    },
+    "desktop": {
+      "range": "990+",
+      "containerMax": 1280,
+      "horizontalGutterAt1440": 80,
+      "productColumns": 4,
+      "cardTarget": [
+        296,
+        406
+      ],
+      "gap": 32,
+      "defaultVisibleProducts": 12
+    }
+  },
+  "faq": {
+    "desktopContentMax": 908,
+    "mobile": "single-column full-width disclosure list with balanced gutters"
+  },
+  "preserve": [
+    "global shell",
+    "dynamic product data",
+    "native forms",
+    "merchant FAQ blocks",
+    "Fresh Club curved section separator"
+  ]
+}

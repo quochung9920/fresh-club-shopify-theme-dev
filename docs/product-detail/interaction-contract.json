@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "page": "product-detail",
+  "interactions": [
+    {
+      "name": "media-gallery",
+      "authority": "native product-media-gallery",
+      "requirements": [
+        "thumbnail selection updates active media",
+        "keyboard-focusable native controls",
+        "image zoom behavior remains native"
+      ]
+    },
+    {
+      "name": "variant-selection",
+      "authority": "native product variant picker",
+      "requirements": [
+        "selected variant remains form authority",
+        "price and availability updates remain native"
+      ]
+    },
+    {
+      "name": "quantity",
+      "authority": "native quantity-input",
+      "requirements": [
+        "minus and plus obey variant quantity rules",
+        "numeric input remains form-associated"
+      ]
+    },
+    {
+      "name": "add-to-cart",
+      "authority": "native Shopify product form",
+      "requirements": [
+        "available variant submits to cart",
+        "sold-out state stays disabled and truthful",
+        "no page-local cart clone"
+      ]
+    },
+    {
+      "name": "recommendations",
+      "authority": "native product-recommendations custom element",
+      "requirements": [
+        "loads asynchronously from Shopify recommendations route",
+        "empty result renders no fake cards",
+        "quick-add behavior remains native"
+      ]
+    }
+  ],
+  "accessibility": [
+    "one product H1",
+    "recommendation heading is H2",
+    "product grid is a list",
+    "no fake interactive heart",
+    "visible focus styles preserved",
+    "no content depends on animation"
+  ]
+}

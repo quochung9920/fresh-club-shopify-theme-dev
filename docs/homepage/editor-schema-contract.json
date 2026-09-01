@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sections": {
+    "fc-home-hero": {
+      "editor_name": "Home — Hero",
+      "settings": ["heading", "text", "image", "image_alt", "fallback_asset"],
+      "blocks": {"action": ["heading", "link", "style"]},
+      "max_blocks": 2
+    },
+    "fc-home-benefits": {
+      "editor_name": "Home — Benefits",
+      "settings": [],
+      "blocks": {"benefit": ["icon", "heading", "text", "fallback_asset"]},
+      "max_blocks": 8
+    },
+    "fc-home-story": {
+      "editor_name": "Home — Story",
+      "settings": ["heading"],
+      "blocks": {"story": ["image", "image_alt", "heading", "text", "button_label", "button_link", "button_style", "image_side", "fallback_asset"]},
+      "max_blocks": 6
+    },
+    "fc-home-cta": {
+      "editor_name": "Home — Call to action",
+      "settings": ["heading", "subheading", "text", "background_image", "button_label", "button_link", "button_style"]
+    }
+  },
+  "rules": [
+    "Repeated merchant content uses blocks with block.shopify_attributes.",
+    "Each action owns its own label, URL and style.",
+    "Image pickers override immutable packaged Figma fallbacks.",
+    "Editor labels describe merchant intent and never mention Figma coordinates."
+  ]
+}

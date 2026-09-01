@@ -1,0 +1,171 @@
+{{ 'fc-home-benefits.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-home-benefits" aria-labelledby="HomeBenefitsHeading-{{ section.id }}">
+  <h2 id="HomeBenefitsHeading-{{ section.id }}" class="fc-home-benefits__section-heading">Why FreshClub</h2>
+
+  <span class="fc-home-benefits__oval-stack" aria-hidden="true">
+    <img
+      class="fc-home-benefits__oval-image"
+      src="{{ 'freshclub-home-ellipse-mint.svg' | asset_url }}"
+      alt=""
+      width="1801"
+      height="276"
+      loading="eager"
+    >
+    <img
+      class="fc-home-benefits__oval-image"
+      src="{{ 'freshclub-home-ellipse-mint.svg' | asset_url }}"
+      alt=""
+      width="1801"
+      height="276"
+      loading="eager"
+    >
+  </span>
+
+  <ul class="fc-home-benefits__list" role="list">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'benefit' -%}
+          {%- liquid
+            assign fallback_identity = '01'
+            assign fallback_asset = 'freshclub-home-benefit-01.png'
+            case block.settings.fallback_asset
+              when '02'
+                assign fallback_identity = '02'
+                assign fallback_asset = 'freshclub-home-benefit-02.png'
+              when '03'
+                assign fallback_identity = '03'
+                assign fallback_asset = 'freshclub-home-benefit-03.png'
+              when '04'
+                assign fallback_identity = '04'
+                assign fallback_asset = 'freshclub-home-benefit-04.png'
+            endcase
+            assign icon_class = 'fc-home-benefits__icon-image fc-home-benefits__icon-image--' | append: fallback_identity
+          -%}
+          <li class="fc-home-benefits__card" {{ block.shopify_attributes }}>
+            <div class="fc-home-benefits__icon" aria-hidden="true">
+              {%- if block.settings.icon != blank -%}
+                {{
+                  block.settings.icon
+                  | image_url: width: 112
+                  | image_tag: class: icon_class, widths: '56, 112', sizes: '(min-width: 1024px) 56px, 35px', alt: '', loading: 'lazy'
+                }}
+              {%- else -%}
+                <img
+                  class="{{ icon_class }}"
+                  src="{{ fallback_asset | asset_url }}"
+                  alt=""
+                  width="112"
+                  height="112"
+                  loading="lazy"
+                >
+              {%- endif -%}
+            </div>
+
+            <div class="fc-home-benefits__copy">
+              <h3 class="fc-home-benefits__heading">{{ block.settings.heading | escape }}</h3>
+              <p class="fc-home-benefits__text">{{ block.settings.text | escape }}</p>
+            </div>
+          </li>
+      {%- endcase -%}
+    {%- endfor -%}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "Home — Benefits",
+  "tag": "section",
+  "class": "section-fc-home-benefits",
+  "max_blocks": 8,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Lowest Prices in Sydney"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Our model guarantees the cheapest wholesale fruit & veg delivered direct to your business."
+        },
+        {
+          "type": "select",
+          "id": "fallback_asset",
+          "label": "Fallback icon",
+          "options": [
+            {
+              "value": "01",
+              "label": "Price tag"
+            },
+            {
+              "value": "02",
+              "label": "Fresh produce"
+            },
+            {
+              "value": "03",
+              "label": "Transparency"
+            },
+            {
+              "value": "04",
+              "label": "Reliable ordering"
+            }
+          ],
+          "default": "01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home — Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "heading": "Lowest Prices in Sydney",
+            "text": "Our model guarantees the cheapest wholesale fruit & veg delivered direct to your business.",
+            "fallback_asset": "01"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "heading": "Limited Daily Orders = Fresher Stock",
+            "text": "With only 50 orders a day, we keep quality high and waste low, ensuring you get the best produce available.",
+            "fallback_asset": "02"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "heading": "Total Transparency",
+            "text": "See prices before you order, live photos of stock, and real-time product availability with our stock countdown.",
+            "fallback_asset": "03"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "heading": "Simple & Reliable Ordering",
+            "text": "Preorder online, lock in your delivery slot, and get your produce delivered — no hassle, no surprises.",
+            "fallback_asset": "04"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

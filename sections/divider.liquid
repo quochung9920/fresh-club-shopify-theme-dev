@@ -1,0 +1,130 @@
+{%- liquid
+  assign divider_background = 'transparent'
+
+  case section.settings.divider_type
+    when 'image'
+      if section.settings.divider_image != blank
+        assign divider_image_url = section.settings.divider_image | image_url: width: 3000
+        assign divider_background = 'url(' | append: divider_image_url | append: ')'
+      endif
+    when 'color'
+      assign divider_background = section.settings.divider_color
+    when 'gradient'
+      assign divider_background = section.settings.divider_gradient
+  endcase
+-%}
+
+{%- style -%}
+  #Divider-{{ section.id }} {
+  	display: block;
+  	height: {{ section.settings.height }}px;
+  	opacity: {{ section.settings.opacity | divided_by: 100.0 }};
+  	background: {{ divider_background }};
+  	{% if section.settings.divider_type == 'image' %}
+  		background-repeat: repeat-x;
+  		background-size: {{ section.settings.image_background_size }};
+  		background-position: center top;
+  	{% else %}
+  		background-repeat: no-repeat;
+  		background-size: 100% 100%;
+  		background-position: center;
+  	{% endif %}
+  }
+{%- endstyle -%}
+
+<div id="Divider-{{ section.id }}" aria-hidden="true"></div>
+
+{% schema %}
+{
+  "name": "Divider",
+  "tag": "section",
+  "class": "section section-divider",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "divider_type",
+      "label": "Divider type",
+      "default": "color",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient color"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "divider_image",
+      "label": "Divider image",
+      "visible_if": "{{ section.settings.divider_type == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "image_background_size",
+      "label": "Background size",
+      "default": "contain",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        }
+      ],
+      "visible_if": "{{ section.settings.divider_type == 'image' }}"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#e8e8e8",
+      "visible_if": "{{ section.settings.divider_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "divider_gradient",
+      "label": "Divider gradient",
+      "default": "linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.02) 100%)",
+      "visible_if": "{{ section.settings.divider_type == 'gradient' }}"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Height",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Opacity",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Divider"
+    }
+  ]
+}
+{% endschema %}

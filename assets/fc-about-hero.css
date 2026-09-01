@@ -1,0 +1,134 @@
+.fc-about-hero {
+  padding: 48px 20px;
+  color: #16494a;
+}
+
+.fc-about-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.fc-about-hero__lede,
+.fc-about-hero__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.fc-about-hero__lede {
+  gap: 28px;
+}
+
+.fc-about-hero__copy {
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-about-hero__heading {
+  margin: 0;
+  color: #16494a;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+}
+
+.fc-about-hero__text {
+  margin: 0;
+  color: #475467;
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -0.15px;
+}
+
+.fc-about-hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.fc-about-hero__action {
+  width: 100%;
+}
+
+.fc-about-hero__media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  background: #f5faf3;
+}
+
+.fc-about-hero__image,
+.fc-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fc-about-hero__image {
+  object-position: center;
+}
+
+.fc-about-hero__overlay {
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .fc-about-hero {
+    padding: 96px 80px;
+  }
+
+  .fc-about-hero__inner {
+    gap: 64px;
+  }
+
+  .fc-about-hero__lede {
+    gap: 40px;
+    max-width: 900px;
+  }
+
+  .fc-about-hero__copy {
+    gap: 24px;
+  }
+
+  .fc-about-hero__heading {
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.48px;
+  }
+
+  .fc-about-hero__text {
+    max-width: 760px;
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.18px;
+  }
+
+  .fc-about-hero__actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    width: auto;
+  }
+
+  .fc-about-hero__action {
+    width: auto;
+  }
+
+  .fc-about-hero__media {
+    height: 360px;
+    border-radius: 16px;
+  }
+}

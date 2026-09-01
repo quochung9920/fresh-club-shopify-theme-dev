@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "page": "collection",
+  "figmaRoot": "80841:1119",
+  "sections": [
+    {
+      "id": "collection_list",
+      "merchantLabel": "Collection List",
+      "owner": "sections/collection_list.liquid",
+      "data": "selected Shopify collections",
+      "defaultState": "disabled because node 80841:1119 moves directly from header to product grid"
+    },
+    {
+      "id": "product-grid",
+      "merchantLabel": "Product grid",
+      "owner": "sections/main-collection-product-grid.liquid",
+      "data": "collection.products",
+      "settings": [
+        "products_per_page",
+        "columns_desktop",
+        "columns_mobile",
+        "image_ratio",
+        "quick_add"
+      ]
+    },
+    {
+      "id": "faq",
+      "merchantLabel": "Collapsible content",
+      "owner": "sections/collapsible-content.liquid",
+      "data": "collapsible_row blocks",
+      "blockTitle": "heading"
+    }
+  ],
+  "globalAuthorities": [
+    "header",
+    "predictive search",
+    "cart",
+    "newsletter",
+    "footer"
+  ],
+  "forbidden": [
+    "hard-coded products",
+    "hard-coded prices",
+    "fake wishlist state",
+    "duplicated global shell"
+  ]
+}

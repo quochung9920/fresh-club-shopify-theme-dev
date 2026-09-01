@@ -1,0 +1,46 @@
+/* Fresh Club — design tokens extracted from Figma (About Us page, mobile + desktop) */
+:root {
+  /* Brand colors */
+  --brand-1: #16494A;       /* dark teal/green — headings, footer, stats band bg */
+  --brand-2: #EA1A65;       /* pink/magenta — primary CTA, accents */
+  --brand-3: #F5FAF3;       /* pale mint — section backgrounds */
+
+  /* Base */
+  --base-black: #000000;
+  --base-white: #FFFFFF;
+
+  /* Grayscale (light mode) */
+  --gray-light-50: #F9FAFB;
+  --gray-light-200: #EAECF0;
+  --gray-light-300: #D0D5DD;
+  --gray-light-400: #98A2B3;
+  --gray-light-500: #667085;
+  --gray-light-600: #475467;
+  --gray-light-800: #182230;
+
+  /* Grayscale (dark mode / on-dark text) */
+  --gray-dark-200: #ECECED;
+  --gray-dark-300: #CECFD2;
+  --gray-dark-600: #61646C;
+
+  /* Spacing scale */
+  --spacing-xxs: 2px;
+  --spacing-sm: 6px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+  --spacing-4xl: 32px;
+
+  /* Radius */
+  --radius-md: 8px;
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+
+  /* Shadows */
+  --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-card: 0px 6px 12px rgba(22, 73, 74, 0.08);
+
+  /* Typography */
+  --font-primary: 'Lexend Deca', sans-serif;
+  --font-secondary: 'DM Sans', sans-serif;
+}

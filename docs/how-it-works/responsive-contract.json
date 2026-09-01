@@ -1,0 +1,18 @@
+{
+  "anchors": [375, 390, 768, 1440],
+  "mobile": {
+    "page_padding": 20,
+    "hero": {"padding_y": 48, "gap": 20, "actions": "stacked-full-width"},
+    "steps": {"padding_y": 56, "section_gap": 48, "step_order": ["image", "copy"], "image_wrapper": [335, 240], "image": [305, 220], "decoration_offset": [30, 20], "radius": 16},
+    "faq": {"padding_y": 56, "gap": 20},
+    "cta": {"outer_padding": [32, 20], "card_radius": 16}
+  },
+  "desktop": {
+    "content_width": 1280,
+    "hero": {"padding_y": 96, "actions": "inline"},
+    "steps": {"padding_y": 96, "section_gap": 72, "step_columns": [560, 600], "image_wrapper": [600, 424], "image": [520, 380], "decoration_offset": [80, 44], "radius": 24, "alternating": true},
+    "faq": {"content_width": 908, "padding_top": 132, "padding_bottom": 100},
+    "cta": {"content_width": 1280, "card_radius": 24}
+  },
+  "invariants": ["no horizontal overflow", "all content visible without JavaScript", "global header/footer exactly once"]
+}

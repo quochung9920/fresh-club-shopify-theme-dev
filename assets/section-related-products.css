@@ -1,0 +1,125 @@
+.related-products {
+  display: block;
+}
+
+.related-products .grid__item {
+  border: 1px solid #D8EBD0;
+  border-radius: 0.8rem;
+  background-color: white;
+}
+
+/* Figma 80846:855-946: keep the native card media authority, but
+   place its viewport at the exact 39px/170px recommendation geometry. */
+.related-products .card__inner {
+  min-height: 28.6rem;
+}
+
+.related-products .card__inner .card__media {
+  top: 3.9rem;
+  right: auto;
+  bottom: auto;
+  left: 2.4rem;
+  width: calc(100% - 4.8rem);
+  height: 17rem;
+  margin: 0;
+}
+
+.related-products__heading {
+  margin: 0 0 6rem;
+  text-align: center;
+  font-size: 4.4rem;
+  font-weight: bold;
+  line-height: normal;
+  color: #16494A;
+  letter-spacing: -0.044rem;
+}
+
+@media screen and (max-width: 749px) {
+  /* Mobile authority: one recommended product per row. */
+  .related-products {
+    padding-inline: 2rem;
+  }
+
+  .related-products__heading {
+    margin-bottom: 4rem;
+    font-size: 3.2rem;
+    letter-spacing: -0.032rem;
+  }
+
+  .related-products .grid.product-grid > .grid__item {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /* Gap-free tablet default; the later 990px rule explicitly overrides it. */
+  .related-products .product-grid {
+    --related-card-width: calc((100% - 3.2rem) / 2);
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+  }
+
+  .related-products .grid.product-grid > .grid__item {
+    flex-basis: var(--related-card-width);
+    width: var(--related-card-width);
+    max-width: var(--related-card-width);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  /* Product recommendations Figma contract: 80846:251 */
+  .related-products.page-width {
+    max-width: 144rem;
+    padding-inline: 8rem;
+  }
+
+  .related-products .product-grid {
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+  }
+
+  .related-products .grid--1-col-desktop {
+    --related-card-width: 100%;
+  }
+
+  .related-products .grid--2-col-desktop {
+    --related-card-width: calc((100% - 3.2rem) / 2);
+  }
+
+  .related-products .grid--3-col-desktop {
+    --related-card-width: calc((100% - 6.4rem) / 3);
+  }
+
+  .related-products .grid--4-col-desktop {
+    --related-card-width: calc((100% - 9.6rem) / 4);
+  }
+
+  .related-products .grid--5-col-desktop {
+    --related-card-width: calc((100% - 12.8rem) / 5);
+  }
+
+  .related-products .grid--6-col-desktop {
+    --related-card-width: calc((100% - 16rem) / 6);
+  }
+
+  .related-products .grid--4-col-desktop > .grid__item {
+    min-height: 40.6rem;
+  }
+
+  .related-products .grid--4-col-desktop > .grid__item > .card-wrapper,
+  .related-products .grid--4-col-desktop > .grid__item > .card-wrapper > .card {
+    height: 100%;
+  }
+
+  .related-products .grid--4-col-desktop .card__inner {
+    height: 28.6rem;
+    flex: 0 0 28.6rem;
+  }
+
+  .related-products .grid--4-col-desktop .card > .card__content {
+    min-height: 12rem;
+    flex: 1 0 auto;
+  }
+}

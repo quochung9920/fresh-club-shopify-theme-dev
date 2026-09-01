@@ -1,0 +1,57 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "contract_base": "55ce73b9cac5b17e940b511a7b14e2748ec6948c",
+  "coordinator": {
+    "branch": "integration/about-us-native-refactor",
+    "owned_paths": [
+      "docs/about-us-native-refactor/contracts/**",
+      "templates/page.about-us.json",
+      "layout/theme.liquid",
+      "assets/fc-about-base.css",
+      "assets/fc-about-runtime.js",
+      "snippets/fc-about-button.liquid",
+      "scripts/validate_about_us_refactor_contracts.py",
+      "scripts/validate_about_us_native_refactor.py",
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "sections_a": {
+    "branch": "agent/about-sections-a",
+    "owned_paths": [
+      "sections/fc-about-hero.liquid",
+      "sections/fc-about-values.liquid",
+      "sections/fc-about-metrics.liquid",
+      "assets/fc-about-hero.css",
+      "assets/fc-about-values.css",
+      "assets/fc-about-metrics.css",
+      "scripts/validate_about_sections_a.py"
+    ],
+    "forbidden_paths": ["layout/theme.liquid","templates/page.about-us.json","assets/fc-about-base.css","assets/fc-about-runtime.js","snippets/fc-about-button.liquid","sections/fc-about-story.liquid","sections/fc-about-process.liquid","sections/fc-about-cta.liquid"]
+  },
+  "sections_b": {
+    "branch": "agent/about-sections-b",
+    "owned_paths": [
+      "sections/fc-about-story.liquid",
+      "sections/fc-about-process.liquid",
+      "sections/fc-about-cta.liquid",
+      "assets/fc-about-story.css",
+      "assets/fc-about-process.css",
+      "assets/fc-about-cta.css",
+      "scripts/validate_about_sections_b.py"
+    ],
+    "forbidden_paths": ["layout/theme.liquid","templates/page.about-us.json","assets/fc-about-base.css","assets/fc-about-runtime.js","snippets/fc-about-button.liquid","sections/fc-about-hero.liquid","sections/fc-about-values.liquid","sections/fc-about-metrics.liquid"]
+  },
+  "audit_lanes": {
+    "design_architecture": "read-only repository; evidence under workspace/evidence/design-architecture",
+    "storefront_systems": "read-only repository and preview; evidence under workspace/evidence/storefront-systems",
+    "runtime_qa": "read-only repository, Theme Editor, and preview; evidence under workspace/evidence/runtime-qa"
+  },
+  "rules": [
+    "No implementation lane edits a shared path.",
+    "No implementation lane edits another lane's tests, Liquid, or CSS.",
+    "No agent writes project artifacts outside E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace.",
+    "Only the coordinator integrates commits, changes the JSON template or layout, runs release gates, creates PRs, or verifies native sync."
+  ]
+}

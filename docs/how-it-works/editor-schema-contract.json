@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "sections": {
+    "fc-how-hero": {
+      "settings": ["eyebrow", "heading", "text"],
+      "blocks": {"action": ["heading", "link", "style"]},
+      "max_blocks": 2
+    },
+    "fc-how-steps": {
+      "settings": ["heading", "intro"],
+      "blocks": {"step": ["number", "heading", "text", "image", "image_alt", "image_side", "fallback_asset"]},
+      "max_blocks": 8
+    },
+    "fc-how-faq": {
+      "settings": ["heading"],
+      "blocks": {"faq": ["heading", "answer", "open_by_default"]},
+      "max_blocks": 12
+    },
+    "fc-how-cta": {
+      "settings": ["heading", "subheading", "text", "background_image", "button_label", "button_link", "button_style"],
+      "reuse_assets": ["freshclub-about-cta-bg.png", "freshclub-about-cta-decoration.png"]
+    }
+  },
+  "requirements": ["block.shopify_attributes", "meaningful block titles", "independent links", "no page-local global shell"]
+}

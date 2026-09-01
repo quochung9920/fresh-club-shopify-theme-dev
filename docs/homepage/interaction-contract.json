@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "page_local_javascript": false,
+  "actions": {
+    "hero_primary": "native Shopify link to collection",
+    "hero_secondary": "native Shopify link to About Us",
+    "story_buttons": "independent native links owned by each story block",
+    "cta": "native Shopify link to collection"
+  },
+  "shared_authorities": [
+    "global button default/hover/focus/active states",
+    "global header and menu",
+    "predictive search and normal search submission",
+    "cart route and count",
+    "global footer newsletter and social links"
+  ],
+  "input_fields": {
+    "header_search_rest": "16px/24px associated label centered vertically in the 48px native predictive-search input; native placeholder text remains transparent so :placeholder-shown drives state",
+    "header_search_active": "on focus, entered value, or autofill, label becomes 10px/14px at top 6px and left 16px while query uses 20px 52px 4px 16px padding",
+    "footer_newsletter_rest": "14px label centered vertically in the 48px input",
+    "footer_newsletter_active": "on focus, entered value, or autofill, label becomes 10px/14px at top 6px and left 14px while input value uses 20px 14px 6px padding"
+  },
+  "accessibility": [
+    "single Homepage h1",
+    "decorations have empty alt and aria-hidden parents",
+    "content images expose merchant-owned alt text",
+    "content is visible without JavaScript",
+    "reduced motion cannot hide content"
+  ]
+}

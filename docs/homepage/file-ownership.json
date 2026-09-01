@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "coordinator": [
+    "templates/index.json",
+    "scripts/validate_homepage.py",
+    "package.json",
+    "docs/homepage/*",
+    "assets/freshclub-home-*.png"
+  ],
+  "hero": ["sections/fc-home-hero.liquid", "assets/fc-home-hero.css"],
+  "benefits": ["sections/fc-home-benefits.liquid", "assets/fc-home-benefits.css"],
+  "story": ["sections/fc-home-story.liquid", "assets/fc-home-story.css"],
+  "cta": ["sections/fc-home-cta.liquid", "assets/fc-home-cta.css"],
+  "forbidden_shared_edits": [
+    "layout/theme.liquid",
+    "sections/header*.liquid",
+    "sections/footer.liquid",
+    "assets/base.css",
+    "assets/freshclub-global-shell.css",
+    "snippets/predictive-search*.liquid"
+  ]
+}

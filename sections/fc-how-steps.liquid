@@ -1,0 +1,115 @@
+{{ 'fc-how-steps.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-how-steps" aria-labelledby="HowStepsHeading-{{ section.id }}">
+  <div class="fc-how-steps__inner">
+    <div class="fc-how-steps__heading-group">
+      {%- if section.settings.heading != blank -%}
+        <h2 id="HowStepsHeading-{{ section.id }}" class="fc-how-steps__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro != blank -%}
+        <p class="fc-how-steps__intro">{{ section.settings.intro | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'step' -%}
+        {%- case block.settings.fallback_asset -%}
+          {%- when 'step_02' -%}{%- assign fallback_asset = 'freshclub-how-step-02.png' -%}
+          {%- when 'step_03' -%}{%- assign fallback_asset = 'freshclub-how-step-03.png' -%}
+          {%- when 'step_04' -%}{%- assign fallback_asset = 'freshclub-how-step-04.png' -%}
+          {%- else -%}{%- assign fallback_asset = 'freshclub-how-step-01.png' -%}
+        {%- endcase -%}
+        <article class="fc-how-step fc-how-step--image-{{ block.settings.image_side }}" {{ block.shopify_attributes }}>
+          <div class="fc-how-step__copy">
+            {%- if block.settings.number != blank -%}<p class="fc-how-step__number">{{ block.settings.number | escape }}</p>{%- endif -%}
+            {%- if block.settings.heading != blank -%}<h3 class="fc-how-step__heading">{{ block.settings.heading | escape }}</h3>{%- endif -%}
+            {%- if block.settings.text != blank -%}<p class="fc-how-step__text">{{ block.settings.text | escape }}</p>{%- endif -%}
+          </div>
+          <div class="fc-how-step__media">
+            <div class="fc-how-step__decoration" aria-hidden="true"></div>
+            {%- if block.settings.image != blank -%}
+              {{
+                block.settings.image
+                | image_url: width: 1600
+                | image_tag:
+                  class: 'fc-how-step__image',
+                  widths: '305, 520, 610, 1040, 1600',
+                  sizes: '(min-width: 1024px) 520px, (min-width: 750px) 520px, 305px',
+                  alt: block.settings.image_alt,
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              <img
+                class="fc-how-step__image"
+                src="{{ fallback_asset | asset_url }}"
+                alt="{{ block.settings.image_alt | escape }}"
+                width="520"
+                height="380"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works — Steps",
+  "tag": "section",
+  "class": "section-fc-how-steps",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "From market floor to your kitchen door" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "Here’s exactly what happens after you place an order." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Browse today’s live stock" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "See real photos of what’s actually on the market floor this morning, with per-kilo pricing and live availability." },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Fresh produce available to order" },
+        {
+          "type": "select",
+          "id": "image_side",
+          "label": "Image position on desktop",
+          "options": [
+            { "value": "right", "label": "Right" },
+            { "value": "left", "label": "Left" }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "select",
+          "id": "fallback_asset",
+          "label": "Default image",
+          "options": [
+            { "value": "step_01", "label": "Produce close-up" },
+            { "value": "step_02", "label": "Market ordering" },
+            { "value": "step_03", "label": "Market floor" },
+            { "value": "step_04", "label": "FreshClub delivery" }
+          ],
+          "default": "step_01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works — Steps",
+      "blocks": [
+        { "type": "step", "settings": { "number": "01", "heading": "Browse today’s live stock", "text": "See real photos of what’s actually on the market floor this morning, with per-kilo pricing and live availability. No out-of-date catalogue, and no guessing what will turn up.", "image_alt": "Fresh produce available on the market floor", "image_side": "right", "fallback_asset": "step_01" } },
+        { "type": "step", "settings": { "number": "02", "heading": "Build your order and lock your slot", "text": "Add what you need, set your quantities, and choose the delivery window that fits your prep. The price you see is the price you pay — locked in the moment you confirm.", "image_alt": "Fresh produce order being prepared", "image_side": "left", "fallback_asset": "step_02" } },
+        { "type": "step", "settings": { "number": "03", "heading": "We hand-pick it at 4am", "text": "Our own crew is on the market floor before dawn, selecting your produce, quality-checking every box, and packing it for your delivery run.", "image_alt": "Fresh produce on the Sydney market floor", "image_side": "right", "fallback_asset": "step_03" } },
+        { "type": "step", "settings": { "number": "04", "heading": "Delivered fresh to your door", "text": "Your order arrives inside the window you chose, picked just hours earlier — not days. Next time, reorder your usuals in a couple of taps.", "image_alt": "FreshClub team member delivering produce", "image_side": "left", "fallback_asset": "step_04" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

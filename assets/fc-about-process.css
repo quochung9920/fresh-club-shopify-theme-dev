@@ -1,0 +1,121 @@
+.fc-about-process {
+  padding: 56px 20px;
+  background: #f5faf3;
+}
+
+.fc-about-process__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+}
+
+.fc-about-process__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-about-process__heading {
+  margin: 0;
+  color: #16494a;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.fc-about-process__intro {
+  margin: 0;
+  color: #475467;
+  font-size: 15px;
+  line-height: normal;
+}
+
+.fc-about-process__steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fc-about-process__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-about-process__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border: 2px dashed #ea1a65;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #ea1a65;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.fc-about-process__badge--time {
+  font-size: 18px;
+}
+
+.fc-about-process__step-heading {
+  margin: 0;
+  color: #16494a;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.fc-about-process__step-text {
+  max-width: 295px;
+  margin: 0;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .fc-about-process {
+    padding: 96px 80px;
+  }
+
+  .fc-about-process__inner {
+    gap: 64px;
+  }
+
+  .fc-about-process__heading {
+    font-size: 40px;
+    line-height: normal;
+  }
+
+  .fc-about-process__intro {
+    font-size: 18px;
+  }
+
+  .fc-about-process__steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  .fc-about-process__step-heading {
+    font-size: 18px;
+  }
+
+  .fc-about-process__step-text {
+    max-width: 262px;
+  }
+}

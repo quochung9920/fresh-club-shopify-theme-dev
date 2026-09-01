@@ -1,0 +1,5 @@
+# Preserve byte-exact third-party and supplied reference artifacts.
+assets/gsap-3.13.0.min.js -text whitespace=-trailing-space,-blank-at-eof
+prototype/about-us/reference/** -text whitespace=-trailing-space,-blank-at-eof
+prototype/about-us/working/assets/gsap-3.13.0.min.js -text whitespace=-trailing-space,-blank-at-eof
+prototype/about-us/working/assets/OFL-*.txt -text whitespace=-trailing-space,-blank-at-eof

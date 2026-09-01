@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "page": "collection",
+  "strategy": "preserve native Shopify authorities",
+  "mapping": {
+    "collectionList": "available to merchants but disabled in the Figma-default template",
+    "products": "collection.products pagination",
+    "productMedia": "product.featured_media",
+    "price": "selected/first available variant and native price snippet",
+    "faq": "collapsible_row blocks",
+    "footerNewsletter": "global footer section"
+  },
+  "defaults": {
+    "productsPerPage": 12,
+    "desktopColumns": 4,
+    "mobileColumns": 1,
+    "quickAdd": "bulk"
+  },
+  "prohibitions": [
+    "sample Cherry Tomato copy",
+    "sample $9.99 price",
+    "sample image assets",
+    "static inventory",
+    "static product URLs"
+  ]
+}

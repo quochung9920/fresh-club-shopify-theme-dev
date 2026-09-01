@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "source_commit": "047a61cbd07798703779cd8c3b9342b538240a98",
+  "policy": "No offense signature count may exceed this reviewed imported-theme baseline.",
+  "offenses": [
+    {
+      "path": "layout/password.liquid",
+      "check": "UndefinedObject",
+      "severity": "warning",
+      "message": "Unknown object 'scheme_classes' used.",
+      "count": 1
+    },
+    {
+      "path": "layout/theme.liquid",
+      "check": "RemoteAsset",
+      "severity": "warning",
+      "message": "Asset should be served by the Shopify CDN for better performance.",
+      "count": 1
+    },
+    {
+      "path": "layout/theme.liquid",
+      "check": "UndefinedObject",
+      "severity": "warning",
+      "message": "Unknown object 'scheme_classes' used.",
+      "count": 1
+    },
+    {
+      "path": "sections/collapsible-content.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "sections/collection_list.liquid",
+      "check": "ImgWidthAndHeight",
+      "severity": "error",
+      "message": "Missing width and height attributes on img tag",
+      "count": 2
+    },
+    {
+      "path": "sections/featured-product.liquid",
+      "check": "UnusedAssign",
+      "severity": "warning",
+      "message": "The variable 'seo_media' is assigned but not used",
+      "count": 1
+    },
+    {
+      "path": "sections/featured-product.liquid",
+      "check": "ValidSchemaTranslations",
+      "severity": "error",
+      "message": "'t:sections.main-product.blocks.icon_with_text.settings.content.info' does not have a matching entry in 'locales/en.default.schema.json'",
+      "count": 1
+    },
+    {
+      "path": "sections/featured-product.liquid",
+      "check": "ValidSchemaTranslations",
+      "severity": "error",
+      "message": "'t:sections.main-product.blocks.icon_with_text.settings.content.label' does not have a matching entry in 'locales/en.default.schema.json'",
+      "count": 1
+    },
+    {
+      "path": "sections/image-with-text.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "sections/info-card.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "sections/main-article.liquid",
+      "check": "VariableName",
+      "severity": "warning",
+      "message": "The variable 'anchorId' uses wrong naming format",
+      "count": 1
+    },
+    {
+      "path": "sections/main-list-collections.liquid",
+      "check": "VariableName",
+      "severity": "warning",
+      "message": "The variable 'moduloResult' uses wrong naming format",
+      "count": 1
+    },
+    {
+      "path": "sections/main-product.liquid",
+      "check": "UndefinedObject",
+      "severity": "warning",
+      "message": "Unknown object 'continue' used.",
+      "count": 1
+    },
+    {
+      "path": "sections/main-product.liquid",
+      "check": "UnusedAssign",
+      "severity": "warning",
+      "message": "The variable 'seo_media' is assigned but not used",
+      "count": 1
+    },
+    {
+      "path": "sections/main-search.liquid",
+      "check": "UnusedAssign",
+      "severity": "warning",
+      "message": "The variable 'product_settings' is assigned but not used",
+      "count": 1
+    },
+    {
+      "path": "sections/multiple-steps.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "sections/multirow.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "sections/rich-text.liquid",
+      "check": "LiquidHTMLSyntaxError",
+      "severity": "error",
+      "message": "SyntaxError: expected a letter, \"{{\", \"wbr\" (case-insensitive), \"track\" (case-insensitive), \"source\" (case-insensitive), \"param\" (case-insensitive), \"meta\" (case-insensitive), \"link\" (case-insensitive), \"keygen\" (case-insensitive), \"input\" (case-insensitive), \"img\" (case-insensitive), \"hr\" (case-insensitive), \"embed\" (case-insensitive), \"command\" (case-insensitive), \"col\" (case-insensitive), \"br\" (case-insensitive), \"base\" (case-insensitive), \"area\" (case-insensitive), \"svg\", \"style\", or \"script\"",
+      "count": 1
+    },
+    {
+      "path": "snippets/icon-cart-form-hover.liquid",
+      "check": "OrphanedSnippet",
+      "severity": "warning",
+      "message": "This snippet is not referenced by any other files",
+      "count": 1
+    },
+    {
+      "path": "snippets/icon-cart-form.liquid",
+      "check": "OrphanedSnippet",
+      "severity": "warning",
+      "message": "This snippet is not referenced by any other files",
+      "count": 1
+    },
+    {
+      "path": "snippets/product-variant-options.liquid",
+      "check": "UnsupportedFilterArguments",
+      "severity": "error",
+      "message": "Filters cannot be used on arguments passed to the 'render' tag. Apply the filter beforehand (e.g. with {% assign %}) and pass the result instead.",
+      "count": 1
+    },
+    {
+      "path": "snippets/product-variant-options.liquid",
+      "check": "UnusedAssign",
+      "severity": "warning",
+      "message": "The variable 'help_text' is assigned but not used",
+      "count": 1
+    },
+    {
+      "path": "snippets/quick-order-product-row.liquid",
+      "check": "OrphanedSnippet",
+      "severity": "warning",
+      "message": "This snippet is not referenced by any other files",
+      "count": 1
+    }
+  ]
+}

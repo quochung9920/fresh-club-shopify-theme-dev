@@ -1,0 +1,131 @@
+.fc-how-faq {
+  padding: 56px 20px;
+  background: #f5faf3;
+}
+
+.fc-how-faq__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 908px;
+  margin-inline: auto;
+}
+
+.fc-how-faq__heading {
+  margin: 0;
+  color: #16494a;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.28px;
+  text-align: center;
+}
+
+.fc-how-faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fc-how-faq__item {
+  border-top: 1px solid #eaecf0;
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+
+.fc-how-faq__item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.fc-how-faq__summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.fc-how-faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.fc-how-faq__question {
+  color: #344054;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.fc-how-faq__icon {
+  position: relative;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #98a2b3;
+  border-radius: 50%;
+}
+
+.fc-how-faq__icon::before,
+.fc-how-faq__icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: #667085;
+  transform: translate(-50%, -50%);
+}
+
+.fc-how-faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+details[open] .fc-how-faq__icon::after {
+  display: none;
+}
+
+.fc-how-faq__answer {
+  padding-top: 8px;
+  padding-right: 48px;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (min-width: 1024px) {
+  .fc-how-faq {
+    padding: 132px 80px 100px;
+  }
+
+  .fc-how-faq__inner {
+    gap: 60px;
+  }
+
+  .fc-how-faq__heading {
+    font-size: 44px;
+    line-height: normal;
+    letter-spacing: -0.44px;
+  }
+
+  .fc-how-faq__item {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .fc-how-faq__question {
+    color: #101828;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .fc-how-faq__answer {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

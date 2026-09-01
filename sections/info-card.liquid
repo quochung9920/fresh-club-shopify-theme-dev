@@ -1,0 +1,682 @@
+{%- liquid
+  assign info_card_id = 'info-card-' | append: section.id
+-%}
+
+{%- style -%}
+  #{{ info_card_id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  #{{ info_card_id }} .info-card {
+    background: rgb(var(--color-background));
+    border-radius: {{ section.settings.container_corner_radius }}px;
+    padding: 4rem 2.4rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  #{{ info_card_id }} .info-card__heading {
+    margin: 0 0 {{ section.settings.heading_margin_bottom }}px;
+    color: rgb(var(--color-foreground));
+  }
+
+  #{{ info_card_id }} .info-card__header--left {
+    text-align: left;
+  }
+
+  #{{ info_card_id }} .info-card__header--center {
+    text-align: center;
+  }
+
+  #{{ info_card_id }} .info-card__header--right {
+    text-align: right;
+  }
+
+  #{{ info_card_id }} .info-card__subheading {
+    margin: 0 0 {{ section.settings.subheading_margin_bottom }}px;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  #{{ info_card_id }} .info-card__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+    gap: {{ section.settings.grid_gap }}px;
+  }
+
+  {% if section.settings.card_show_container %}
+    #{{ info_card_id }} .info-card__item {
+      background: rgba(var(--color-foreground), 0.06);
+      border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+      border-radius: {{ section.settings.card_border_radius }}px;
+      padding: 2.4rem 2.2rem;
+      height: 100%;
+    }
+  {% endif %}
+
+  #{{ info_card_id }} .info-card__item--left {
+    text-align: left;
+  }
+
+  #{{ info_card_id }} .info-card__item--center {
+    text-align: center;
+  }
+
+  #{{ info_card_id }} .info-card__item--right {
+    text-align: right;
+  }
+
+  #{{ info_card_id }} .info-card__icon {
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: {{ section.settings.icon_border_radius }}px;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+  }
+
+  #{{ info_card_id }} .info-card__icon svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: block;
+  }
+
+  #{{ info_card_id }} .info-card__icon path,
+  #{{ info_card_id }} .info-card__icon circle,
+  #{{ info_card_id }} .info-card__icon line,
+  #{{ info_card_id }} .info-card__icon polyline {
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #{{ info_card_id }} .info-card__title {
+    margin: 0 0 0.6rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  #{{ info_card_id }} .info-card__text {
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  @media screen and (min-width: 750px) {
+    #{{ info_card_id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    #{{ info_card_id }} .info-card {
+      padding: 5.4rem 4rem;
+    }
+
+    #{{ info_card_id }} .info-card__grid {
+      grid-template-columns: repeat({{ section.settings.columns_tablet }}, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #{{ info_card_id }} .info-card__grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+    }
+  }
+{%- endstyle -%}
+
+<section id="{{ info_card_id }}" class="section color-{{ section.settings.background_color_scheme }}">
+  <div class="page-width">
+    <div class="info-card color-{{ section.settings.color_scheme }} gradient{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="info-card__inner">
+        {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+          <div class="info-card__header info-card__header--{{ section.settings.header_text_alignment }}">
+            {%- if section.settings.heading != blank -%}
+              <{% if section.index == 1 %}h1{% else %}h2{% endif %} class="info-card__heading {{ section.settings.heading_size }}">
+                {{ section.settings.heading }}
+              </{% if section.index == 1 %}h1{% else %}h2{% endif %}>
+            {%- endif -%}
+            {%- if section.settings.subheading != blank -%}
+              <p class="info-card__subheading {{ section.settings.subheading_size }}">
+                {{ section.settings.subheading }}
+              </p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <div class="info-card__grid" role="list">
+            {%- for block in section.blocks -%}
+              <div
+                class="info-card__item info-card__item--{{ section.settings.card_content_alignment }}"
+                role="listitem"
+                {{ block.shopify_attributes }}
+              >
+                {%- if block.settings.icon_svg != blank -%}
+                  <div class="info-card__icon" aria-hidden="true">
+                    {{ block.settings.icon_svg }}
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.custom_html_title != blank -%}
+                  <div class="info-card__title {{ block.settings.title_size }}">
+                    {{ block.settings.custom_html_title }}
+                  </div>
+                {%- elsif block.settings.title != blank -%}
+                  <h3 class="info-card__title {{ block.settings.title_size }}">{{ block.settings.title }}</h3>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <p class="info-card__text {{ block.settings.text_size }}">{{ block.settings.text }}</p>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Info card",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "background_color_scheme",
+      "label": "Background color scheme",
+      "default": "scheme_1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme_1"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Fresh Club model"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading font size",
+      "default": "h1",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal text"
+        },
+        {
+          "value": "text-body",
+          "label": "Body"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "value": "hxl",
+          "label": "HXL"
+        },
+        {
+          "value": "hxxl",
+          "label": "HXXL"
+        },
+        {
+          "value": "h0",
+          "label": "H0"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_margin_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading margin bottom",
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A few simple rules keep prices low, produce fresh, and ordering fair for everyone."
+    },
+    {
+      "type": "select",
+      "id": "subheading_size",
+      "label": "Subheading font size",
+      "default": "text-body",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal text"
+        },
+        {
+          "value": "text-body",
+          "label": "Body"
+        },
+        {
+          "value": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "value": "hxl",
+          "label": "HXL"
+        },
+        {
+          "value": "hxxl",
+          "label": "HXXL"
+        },
+        {
+          "value": "h0",
+          "label": "H0"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "subheading_margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading margin bottom",
+      "default": 34
+    },
+    {
+      "type": "header",
+      "content": "Alignment"
+    },
+    {
+      "type": "select",
+      "id": "header_text_alignment",
+      "label": "Heading and subheading alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "card_content_alignment",
+      "label": "Card content alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "label": "Grid gap",
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "container_corner_radius",
+      "label": "Container corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Card"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius",
+      "label": "Icon corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "checkbox",
+      "id": "card_show_container",
+      "label": "Show container",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rule",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "icon_svg",
+          "label": "Icon SVG",
+          "info": "Paste full SVG markup, for example <svg viewBox=\"0 0 24 24\"><path d=\"M12 2v20M2 12h20\"></path></svg>",
+          "default": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2v20M2 12h20\"></path></svg>"
+        },
+        {
+          "type": "liquid",
+          "id": "custom_html_title",
+          "label": "Custom HTML Title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "50 orders a day"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title font size",
+          "default": "h3",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal text"
+            },
+            {
+              "value": "text-body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "hxl",
+              "label": "HXL"
+            },
+            {
+              "value": "hxxl",
+              "label": "HXXL"
+            },
+            {
+              "value": "h0",
+              "label": "H0"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Capped daily, six days a week - so every box leaves fresh and nothing goes to waste."
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Description font size",
+          "default": "text-body",
+          "options": [
+            {
+              "value": "",
+              "label": "Normal text"
+            },
+            {
+              "value": "text-body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "hxl",
+              "label": "HXL"
+            },
+            {
+              "value": "hxxl",
+              "label": "HXXL"
+            },
+            {
+              "value": "h0",
+              "label": "H0"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Info card",
+      "blocks": [
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2v20M2 12h20\"></path></svg>",
+            "title": "50 orders a day",
+            "text": "Capped daily, six days a week - so every box leaves fresh and nothing goes to waste."
+          }
+        },
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M20 6 9 17l-5-5\"></path></svg>",
+            "title": "We sell what we have",
+            "text": "Real, in-season stock only. No phantom listings - if you can see it, you can order it."
+          }
+        },
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6\"></path></svg>",
+            "title": "$500 minimum order",
+            "text": "Fruit and veg minimum of $500 per order, with eggs available to add on top."
+          }
+        },
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\"></circle><path d=\"M12 7v5l3 2\"></path></svg>",
+            "title": "First in, best dressed",
+            "text": "Delivery slots fill in order - book early to lock in the time that suits your kitchen."
+          }
+        },
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M9 12l2 2 4-4\"></path><path d=\"M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z\"></path></svg>",
+            "title": "Price before you order",
+            "text": "The price you see is the price you pay. Know your costs upfront, every single time."
+          }
+        },
+        {
+          "type": "rule",
+          "settings": {
+            "icon_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M3 9l9-7 9 7v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z\"></path></svg>",
+            "title": "Multi-store ready",
+            "text": "Run several venues? Manage every store's orders and invoices from one account."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

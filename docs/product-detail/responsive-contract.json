@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "page": "product-detail",
+  "supersedes": {
+    "version": 1,
+    "commit": "94f46bb20c9aaa09d3608cb331e3a75ae972c470",
+    "reason": "Runtime QA showed that Dawn's tablet-down one-column utility produced oversized 653-874px recommendation cards; version 2 derives a two-column tablet transition while preserving the explicit one-column mobile authority and four-column Figma desktop authority."
+  },
+  "authority": {
+    "desktopFigma": "80846:250",
+    "mainProduct": "80846:313",
+    "relatedProducts": "80846:251",
+    "mobile": "user requirement: exactly one recommended product per row"
+  },
+  "anchors": [
+    320,
+    375,
+    390,
+    430,
+    768,
+    989,
+    1024,
+    1440
+  ],
+  "breakpoints": {
+    "mobile": {
+      "range": "0-749",
+      "mainProduct": "single-column native stack; media before information; balanced page gutters",
+      "relatedProductsColumns": 1,
+      "relatedCardWidth": "100% of section content box",
+      "horizontalOverflow": false
+    },
+    "tablet": {
+      "range": "750-989",
+      "cssRange": "min-width: 750px; desktop override begins at 990px",
+      "mainProduct": "native responsive composition without horizontal overflow",
+      "relatedProductsColumns": 2,
+      "relatedProductsRationale": "two columns prevent oversized single cards between phone and the Figma four-column desktop composition; a min-width-only tablet default plus a later explicit 990px four-column override covers every fractional viewport without a decimal dead zone"
+    },
+    "desktop": {
+      "range": "990+",
+      "mainProduct": {
+        "containerMax": 1280,
+        "columns": [
+          575,
+          645
+        ],
+        "gap": 60
+      },
+      "relatedProductsColumns": 4,
+      "relatedCardTarget": [
+        296,
+        406
+      ],
+      "relatedCardHeightPolicy": "406px is the Figma minimum/nominal target; cards grow for merchant-variable titles, prices, variants, and native quick-add controls and must never clip content",
+      "relatedGap": 32
+    }
+  },
+  "preserve": [
+    "global header and footer",
+    "native merchant content",
+    "native product forms",
+    "desktop 4-column recommendation grid",
+    "desktop main-product two-column composition"
+  ]
+}

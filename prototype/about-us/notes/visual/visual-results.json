@@ -1,0 +1,238 @@
+{
+  "captures": [
+    {
+      "screenshot": "prototype/about-us/notes/visual/reference-375.png",
+      "screenshotBytes": 693357,
+      "screenshotSha256": "b7f4a2b557c925d5dda4dd6ceb22c4b3333faa5fecf8485b767112bbe2b07f85"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/candidate-375.png",
+      "screenshotBytes": 693357,
+      "screenshotSha256": "b7f4a2b557c925d5dda4dd6ceb22c4b3333faa5fecf8485b767112bbe2b07f85"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/liquid-fixture-375.png",
+      "screenshotBytes": 693357,
+      "screenshotSha256": "b7f4a2b557c925d5dda4dd6ceb22c4b3333faa5fecf8485b767112bbe2b07f85"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/reference-390.png",
+      "screenshotBytes": 702109,
+      "screenshotSha256": "8e36017cd5e00adde0f8b29e9e632f50ebc958ed93d7041f5665d11e83622e37"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/candidate-390.png",
+      "screenshotBytes": 702109,
+      "screenshotSha256": "8e36017cd5e00adde0f8b29e9e632f50ebc958ed93d7041f5665d11e83622e37"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/liquid-fixture-390.png",
+      "screenshotBytes": 702109,
+      "screenshotSha256": "8e36017cd5e00adde0f8b29e9e632f50ebc958ed93d7041f5665d11e83622e37"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/reference-768.png",
+      "screenshotBytes": 861328,
+      "screenshotSha256": "f22e54f50edd89664862cb5e360bb7580e9c2414bf5f2e2addbb0353cfc0302d"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/candidate-768.png",
+      "screenshotBytes": 861328,
+      "screenshotSha256": "f22e54f50edd89664862cb5e360bb7580e9c2414bf5f2e2addbb0353cfc0302d"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/liquid-fixture-768.png",
+      "screenshotBytes": 861328,
+      "screenshotSha256": "f22e54f50edd89664862cb5e360bb7580e9c2414bf5f2e2addbb0353cfc0302d"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/reference-1440.png",
+      "screenshotBytes": 1885016,
+      "screenshotSha256": "3a9d689449f1c9c42d12218936c9aed82f24b2116adc1d0e9083736f4e924eba"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/candidate-1440.png",
+      "screenshotBytes": 1885017,
+      "screenshotSha256": "906c6e20b7431ee3b198d2087a7c31728b867748e21199d4dc69115be6f82b11"
+    },
+    {
+      "screenshot": "prototype/about-us/notes/visual/liquid-fixture-1440.png",
+      "screenshotBytes": 1885017,
+      "screenshotSha256": "906c6e20b7431ee3b198d2087a7c31728b867748e21199d4dc69115be6f82b11"
+    }
+  ],
+  "comparisons": {
+    "375": {
+      "referenceDimensions": [
+        375,
+        4939
+      ],
+      "candidateDimensions": [
+        375,
+        4939
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "390": {
+      "referenceDimensions": [
+        390,
+        4850
+      ],
+      "candidateDimensions": [
+        390,
+        4850
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "768": {
+      "referenceDimensions": [
+        768,
+        4431
+      ],
+      "candidateDimensions": [
+        768,
+        4431
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "1440": {
+      "referenceDimensions": [
+        1440,
+        4190
+      ],
+      "candidateDimensions": [
+        1440,
+        4190
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": [
+        961,
+        1111,
+        962,
+        1112
+      ],
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": false,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    }
+  },
+  "liquidFixtureComparisons": {
+    "375": {
+      "referenceDimensions": [
+        375,
+        4939
+      ],
+      "candidateDimensions": [
+        375,
+        4939
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "390": {
+      "referenceDimensions": [
+        390,
+        4850
+      ],
+      "candidateDimensions": [
+        390,
+        4850
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "768": {
+      "referenceDimensions": [
+        768,
+        4431
+      ],
+      "candidateDimensions": [
+        768,
+        4431
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": null,
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": true,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    },
+    "1440": {
+      "referenceDimensions": [
+        1440,
+        4190
+      ],
+      "candidateDimensions": [
+        1440,
+        4190
+      ],
+      "equalDimensions": true,
+      "diffBoundingBox": [
+        961,
+        1111,
+        962,
+        1112
+      ],
+      "meanPerChannelDelta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pixelIdentical": false,
+      "maxMeanChannelDelta": 0.005,
+      "withinTolerance": true
+    }
+  }
+}

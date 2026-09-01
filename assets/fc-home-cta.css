@@ -1,0 +1,152 @@
+.fc-home-cta {
+  padding: 32px 20px;
+  background: #ffffff;
+}
+
+.fc-home-cta__banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 36px 20px;
+  border-radius: 16px;
+  background: #16494a;
+  text-align: center;
+}
+
+.fc-home-cta__background,
+.fc-home-cta__background::after {
+  position: absolute;
+  inset: 0;
+}
+
+.fc-home-cta__background::after {
+  content: '';
+  background: rgba(22, 73, 74, 0.93);
+}
+
+.fc-home-cta__background-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.36;
+}
+
+.fc-home-cta__decoration {
+  display: none;
+}
+
+.fc-home-cta__copy,
+.fc-home-cta__banner > .button {
+  position: relative;
+  z-index: 2;
+}
+
+.fc-home-cta__copy,
+.fc-home-cta__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fc-home-cta__copy {
+  gap: 14px;
+  width: 100%;
+}
+
+.fc-home-cta__title-group {
+  gap: 12px;
+}
+
+.fc-home-cta__heading,
+.fc-home-cta__subheading,
+.fc-home-cta__text {
+  margin: 0;
+}
+
+.fc-home-cta__heading {
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.fc-home-cta__subheading {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.fc-home-cta__text {
+  color: #f9fafb;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media (min-width: 1024px) {
+  .fc-home-cta {
+    padding: 40px 80px;
+  }
+
+  .fc-home-cta__banner {
+    gap: 40px;
+    padding: 48px;
+    border-radius: 24px;
+  }
+
+  .fc-home-cta__copy {
+    gap: 20px;
+    max-width: 966px;
+  }
+
+  .fc-home-cta__heading {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .fc-home-cta__subheading {
+    font-size: 20px;
+  }
+
+  .fc-home-cta__text {
+    font-size: 16px;
+  }
+
+  .fc-home-cta__decoration {
+    position: absolute;
+    top: 131px;
+    z-index: 1;
+    display: flex;
+    width: 165px;
+    height: 206px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fc-home-cta__decoration img {
+    width: 206px;
+    height: 165px;
+    max-width: none;
+    object-fit: cover;
+    transform: rotate(90deg);
+  }
+
+  .fc-home-cta__decoration--left {
+    left: 0;
+  }
+
+  .fc-home-cta__decoration--left img {
+    transform: rotate(90deg) scaleY(-1);
+  }
+
+  .fc-home-cta__decoration--right {
+    right: 0;
+  }
+}

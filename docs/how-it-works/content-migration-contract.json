@@ -1,0 +1,8 @@
+{
+  "template": "page.how-does-it-work.json",
+  "default_sections": ["how_hero", "how_steps", "how_faq", "how_cta"],
+  "default_step_assets": ["freshclub-how-step-01.png", "freshclub-how-step-02.png", "freshclub-how-step-03.png", "freshclub-how-step-04.png"],
+  "fallback_policy": "Merchant image_picker wins; exact local Figma asset renders only when blank.",
+  "preserve_existing_page": true,
+  "global_state_mutation": false
+}

@@ -1,0 +1,71 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "source": {
+    "template": "templates/page.about-us.json",
+    "section_type": "about-us-figma",
+    "section_file": "sections/about-us-figma.liquid",
+    "base_commit": "55ce73b9cac5b17e940b511a7b14e2748ec6948c"
+  },
+  "migration_policy": {
+    "preserve_current_copy": true,
+    "preserve_current_block_order": true,
+    "preserve_current_page_urls": true,
+    "remove_page_owned_global_shell_content": true,
+    "blank_image_picker_uses_reviewed_theme_asset_fallback": true,
+    "merchant_selection_overrides_fallback": true,
+    "do_not_mutate_shopify_page_or_settings_data": true
+  },
+  "sections": {
+    "fc-about-hero": {
+      "settings": {"heading":"hero_heading","text":"hero_text","image":"hero_image","image_alt":"hero_image_alt"},
+      "fallback_assets": {"image":"freshclub-about-hero-base.jpg","decorative_overlay":"freshclub-about-hero-overlay.jpg"},
+      "blocks": [
+        {"type":"button","heading_source":"hero_primary_label","link_source":"products_url","style":"primary"},
+        {"type":"button","heading_source":"hero_secondary_label","link_source":"products_url","style":"secondary"}
+      ],
+      "post_migration_rule": "Each action stores its own independent link; there is no shared products_url setting in the new section."
+    },
+    "fc-about-values": {
+      "source_blocks": ["value_freshness","value_pricing","value_quality","value_local"],
+      "target_block_type": "value_card",
+      "block_setting_map": {"heading":"heading","text":"text"},
+      "fallback_icons_by_source_block": {
+        "value_freshness":"freshclub-value-freshness.png",
+        "value_pricing":"freshclub-value-pricing.png",
+        "value_quality":"freshclub-value-quality.png",
+        "value_local":"freshclub-value-local.png"
+      },
+      "icon_alt_policy": "blank because each decorative icon repeats the adjacent heading"
+    },
+    "fc-about-metrics": {
+      "settings": {"eyebrow":"stats_eyebrow"},
+      "source_blocks": ["stat_orders","stat_market","stat_fees","stat_guarantee"],
+      "target_block_type": "metric",
+      "block_setting_map": {"value":"value","heading":"text"},
+      "line_break_policy": "Normalize current authored newlines through layout; merchants do not author presentation newlines."
+    },
+    "fc-about-story": {
+      "settings": {"heading":"story_heading","title":"story_title","text":"story_text","image":"story_image","image_alt":"story_image_alt","button_label":"story_button_label","button_link":"process_url","button_style":"secondary"},
+      "fallback_assets": {"image":"freshclub-about-story.jpg"}
+    },
+    "fc-about-process": {
+      "settings": {"heading":"day_heading","intro":"day_text"},
+      "source_blocks": ["step_order","step_market","step_pack","step_delivery"],
+      "target_block_type": "process_step",
+      "block_setting_map": {"badge":"badge","heading":"heading","text":"text"},
+      "removed_setting": "large_badge",
+      "badge_policy": "Typography derives from content or a closed renderer rule, not a merchant visual toggle."
+    },
+    "fc-about-cta": {
+      "settings": {"heading":"cta_heading","subheading":"cta_subheading","text":"cta_text","background_image":"cta_image","button_label":"cta_button_label","button_link":"products_url","button_style":"primary"},
+      "fallback_assets": {"background_image":"freshclub-about-cta-bg.png","side_decorations":"freshclub-about-cta-decoration.png"},
+      "decorative_media_policy": "Background and side decorations expose no alt setting; side decorations remain desktop-only."
+    }
+  },
+  "removed_page_owned_settings": [
+    "about_label","about_url","products_label","process_label","contact_label","contact_url","search_placeholder",
+    "home_label","home_url","footer_products_label","footer_about_label","newsletter_heading","newsletter_placeholder",
+    "newsletter_button_label","copyright_text","linkedin_url","instagram_url","facebook_url","youtube_url"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "name": "Fresh Club global storefront shell",
+  "authority": {
+    "desktop_frame": "81154:408",
+    "mobile_frame": "81177:209",
+    "html_sha256": "730247ac286a7123fcaea2459100e4905801557101aa9a25b433eddee7312329",
+    "screenshot_sha256": "23c33dd55bec3df18153e968a89989fb210fcaf70b07e95974813a0edd4614ed",
+    "design_tokens_sha256": "4665bea7180e3e37120aa0f829bfc4547419788c9e9b4f8481b0e750f2a45cb6",
+    "desktop_context_sha256": "44bb9eede1cf7c77ba76a1f5229cf6e442cb77a9c19da21f122e031c7154e540",
+    "mobile_context_sha256": "77e223c829aa08552cbff4ab64c0e1ab090b6e5794827a36b4da568cecd44933"
+  },
+  "assets": {
+    "freshclub-logo-header.png": "052d8190491b1a10b49d673489738fb3b6af769b98ffe485bb526b7dc85302e9",
+    "freshclub-logo-footer.png": "edcf5e1f4669bbd335dbde74a549e82baf499e24c5536446cbbb6edbf784a253",
+    "fc-icon-menu-html.svg": "e3d39eb4d03461d5e30ee461b651b1b797aae8c270a507a8dda48f9458469bf7",
+    "fc-icon-search-html.svg": "a8f0aaad7ae135653eec12d37e8d9c2a1b7623779d1d5a8d6083d3f28dec9987",
+    "fc-icon-cart-html.svg": "fe7d0c46edfc54fad2cc131899ad830a1f4421e8c5e1396ae793ad65b71da909",
+    "icon-linkedin.svg": "f40000d86706cfe1dc827770874ec7f4a7f38077b7f4d75eecbf9b49f5473e3d",
+    "lexend-deca-400.woff2": "3cad1d144b870d6083c79131c4817b2bcf3b4d76fc4aaeaba2eec295fbaa5cb1",
+    "lexend-deca-500.woff2": "3cad1d144b870d6083c79131c4817b2bcf3b4d76fc4aaeaba2eec295fbaa5cb1",
+    "lexend-deca-600.woff2": "3cad1d144b870d6083c79131c4817b2bcf3b4d76fc4aaeaba2eec295fbaa5cb1",
+    "lexend-deca-700.woff2": "3cad1d144b870d6083c79131c4817b2bcf3b4d76fc4aaeaba2eec295fbaa5cb1",
+    "dm-sans-600.woff2": "6bb2b2645ba5eeaecf56322c543fa3a75b87b927977b9c03b1dabc4205089120"
+  },
+  "scope": {
+    "global": true,
+    "layout": "layout/theme.liquid",
+    "header": "sections/header.liquid",
+    "search_row": "snippets/header-search-row.liquid",
+    "footer": "sections/footer.liquid",
+    "style_asset": "assets/freshclub-global-shell.css",
+    "behavior_asset": null
+  },
+  "visual": {
+    "font_primary": "Lexend Deca",
+    "font_cart_badge": "DM Sans",
+    "brand_dark": "#16494A",
+    "brand_pink": "#EA1A65",
+    "brand_mint": "#F5FAF3",
+    "desktop_content_width_px": 1280,
+    "desktop_horizontal_padding_px": 80,
+    "desktop_primary_row_height_px": 100,
+    "desktop_secondary_row_height_px": 100,
+    "mobile_primary_row_height_px": 72,
+    "mobile_secondary_row_height_px": 72
+  },
+  "behavior": {
+    "primary_row": "always_visible",
+    "secondary_row": "always_visible",
+    "full_header": "always_sticky",
+    "scroll_autohide": "disabled",
+    "search_row_alignment": "exactly_centered_at_all_breakpoints"
+  },
+  "native_authorities": {
+    "header_navigation": "section.settings.menu",
+    "mobile_navigation": "header-drawer",
+    "search": "Shopify predictive-search with GET fallback",
+    "cart": "routes.cart_url and live cart object",
+    "footer_navigation": "footer link_list block menu",
+    "newsletter": "Shopify customer form",
+    "social_links": "global theme social settings",
+    "logos": "exact local HTML-authority assets",
+    "header_icons": "exact local HTML-authority SVG assets"
+  },
+  "release": {
+    "target_branch": "dev",
+    "target_theme_id": "160342835397",
+    "target_theme_name": "Main - dev [Git]",
+    "live_theme_id": "150898606277",
+    "publication_authorized": false,
+    "shopify_cli_push_allowed": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "branch": "fix/product-related-mobile-one-column",
+  "base": "38c1c3253a9e8cb58eef20f919621d3b3f4d154b",
+  "ownedPaths": [
+    "docs/product-detail/",
+    "scripts/validate_product_detail.py",
+    "assets/section-main-product.css",
+    "assets/section-related-products.css",
+    "sections/main-product.liquid",
+    "sections/related-products.liquid",
+    "templates/product.json"
+  ],
+  "preferredMinimalPaths": [
+    "docs/product-detail/",
+    "scripts/validate_product_detail.py",
+    "assets/section-related-products.css",
+    "sections/related-products.liquid",
+    "templates/product.json"
+  ],
+  "forbiddenPaths": [
+    "assets/freshclub-global-shell.css",
+    "sections/header.liquid",
+    "sections/footer.liquid",
+    "templates/index.json",
+    "assets/fc-home-hero.css",
+    "assets/fc-home-benefits.css",
+    "assets/fc-home-story.css"
+  ],
+  "evidenceRoot": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/product-detail-mobile-one-column-2026-08-27"
+}

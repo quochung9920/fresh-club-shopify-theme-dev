@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "page": "product-detail",
+  "migration": "none",
+  "rules": [
+    {
+      "content": "title",
+      "source": "product.title",
+      "fallback": "none"
+    },
+    {
+      "content": "price and unit price",
+      "source": "selected_or_first_available_variant and existing price snippet",
+      "fallback": "native sold-out/unavailable behavior"
+    },
+    {
+      "content": "description",
+      "source": "product.description",
+      "fallback": "omit when blank"
+    },
+    {
+      "content": "gallery",
+      "source": "product.media",
+      "fallback": "native no-media layout"
+    },
+    {
+      "content": "recommendations",
+      "source": "Shopify Product Recommendations API",
+      "fallback": "render no recommendation cards"
+    },
+    {
+      "content": "Figma sample copy/assets",
+      "source": "design evidence only",
+      "fallback": "never migrate into merchant data"
+    }
+  ]
+}

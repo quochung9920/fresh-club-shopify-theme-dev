@@ -1,0 +1,43 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "required_viewports": [390, 768, 1440],
+  "direct_figma_viewports": [375, 1440],
+  "derived_validation_viewports": [390, 768],
+  "global_shell_breakpoint_px": 990,
+  "content_breakpoint_policy": "Content layouts may switch near 1024px when supported by the immutable HTML, but must not control the global shell.",
+  "section_pairs": [
+    {"type":"fc-about-hero","desktop_node":"81154:517","mobile_node":"81177:317","mobile":"stack full-width actions; preserve content order"},
+    {"type":"fc-about-values","desktop_node":"81154:425","mobile_node":"81177:225","mobile":"four cards in one semantic column"},
+    {"type":"fc-about-metrics","desktop_node":"81154:409","mobile_node":"81177:210","mobile":"two-by-two metric grid"},
+    {"type":"fc-about-story","desktop_node":"81154:535","mobile_node":"81177:335","mobile":"image before copy; hide desktop wave and gradient panel"},
+    {"type":"fc-about-process","desktop_node":"81154:552","mobile_node":"81177:351","mobile":"one vertical ordered sequence"},
+    {"type":"fc-about-cta","desktop_node":"81154:567","mobile_node":"81177:376","mobile":"stack centered content; hide side decorations"}
+  ],
+  "rules": {
+    "mobile_first": true,
+    "horizontal_overflow_allowed": false,
+    "content_order_must_remain_logical": true,
+    "blocks_must_reflow_without_position_dependent_semantics": true,
+    "images_require_explicit_dimensions_or_aspect_ratio": true,
+    "responsive_sources_required_for_content_images": true,
+    "desktop_only_decorations_may_not_contain_required_content": true,
+    "javascript_may_not_be_required_for_content_visibility": true,
+    "390_uses_mobile_topology": true,
+    "768_uses_narrow_topology_unless_separately_approved": true
+  },
+  "evidence": {
+    "static_reference_candidate_diff": true,
+    "shopify_rendered_capture": true,
+    "theme_editor_capture": true,
+    "console_and_network_check": true,
+    "keyboard_check": true,
+    "reduced_motion_check": true
+  },
+  "visual_authorities": {
+    "immutable_html": "prototype/about-us/reference/about-us_1.html",
+    "figma_desktop_node": "81154:408",
+    "figma_mobile_node": "81177:209",
+    "pairing_evidence": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/design-architecture/responsive-pairing.json"
+  }
+}

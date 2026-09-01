@@ -1,0 +1,26 @@
+{
+  "name": "fresh-club-shopify-theme",
+  "private": true,
+  "scripts": {
+    "validate:structure": "python scripts/validate_theme_structure.py",
+    "validate:baseline": "python scripts/verify_theme_check_baseline.py --baseline .theme-check-baseline.json",
+    "validate:theme": "python scripts/run_theme_validation.py",
+    "validate:contracts": "python scripts/validate_about_us_refactor_contracts.py",
+    "validate:sections-a": "python scripts/validate_about_sections_a.py",
+    "validate:sections-b": "python scripts/validate_about_sections_b.py",
+    "validate:about-us-native": "python scripts/validate_about_us_native_refactor.py",
+    "validate:global-shell": "python scripts/validate_global_shell.py",
+    "validate:how-it-works": "python scripts/validate_how_it_works.py",
+    "validate:homepage": "python scripts/validate_homepage.py",
+    "validate:collection-product-templates": "python scripts/test_collection_product_templates.py",
+    "validate:product-detail": "python scripts/validate_product_detail.py",
+    "validate:merchant-rules": "python scripts/test_merchant_product_rules.py && node scripts/test_cart_rules_guard.js",
+    "test:stock-confirmation": "node scripts/test_product_form_stock_confirmation.js && python -m unittest scripts.test_stock_confirmation_contract",
+    "test:product-detail:mutations": "python scripts/test_product_detail_mutations.py",
+    "test:global-shell": "node scripts/test_global_shell_behavior.js",
+    "validate": "npm run validate:structure && npm run validate:baseline && npm run validate:theme && npm run validate:contracts && npm run validate:sections-a && npm run validate:sections-b && npm run validate:about-us-native && npm run validate:global-shell && npm run validate:how-it-works && npm run validate:homepage && npm run validate:product-detail && npm run validate:merchant-rules && npm run test:stock-confirmation && npm run test:product-detail:mutations && npm run test:global-shell"
+  },
+  "devDependencies": {
+    "@shopify/cli": "4.7.0"
+  }
+}

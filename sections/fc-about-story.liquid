@@ -1,0 +1,140 @@
+{{ 'fc-about-story.css' | asset_url | stylesheet_tag }}
+
+<div class="fc-about-story" data-section-id="{{ section.id }}">
+  <svg class="fc-about-story__wave" viewBox="0 0 1801 276" preserveAspectRatio="none" aria-hidden="true">
+    <ellipse cx="900.5" cy="276" rx="900.5" ry="276" fill="#FFFFFF" />
+  </svg>
+
+  <div class="fc-about-story__inner page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="fc-about-story__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="fc-about-story__body">
+      <div class="fc-about-story__panel" aria-hidden="true"></div>
+
+      <div class="fc-about-story__copy">
+        <div>
+          {%- if section.settings.title != blank -%}
+            <h3 class="fc-about-story__title">{{ section.settings.title | escape }}</h3>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="fc-about-story__text">{{ section.settings.text | escape | newline_to_br }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          {%- case section.settings.button_style -%}
+            {%- when 'primary' -%}
+              {%- assign button_class = 'button button--primary' -%}
+            {%- when 'secondary' -%}
+              {%- assign button_class = 'button button--secondary' -%}
+            {%- else -%}
+              {%- assign button_class = 'button button--secondary' -%}
+          {%- endcase -%}
+          <a
+            class="{{ button_class }}"
+            href="{{ section.settings.button_link | escape }}"
+          >
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="fc-about-story__media">
+        {%- if section.settings.image != blank -%}
+          {%- assign story_alt = section.settings.image_alt | default: section.settings.image.alt -%}
+          {{
+            section.settings.image
+            | image_url: width: 1200
+            | image_tag:
+              class: 'fc-about-story__image',
+              alt: story_alt,
+              loading: 'eager',
+              sizes: '(min-width: 1024px) 470px, calc(100vw - 40px)',
+              widths: '335, 470, 670, 940, 1200'
+          }}
+        {%- else -%}
+          <img
+            class="fc-about-story__image"
+            src="{{ 'freshclub-about-story.jpg' | asset_img_url: '670x' }}"
+            srcset="
+              {{ 'freshclub-about-story.jpg' | asset_img_url: '335x' }} 335w,
+              {{ 'freshclub-about-story.jpg' | asset_img_url: '470x' }} 470w,
+              {{ 'freshclub-about-story.jpg' | asset_img_url: '670x' }} 670w,
+              {{ 'freshclub-about-story.jpg' | asset_img_url: '940x' }} 940w
+            "
+            sizes="(min-width: 1024px) 470px, calc(100vw - 40px)"
+            alt="{{ section.settings.image_alt | escape }}"
+            width="626"
+            height="939"
+            loading="eager"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About — Story",
+  "tag": "section",
+  "class": "fc-about-story-section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Built by people who know what 4am market runs really cost"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Story title",
+      "default": "It started with one question"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Story text",
+      "default": "Why should buying fresh produce be this hard? Our founders spent years inside Sydney’s food scene — running kitchens, managing venues, and buying produce the hard way. We watched good businesses overpay and under-sleep, so we built the service we always wished existed."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "The FreshClub crew at the produce markets"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "See How It Works"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "secondary"
+    }
+  ],
+  "presets": [
+    { "name": "About — Story" }
+  ]
+}
+{% endschema %}

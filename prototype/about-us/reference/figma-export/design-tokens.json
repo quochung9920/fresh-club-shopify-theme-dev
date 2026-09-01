@@ -1,0 +1,42 @@
+{
+  "note": "Combined Figma variable definitions from both About Us frames (mobile 81177:209 + desktop 81154:408). Same tokens on both.",
+  "colors": {
+    "brand-1": "#16494A",
+    "brand-2": "#EA1A65",
+    "brand-3": "#F5FAF3",
+    "base-black": "#000000",
+    "base-white": "#FFFFFF",
+    "gray-light-50": "#F9FAFB",
+    "gray-light-200": "#EAECF0",
+    "gray-light-300": "#D0D5DD",
+    "gray-light-400": "#98A2B3",
+    "gray-light-500": "#667085",
+    "gray-light-600": "#475467",
+    "gray-light-800": "#182230",
+    "gray-dark-200": "#ECECED",
+    "gray-dark-300": "#CECFD2",
+    "gray-dark-600": "#61646C",
+    "foundation-primary-500": "#EA1A65",
+    "foreground-fg-quarterary-500": "#667085"
+  },
+  "spacing": {
+    "spacing-xxs": "2px",
+    "spacing-sm": "6px",
+    "spacing-md": "8px",
+    "spacing-lg": "12px",
+    "spacing-xl": "16px",
+    "spacing-4xl": "32px"
+  },
+  "radius": {
+    "radius-md": "8px"
+  },
+  "shadows": {
+    "shadow-xs": "0px 1px 2px 0px rgba(16,24,40,0.05)",
+    "card-shadow": "0px 6px 12px rgba(22,73,74,0.08)"
+  },
+  "typography": {
+    "font-family-primary": "'Lexend Deca', sans-serif",
+    "font-family-secondary": "'DM Sans', sans-serif",
+    "google-fonts-import": "https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&family=DM+Sans:wght@600&display=swap"
+  }
+}

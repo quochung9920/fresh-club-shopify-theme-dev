@@ -1,0 +1,25 @@
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+
+# Shopify CLI local state
+.shopify/
+
+# Node / prototype tooling
+node_modules/
+dist/
+.vite/
+
+# Python validation caches
+__pycache__/
+*.py[cod]
+
+# Generated local reports
+/theme-check-report.json
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

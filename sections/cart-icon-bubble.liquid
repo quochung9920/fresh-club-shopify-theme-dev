@@ -1,0 +1,12 @@
+{% if cart == empty %}
+  <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+{% else %}
+  {% render 'icon-cart' %}
+  {% comment %} <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span> {% endcomment %}
+{% endif %}
+
+
+<div class="cart-count-bubble">
+  <span aria-hidden="true">{{ cart.item_count }}</span>
+</div>
+<div aria-hidden="true">{{ cart.total_price | money }}</div>

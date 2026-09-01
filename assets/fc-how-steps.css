@@ -1,0 +1,237 @@
+.fc-how-steps {
+  padding: 56px 20px;
+  background: #ffffff;
+}
+
+.fc-how-steps__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.fc-how-steps__heading-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 335px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.fc-how-steps__heading,
+.fc-how-steps__intro,
+.fc-how-step__number,
+.fc-how-step__heading,
+.fc-how-step__text {
+  margin: 0;
+}
+
+.fc-how-steps__heading {
+  color: #16494a;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.fc-how-steps__intro {
+  color: #61646c;
+  font-size: 15px;
+  line-height: normal;
+}
+
+.fc-how-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: min(100%, 335px);
+}
+
+.fc-how-step__media {
+  position: relative;
+  order: -1;
+  width: 335px;
+  max-width: 100%;
+  height: 240px;
+  flex: 0 0 auto;
+}
+
+.fc-how-step > .fc-how-step__media > .fc-how-step__decoration {
+  display: block;
+}
+
+.fc-how-step__decoration,
+.fc-how-step__image {
+  position: absolute;
+  width: 305px;
+  max-width: calc(100% - 30px);
+  height: 220px;
+  border-radius: 16px;
+}
+
+.fc-how-step__decoration {
+  top: 20px;
+  left: 30px;
+  background: #5fbeba;
+}
+
+.fc-how-step__image {
+  top: 0;
+  left: 0;
+  display: block;
+  object-fit: cover;
+}
+
+.fc-how-step__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.fc-how-step__number {
+  color: rgba(234, 26, 101, 0.9);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.fc-how-step__heading {
+  color: #16494a;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.fc-how-step__text {
+  color: #61646c;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+@media (min-width: 750px) and (max-width: 1023px) {
+  .fc-how-steps__inner {
+    max-width: 728px;
+  }
+
+  .fc-how-steps__heading-group,
+  .fc-how-step {
+    width: min(100%, 600px);
+  }
+
+  .fc-how-step__media {
+    width: 600px;
+    height: 424px;
+  }
+
+  .fc-how-step__decoration,
+  .fc-how-step__image {
+    width: 520px;
+    max-width: none;
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .fc-how-step__decoration {
+    top: 44px;
+    left: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fc-how-steps {
+    padding: 96px 80px;
+  }
+
+  .fc-how-steps__inner {
+    gap: 72px;
+    max-width: 1280px;
+  }
+
+  .fc-how-steps__heading-group {
+    gap: 16px;
+    width: 100%;
+  }
+
+  .fc-how-steps__heading {
+    max-width: 820px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .fc-how-steps__intro {
+    font-size: 18px;
+  }
+
+  .fc-how-step {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 120px;
+    width: 100%;
+  }
+
+  .fc-how-step--image-left {
+    flex-direction: row-reverse;
+  }
+
+  .fc-how-step__copy {
+    gap: 20px;
+    width: 560px;
+  }
+
+  .fc-how-step__media {
+    order: 0;
+    width: 600px;
+    max-width: none;
+    height: 424px;
+  }
+
+  .fc-how-step__decoration,
+  .fc-how-step__image {
+    width: 520px;
+    max-width: none;
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .fc-how-step--image-right .fc-how-step__decoration {
+    top: 44px;
+    left: 80px;
+  }
+
+  .fc-how-step--image-right .fc-how-step__image {
+    top: 0;
+    left: 0;
+  }
+
+  .fc-how-step--image-left .fc-how-step__decoration {
+    top: 44px;
+    left: 0;
+  }
+
+  .fc-how-step--image-left .fc-how-step__image {
+    top: 0;
+    left: 80px;
+  }
+
+  .fc-how-step__number {
+    font-size: 52px;
+  }
+
+  .fc-how-step__heading {
+    max-width: 520px;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .fc-how-step__text {
+    font-size: 16px;
+  }
+}

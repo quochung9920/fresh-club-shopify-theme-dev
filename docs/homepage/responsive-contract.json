@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "authorities": {
+    "desktop": "Figma node 80795:364",
+    "mobile_tablet": "Verified About Us and How Does It Work responsive composition, per owner direction"
+  },
+  "viewports": [390, 768, 1440],
+  "breakpoints": {"tablet": 750, "desktop": 1024},
+  "hero": {
+    "mobile_tablet": "copy then two-column-safe actions then media; heading, body copy, actions, and media share one centered axis; actions may stack only when the available width requires it",
+    "desktop": "1280px container; copy left and 536x448 media right; 80px page padding"
+  },
+  "benefits": {
+    "mobile": "two-column grid within 20px page gutters",
+    "tablet": "two-column grid",
+    "desktop": "four equal columns in a 1280px container",
+    "desktop_oval_band": "two exact overlapping mint Figma Ellipse 6 layers, 1801x276 at 1440, centered x=-181 and extending 80px below the 414px benefits frame"
+  },
+  "story": {
+    "mobile_tablet": "media before copy for every block; scoped decorations remain visible",
+    "desktop": "shared centered heading followed by alternating right/left/right media rows; row starts are separated by 692px then 734px at 1440 so exact connector frames remain visible",
+    "image_geometry_desktop": "470x424 image inside a 600x424 media box; 434x408 Figma gradient panel at top -32px; right image/panel offsets are 130px/198px and left panel offset is -32px; sizes and offsets scale proportionally from 1024 through 1439",
+    "connectors_desktop": [
+      "freshclub-home-story-connector-right-to-left.svg in a 398x278 Figma frame",
+      "freshclub-home-story-connector-left-to-right.svg in a 402x312 Figma frame"
+    ],
+    "connectors_mobile_tablet": "suppressed because no mobile/tablet Figma connector authority exists and the verified stacked composition must not overflow",
+    "oval_bands_desktop": [
+      "Story 1 white Ellipse 6 at frame y=602, 1801x276",
+      "Story 2 mint Ellipse 6 at frame y=522, 1801x276",
+      "Story 3 white Ellipse 6 at frame y=382, 1801x276"
+    ],
+    "oval_bands_large_screen": "at 1440 preserve exact 1801x276 and x=-181/y=218 for Benefits; above 1440 preserve the same x=-181/y=218 authority, 180.5px nominal side overhang, and 276px depth; from 1024 through 1439 scale with the 1280px content ratio",
+    "oval_bands_scrollbar": "preserve exact viewport-relative x placement when a classic vertical scrollbar reduces clientWidth; validate with a 900px scrolling viewport and all six merchant-addable Story blocks",
+    "oval_bands_mobile_tablet": "suppressed because the oval authority is desktop-only"
+  },
+  "cta": {
+    "mobile_tablet": "contained banner with rounded corners and decoration suppressed when it obstructs copy",
+    "desktop": "1280px banner, 48px inner padding, 24px radius, decorative produce at both sides"
+  },
+  "global_gates": [
+    "scrollWidth equals clientWidth",
+    "header and footer each render once",
+    "no duplicate IDs",
+    "no visible broken images",
+    "computed Lexend Deca typography",
+    "global button hover and focus behavior remains unchanged",
+    "header predictive-search and footer newsletter labels are vertically centered at rest and float to 10px at top-left on focus, entered value, and autofill"
+  ]
+}

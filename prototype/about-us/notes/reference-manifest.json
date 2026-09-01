@@ -1,0 +1,60 @@
+{
+  "authority": {
+    "html_source": "C:\\Users\\ADMIN\\Downloads\\about-us_1.html",
+    "figma_url": "https://www.figma.com/design/hW2EgKV2kCsp1pYLQHSdiR/Fresh-Club-%7C-Website?node-id=81154-408&t=QianRHjiZoHRY51W-4",
+    "desktop_node": "81154:408",
+    "mobile_node": "81177:209"
+  },
+  "files": [
+    {
+      "path": "prototype/about-us/reference/about-us_1.html",
+      "bytes": 33018,
+      "sha256": "730247ac286a7123fcaea2459100e4905801557101aa9a25b433eddee7312329"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81154-408/asset-manifest.json",
+      "bytes": 5014,
+      "sha256": "98511b4275fcee97b4d03a58e11e621dbd49de65a4553adee12c17f83f29754f"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81154-408/design-context.jsx",
+      "bytes": 49372,
+      "sha256": "44bb9eede1cf7c77ba76a1f5229cf6e442cb77a9c19da21f122e031c7154e540"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81154-408/notes.md",
+      "bytes": 2564,
+      "sha256": "09f5e034aee9baa6cd6fb645400d5fd65eb804f16d925e134d343509915d5e8b"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81177-209/asset-manifest.json",
+      "bytes": 4635,
+      "sha256": "98a2b27fc6120a357cf1b10e13b750a27023ce41d83910c33b061bf91c7abd91"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81177-209/design-context.jsx",
+      "bytes": 45224,
+      "sha256": "77e223c829aa08552cbff4ab64c0e1ab090b6e5794827a36b4da568cecd44933"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/81177-209/notes.md",
+      "bytes": 3019,
+      "sha256": "2da16e1a62abb6bd5396be7b788ac9431beb04596d55467cd89ea1ad27f95002"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/design-tokens.css",
+      "bytes": 1248,
+      "sha256": "1cf3f38dcaa4b4e615a93b1ca5e7114ab2e4b7c95d98dd7bacee9646360f0b72"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/design-tokens.json",
+      "bytes": 1326,
+      "sha256": "4665bea7180e3e37120aa0f829bfc4547419788c9e9b4f8481b0e750f2a45cb6"
+    },
+    {
+      "path": "prototype/about-us/reference/figma-export/README.md",
+      "bytes": 5807,
+      "sha256": "5540706b27863d23adc603686895736dca3f638622b016be94965bee0838a727"
+    }
+  ]
+}

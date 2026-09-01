@@ -1,0 +1,595 @@
+@font-face { font-family: 'Lexend Deca'; src: url('lexend-deca-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('lexend-deca-500.woff2') format('woff2'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('lexend-deca-600.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('lexend-deca-700.woff2') format('woff2'); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('dm-sans-600.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+
+freshclub-about-us[data-section-id] { display: block; width: 100%; }
+/* =======================================================================
+   FreshClub — About Us
+   Built from Figma "Fresh Club | Website" (hW2EgKV2kCsp1pYLQHSdiR)
+     mobile  frame 81177:209   375 x 4943
+     desktop frame 81154:408  1440 x 4191
+   Mobile-first; desktop rules start at 1024px.
+   ======================================================================= */
+
+:where(freshclub-about-us[data-section-id]) {
+  --brand-1: #16494A;
+  --brand-2: #EA1A65;
+  --brand-3: #F5FAF3;
+  --gray-50:  #F9FAFB;
+  --gray-200: #EAECF0;
+  --gray-300: #D0D5DD;
+  --gray-400: #98A2B3;
+  --gray-500: #667085;
+  --gray-600: #475467;
+  --gray-800: #182230;
+  --gray-d200: #ECECED;
+  --gray-d300: #CECFD2;
+  --gray-d600: #61646C;
+  --radius-md: 8px;
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+  --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --shadow-card: 0 6px 12px rgba(22, 73, 74, 0.08);
+  --font: 'Lexend Deca', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-alt: 'DM Sans', system-ui, sans-serif;
+
+  /* photo assets (Figma-hosted, see asset-manifest.json) */
+  --img-hero-base:  url('freshclub-about-hero-base.jpg');
+  --img-hero-top:   url('freshclub-about-hero-overlay.jpg');
+  --img-story:      url('freshclub-about-story.jpg');
+  --img-cta-bg:     url('freshclub-about-cta-bg.png');
+  --img-icon-ring:  url('freshclub-value-ring.png');
+}
+
+/* ---------- reset ---------- */
+:where(freshclub-about-us[data-section-id]) *, :where(freshclub-about-us[data-section-id]) *::before, :where(freshclub-about-us[data-section-id]) *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:where(freshclub-about-us[data-section-id]) { -webkit-text-size-adjust: 100%; }
+:where(freshclub-about-us[data-section-id]) {
+  font-family: var(--font);
+  color: var(--gray-800);
+  background: #fff;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+:where(freshclub-about-us[data-section-id]) img, :where(freshclub-about-us[data-section-id]) svg { display: block; max-width: 100%; }
+:where(freshclub-about-us[data-section-id]) a { color: inherit; text-decoration: none; }
+:where(freshclub-about-us[data-section-id]) button, :where(freshclub-about-us[data-section-id]) input { font: inherit; }
+:where(freshclub-about-us[data-section-id]) button { border: none; background: none; cursor: pointer; }
+
+/* ---------- shared layout ---------- */
+:where(freshclub-about-us[data-section-id]) .fc-wrap { width: 100%; max-width: 500px; margin-inline: auto; }
+
+/* ---------- buttons ---------- */
+:where(freshclub-about-us[data-section-id]) .fc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+:where(freshclub-about-us[data-section-id]) .fc-btn--primary { background: var(--brand-2); border-color: var(--brand-2); color: #fff; }
+:where(freshclub-about-us[data-section-id]) .fc-btn--outline { background: transparent;    border-color: var(--brand-2); color: var(--brand-2); box-shadow: var(--shadow-xs); }
+:where(freshclub-about-us[data-section-id]) .fc-btn--on-photo { background: var(--brand-2); border-color: #fff;           color: #fff; }
+:where(freshclub-about-us[data-section-id]) .fc-btn--block { width: 100%; }
+
+/* =====================================================================
+   HEADER
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-site-header { padding: 16px 0; box-shadow: inset 0 -1px 0 var(--gray-200); }
+
+:where(freshclub-about-us[data-section-id]) .fc-header-row { display: flex; align-items: center; height: 72px; padding: 12px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-header-row--top {
+  background: var(--brand-3);
+  border-bottom: 1px solid #EDF6E9;
+}
+:where(freshclub-about-us[data-section-id]) .fc-header-row--search {
+  background: #fff;
+  border-bottom: 1px solid rgba(237, 246, 233, 0.2);
+}
+:where(freshclub-about-us[data-section-id]) .fc-header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+
+:where(freshclub-about-us[data-section-id]) .fc-logo { width: 133px; height: 32px; object-fit: contain; }
+:where(freshclub-about-us[data-section-id]) .fc-nav-desktop { display: none; }
+:where(freshclub-about-us[data-section-id]) .fc-header-actions { display: flex; align-items: center; gap: 14px; }
+:where(freshclub-about-us[data-section-id]) .fc-menu-btn { width: 24px; height: 24px; flex-shrink: 0; }
+
+:where(freshclub-about-us[data-section-id]) .fc-cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 134px;
+  height: 48px;
+  padding: 12px 28px 12px 24px;
+  background: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  filter: drop-shadow(0 1px 1px rgba(16, 24, 40, 0.05));
+}
+:where(freshclub-about-us[data-section-id]) .fc-cart-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+:where(freshclub-about-us[data-section-id]) .fc-cart-btn .fc-price { font-size: 16px; font-weight: 500; line-height: 24px; color: var(--gray-600); }
+:where(freshclub-about-us[data-section-id]) .fc-cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  width: 24.18px;
+  height: 24.18px;
+  border-radius: 50%;
+  background: var(--brand-2);
+  color: #fff;
+  font-family: var(--font-alt);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:where(freshclub-about-us[data-section-id]) .fc-search-field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 6px 16px;
+  background: #fff;
+  border: 1px solid var(--gray-d200);
+  border-radius: var(--radius-md);
+}
+:where(freshclub-about-us[data-section-id]) .fc-search-field input { flex: 1; min-width: 0; border: none; outline: none; font-size: 16px; line-height: 24px; color: var(--gray-800); background: none; }
+:where(freshclub-about-us[data-section-id]) .fc-search-field input::placeholder { color: var(--gray-400); }
+:where(freshclub-about-us[data-section-id]) .fc-search-field svg { width: 20px; height: 20px; flex-shrink: 0; }
+:where(freshclub-about-us[data-section-id]) .fc-search-group { display: flex; flex: 1; align-items: center; gap: 12px; }
+:where(freshclub-about-us[data-section-id]) .fc-header-spacer { display: none; }
+:where(freshclub-about-us[data-section-id]) .fc-contact-btn { display: none; }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-hero { padding: 48px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-hero-inner { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+:where(freshclub-about-us[data-section-id]) .fc-hero-lede { display: flex; flex-direction: column; align-items: center; gap: 28px; width: 100%; }
+:where(freshclub-about-us[data-section-id]) .fc-hero-copy { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; width: 100%; }
+:where(freshclub-about-us[data-section-id]) .fc-hero-copy h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+  color: var(--brand-1);
+}
+:where(freshclub-about-us[data-section-id]) .fc-hero-copy p {
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -0.15px;
+  color: var(--gray-d600);
+}
+:where(freshclub-about-us[data-section-id]) .fc-hero-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+:where(freshclub-about-us[data-section-id]) .fc-photo-frame { position: relative; overflow: hidden; border-radius: var(--radius-card); }
+:where(freshclub-about-us[data-section-id]) .fc-photo-frame::before, :where(freshclub-about-us[data-section-id]) .fc-photo-frame::after { content: ''; position: absolute; inset: 0; }
+:where(freshclub-about-us[data-section-id]) .fc-hero-photo { width: 100%; height: 220px; background: var(--img-hero-base) center/cover no-repeat, var(--brand-3); }
+:where(freshclub-about-us[data-section-id]) .fc-hero-photo::before { background: rgba(0, 0, 0, 0.08); }
+:where(freshclub-about-us[data-section-id]) .fc-hero-photo::after { background: var(--img-hero-top) center/cover no-repeat; }
+
+/* =====================================================================
+   VALUE CARDS
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-values { background: var(--brand-3); padding: 56px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-values-grid { display: flex; flex-direction: column; gap: 16px; }
+:where(freshclub-about-us[data-section-id]) .fc-values-row { display: contents; }
+
+:where(freshclub-about-us[data-section-id]) .fc-value-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  filter: drop-shadow(var(--shadow-card));
+}
+:where(freshclub-about-us[data-section-id]) .fc-value-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--img-icon-ring) center/cover no-repeat, var(--brand-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:where(freshclub-about-us[data-section-id]) .fc-value-icon::before {
+  content: '';
+  position: absolute;
+  width: 56.21px;
+  height: 56.21px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--brand-3);
+}
+:where(freshclub-about-us[data-section-id]) .fc-value-icon img { position: relative; object-fit: contain; }
+/* leaf sizes are per-icon in the design — keep them distinct */
+:where(freshclub-about-us[data-section-id]) .fc-value-icon--1 img { width: 28.52px; height: 29.76px; }
+:where(freshclub-about-us[data-section-id]) .fc-value-icon--2 img { width: 24.80px; height: 32.24px; }
+:where(freshclub-about-us[data-section-id]) .fc-value-icon--3 img { width: 34.72px; height: 24.80px; }
+:where(freshclub-about-us[data-section-id]) .fc-value-icon--4 img { width: 31.62px; height: 27.28px; }
+
+:where(freshclub-about-us[data-section-id]) .fc-value-text { display: flex; flex-direction: column; gap: 8px; padding-top: 6px; line-height: 1.55; }
+:where(freshclub-about-us[data-section-id]) .fc-value-text h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.7802px; color: #000; }
+:where(freshclub-about-us[data-section-id]) .fc-value-text p { font-size: 13.5px; font-weight: 400; color: var(--gray-600); }
+
+/* =====================================================================
+   STATS BAND
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-stats { background: var(--brand-1); padding: 56px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-stats-inner { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+:where(freshclub-about-us[data-section-id]) .fc-stats-eyebrow { font-size: 13px; font-weight: 600; line-height: normal; letter-spacing: 3px; color: var(--brand-2); text-align: center; }
+:where(freshclub-about-us[data-section-id]) .fc-stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 158px)); justify-content: center; column-gap: 16px; row-gap: 32px; }
+:where(freshclub-about-us[data-section-id]) .fc-stat { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+:where(freshclub-about-us[data-section-id]) .fc-stat .fc-stat-num { font-size: 38px; font-weight: 700; color: #fff; line-height: normal; }
+:where(freshclub-about-us[data-section-id]) .fc-stat .fc-stat-label { font-size: 13px; line-height: 1.5; color: rgba(245, 250, 243, 0.85); }
+
+/* =====================================================================
+   STORY
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-story { position: relative; padding: 56px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-story-wave { display: none; }
+:where(freshclub-about-us[data-section-id]) .fc-story-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+:where(freshclub-about-us[data-section-id]) .fc-story-heading {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.26px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--brand-1);
+}
+:where(freshclub-about-us[data-section-id]) .fc-story-body { position: relative; display: flex; flex-direction: column; gap: 28px; width: 100%; }
+:where(freshclub-about-us[data-section-id]) .fc-story-panel { display: none; }
+:where(freshclub-about-us[data-section-id]) .fc-story-photo {
+  position: relative;
+  z-index: 1;
+  order: 1;
+  width: 100%;
+  height: 230px;
+  box-shadow: 8px -8px 0 0 #fff;
+  background: var(--img-story) center 30% / cover no-repeat, var(--brand-3);
+}
+:where(freshclub-about-us[data-section-id]) .fc-story-photo::before { background: none; }
+:where(freshclub-about-us[data-section-id]) .fc-story-photo::after { background: rgba(0, 0, 0, 0.1); }
+:where(freshclub-about-us[data-section-id]) .fc-story-text { position: relative; z-index: 1; order: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-story-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-transform: capitalize;
+  color: var(--gray-800);
+  margin-bottom: 16px;
+}
+:where(freshclub-about-us[data-section-id]) .fc-story-text p { font-size: 15px; line-height: 24px; color: var(--gray-500); }
+
+/* =====================================================================
+   A DAY AT FRESHCLUB
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-day { background: var(--brand-3); padding: 56px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-day-inner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+:where(freshclub-about-us[data-section-id]) .fc-day-heading { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+:where(freshclub-about-us[data-section-id]) .fc-day-heading h2 { font-size: 26px; font-weight: 700; line-height: 34px; color: var(--brand-1); }
+:where(freshclub-about-us[data-section-id]) .fc-day-heading p { font-size: 15px; line-height: normal; color: var(--gray-d600); }
+
+:where(freshclub-about-us[data-section-id]) .fc-steps { display: flex; flex-direction: column; gap: 32px; width: 100%; }
+:where(freshclub-about-us[data-section-id]) .fc-step { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+:where(freshclub-about-us[data-section-id]) .fc-step-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px dashed var(--brand-2);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--brand-2);
+}
+:where(freshclub-about-us[data-section-id]) .fc-step-badge--time { font-size: 18px; }
+:where(freshclub-about-us[data-section-id]) .fc-step h3 { font-size: 17px; font-weight: 600; line-height: normal; color: var(--brand-1); }
+:where(freshclub-about-us[data-section-id]) .fc-step p { font-size: 14px; line-height: 1.5; color: var(--gray-d600); max-width: 295px; }
+
+/* =====================================================================
+   CTA BANNER
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-cta-wrap { padding: 32px 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+:where(freshclub-about-us[data-section-id]) .fc-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--img-cta-bg) center/cover no-repeat;
+  opacity: 0.36;
+}
+:where(freshclub-about-us[data-section-id]) .fc-cta::after { content: ''; position: absolute; inset: 0; background: rgba(22, 73, 74, 0.93); }
+:where(freshclub-about-us[data-section-id]) .fc-cta > * { position: relative; z-index: 2; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-deco { display: none; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-copy { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-title { display: flex; flex-direction: column; gap: 12px; color: #fff; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-title h2 { font-size: 23px; font-weight: 700; line-height: 30px; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-title p { font-size: 15px; font-weight: 500; line-height: normal; }
+:where(freshclub-about-us[data-section-id]) .fc-cta-desc { font-size: 14px; line-height: 24px; color: var(--gray-50); }
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+:where(freshclub-about-us[data-section-id]) .fc-site-footer { background: var(--brand-1); padding: 44px 20px; color: #fff; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-inner { display: flex; flex-direction: column; gap: 28px; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 8px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+:where(freshclub-about-us[data-section-id]) .fc-footer-brand { display: flex; flex-direction: column; gap: 32px; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-brand .fc-logo-footer { width: 169px; height: 41px; object-fit: contain; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-nav { display: flex; gap: 40px; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-nav a { font-size: 16px; line-height: 24px; color: var(--gray-300); }
+
+:where(freshclub-about-us[data-section-id]) .fc-newsletter h4 { font-size: 18px; font-weight: 500; line-height: 24px; text-transform: capitalize; margin-bottom: 16px; }
+:where(freshclub-about-us[data-section-id]) .fc-newsletter-form { display: flex; gap: 16px; }
+:where(freshclub-about-us[data-section-id]) .fc-newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  outline: none;
+}
+:where(freshclub-about-us[data-section-id]) .fc-newsletter-form input::placeholder { color: var(--gray-400); }
+:where(freshclub-about-us[data-section-id]) .fc-newsletter-form .fc-btn { font-weight: 400; padding: 12px 20px; }
+
+:where(freshclub-about-us[data-section-id]) .fc-footer-bottom { display: flex; flex-direction: column; gap: 24px; }
+:where(freshclub-about-us[data-section-id]) .fc-footer-bottom .fc-copyright { font-size: 16px; line-height: 24px; color: var(--gray-d300); }
+:where(freshclub-about-us[data-section-id]) .fc-social { display: flex; gap: 20px; }
+:where(freshclub-about-us[data-section-id]) .fc-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+:where(freshclub-about-us[data-section-id]) .fc-social svg { fill: currentColor; }
+
+/* very narrow phones (below the 375px design width) — degrade, don't overflow */
+@media (max-width: 359px) {
+  :where(freshclub-about-us[data-section-id]) .fc-header-row { padding-inline: 12px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cart-btn { width: auto; padding: 12px 20px 12px 16px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cart-badge { right: -6px; }
+}
+
+/* =====================================================================
+   DESKTOP  (1440px frame 81154:408)
+   ===================================================================== */
+@media (min-width: 1024px) {
+  :where(freshclub-about-us[data-section-id]) .fc-wrap { max-width: 1440px; }
+
+  /* ---- header ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-site-header { padding: 0; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-row { height: 100px; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-row--top { padding: 28px 80px 20px; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-row--search { padding: 16px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-inner { max-width: 1280px; margin-inline: auto; }
+  :where(freshclub-about-us[data-section-id]) .fc-nav-desktop { display: flex; align-items: center; gap: 34px; }
+  :where(freshclub-about-us[data-section-id]) .fc-nav-desktop a { font-size: 16px; font-weight: 500; line-height: 24px; color: var(--gray-500); }
+  :where(freshclub-about-us[data-section-id]) .fc-menu-btn { display: none; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-actions { gap: 24px; width: 229px; justify-content: flex-end; }
+  :where(freshclub-about-us[data-section-id]) .fc-header-spacer { display: block; flex: 0 1 283px; height: 32px; min-width: 0; }
+  :where(freshclub-about-us[data-section-id]) .fc-search-group { flex: 0 1 887px; justify-content: space-between; gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-search-field { flex: 1 1 480px; max-width: 480px; }
+  :where(freshclub-about-us[data-section-id]) .fc-contact-btn { display: inline-flex; }
+
+  /* ---- hero ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-hero { padding: 96px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-inner { max-width: 1280px; margin-inline: auto; gap: 64px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-lede { gap: 40px; max-width: 900px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-copy { gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-copy h1 { font-size: 48px; line-height: 64px; letter-spacing: -0.48px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-copy p { font-size: 18px; line-height: normal; letter-spacing: -0.18px; max-width: 760px; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-actions { flex-direction: row; justify-content: center; gap: 16px; width: auto; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-actions .fc-btn { width: auto; }
+  :where(freshclub-about-us[data-section-id]) .fc-hero-photo { height: 360px; border-radius: var(--radius-card-lg); }
+
+  /* ---- value cards ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-values { padding: 96px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-values-grid { max-width: 1280px; margin-inline: auto; gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-values-row { display: flex; gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-card { flex: 1; padding: 28px; gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon { width: 100px; height: 100px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon::before { width: 90.66px; height: 90.66px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon--1 img { width: 46px; height: 48px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon--2 img { width: 40px; height: 52px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon--3 img { width: 56px; height: 40px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-icon--4 img { width: 51px; height: 44px; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-text { line-height: normal; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-text h3 { line-height: 1.1; }
+  :where(freshclub-about-us[data-section-id]) .fc-value-text p { font-size: 14px; line-height: 26px; }
+
+  /* ---- stats ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-stats { padding: 88px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stats-inner { gap: 48px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stats-eyebrow { font-size: 16px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stats-grid { display: flex; justify-content: space-between; width: 100%; max-width: 1280px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stat { flex: 0 1 300px; gap: 12px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stat .fc-stat-num { font-size: 56px; }
+  :where(freshclub-about-us[data-section-id]) .fc-stat .fc-stat-label { font-size: 15px; }
+
+  /* ---- story ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-story { padding: 96px 80px 64px; overflow: hidden; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-wave {
+    display: block;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1801px;
+    height: 276px;
+    z-index: 0;
+  }
+  :where(freshclub-about-us[data-section-id]) .fc-story-inner { gap: 88px; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-heading { font-size: 44px; line-height: normal; letter-spacing: -0.44px; max-width: 800px; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin-inline: auto;
+    gap: 0;
+  }
+  :where(freshclub-about-us[data-section-id]) .fc-story-panel {
+    display: block;
+    position: absolute;
+    right: -32px;
+    top: -32px;
+    width: 434px;
+    height: 408px;
+    border-radius: var(--radius-card);
+    background: linear-gradient(229.25deg, #34AEB0 12.7%, #FFFFFF 78.01%);
+    z-index: 0;
+  }
+  :where(freshclub-about-us[data-section-id]) .fc-story-text { order: 1; flex: 1 1 648px; max-width: 648px; gap: 40px; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-text h2 { font-size: 32px; line-height: 48px; max-width: 493px; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-text p { font-size: 16px; }
+  :where(freshclub-about-us[data-section-id]) .fc-story-photo { order: 2; flex: 0 1 470px; width: 470px; height: 424px; }
+
+  /* ---- a day at freshclub ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-day { padding: 96px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-day-inner { gap: 64px; }
+  :where(freshclub-about-us[data-section-id]) .fc-day-heading h2 { font-size: 40px; line-height: normal; }
+  :where(freshclub-about-us[data-section-id]) .fc-day-heading p { font-size: 18px; }
+  :where(freshclub-about-us[data-section-id]) .fc-steps { flex-direction: row; justify-content: space-between; max-width: 1280px; gap: 32px; }
+  :where(freshclub-about-us[data-section-id]) .fc-step { flex: 0 1 296px; }
+  :where(freshclub-about-us[data-section-id]) .fc-step h3 { font-size: 18px; }
+  :where(freshclub-about-us[data-section-id]) .fc-step p { max-width: 262px; }
+
+  /* ---- cta ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-cta-wrap { padding: 40px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta { max-width: 1280px; margin-inline: auto; padding: 48px; border-radius: var(--radius-card-lg); gap: 40px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-copy { max-width: 966px; gap: 20px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-title h2 { font-size: 32px; line-height: normal; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-title p { font-size: 20px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-desc { font-size: 16px; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-deco {
+    display: flex;
+    position: absolute;
+    top: 131px;
+    width: 165px;
+    height: 206px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-deco img { width: 206px; height: 165px; max-width: none; object-fit: cover; transform: rotate(90deg); }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-deco--left { left: 0; }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-deco--left img { transform: rotate(90deg) scaleY(-1); }
+  :where(freshclub-about-us[data-section-id]) .fc-cta-deco--right { right: 0; }
+
+  /* ---- footer ---- */
+  :where(freshclub-about-us[data-section-id]) .fc-site-footer { padding: 60px 80px; }
+  :where(freshclub-about-us[data-section-id]) .fc-footer-inner { max-width: 1280px; margin-inline: auto; gap: 24px; }
+  :where(freshclub-about-us[data-section-id]) .fc-footer-top { flex-direction: row; align-items: flex-start; justify-content: space-between; padding-bottom: 60px; }
+  :where(freshclub-about-us[data-section-id]) .fc-newsletter { flex: 0 1 375px; }
+  :where(freshclub-about-us[data-section-id]) .fc-newsletter-form input { padding: 12px 14px; }
+  :where(freshclub-about-us[data-section-id]) .fc-newsletter-form .fc-btn { min-height: 44px; }
+  :where(freshclub-about-us[data-section-id]) .fc-footer-bottom { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+
+/* Override the baseline theme's explicit global heading color. */
+freshclub-about-us[data-section-id] .fc-cta-title h2 { color: #fff; }
+freshclub-about-us[data-section-id] .fc-newsletter h4 { color: #fff; }
+/* Counter the baseline theme's generic `div:empty { display: none; }` rule. */
+freshclub-about-us[data-section-id] .fc-photo-frame { display: block; }
+freshclub-about-us[data-section-id] .fc-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 20px 16px;
+  background: #F5FAF3;
+  border-bottom: 1px solid #EAECF0;
+}
+freshclub-about-us[data-section-id] .fc-mobile-nav[hidden] { display: none; }
+freshclub-about-us[data-section-id] .fc-mobile-nav a {
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #16494A;
+  font-weight: 500;
+}
+freshclub-about-us[data-section-id] :is(a, button, input) {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+freshclub-about-us[data-section-id] :is(a, button, input):focus-visible {
+  outline: 3px solid #EA1A65;
+  outline-offset: 3px;
+}
+freshclub-about-us[data-section-id] :is(.fc-search-field, .fc-newsletter-form):focus-within {
+  border-color: #EA1A65;
+  box-shadow: 0 0 0 3px rgba(234, 26, 101, 0.18);
+}
+freshclub-about-us[data-section-id] :is(.fc-btn, .fc-cart-btn, .fc-social a):active {
+  filter: brightness(0.88);
+}
+@media (hover: hover) {
+  freshclub-about-us[data-section-id] .fc-btn:hover { filter: brightness(0.92); }
+  freshclub-about-us[data-section-id] :is(.fc-nav-desktop, .fc-footer-nav) a:hover { color: #EA1A65; }
+  freshclub-about-us[data-section-id] .fc-cart-btn:hover { border-color: #EA1A65; }
+  freshclub-about-us[data-section-id] .fc-social a:hover { background: #EA1A65; border-color: #EA1A65; }
+}
+@media (prefers-reduced-motion: reduce) {
+  freshclub-about-us[data-section-id] *,
+  freshclub-about-us[data-section-id] *::before,
+  freshclub-about-us[data-section-id] *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+@media (min-width: 1024px) {
+  freshclub-about-us[data-section-id] .fc-mobile-nav { display: none !important; }
+  freshclub-about-us[data-section-id] .fc-header-spacer { display: block; }
+  freshclub-about-us[data-section-id] .fc-story-panel { display: block; }
+  freshclub-about-us[data-section-id] .fc-values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}

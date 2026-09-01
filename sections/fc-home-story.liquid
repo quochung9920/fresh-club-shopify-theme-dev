@@ -1,0 +1,213 @@
+{{ 'fc-home-story.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-home-story"{% if section.settings.heading != blank %} aria-labelledby="HomeStoryHeading-{{ section.id }}"{% endif %}>
+  <div class="fc-home-story__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 id="HomeStoryHeading-{{ section.id }}" class="fc-home-story__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="fc-home-story__blocks">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'story' -%}
+          {%- case block.settings.fallback_asset -%}
+            {%- when 'story_02' -%}{%- assign fallback_asset = 'freshclub-home-story-02.png' -%}
+            {%- when 'story_03' -%}{%- assign fallback_asset = 'freshclub-home-story-03.png' -%}
+            {%- else -%}{%- assign fallback_asset = 'freshclub-home-story-01.png' -%}
+          {%- endcase -%}
+
+          <article class="fc-home-story__block fc-home-story__block--image-{{ block.settings.image_side }}" {{ block.shopify_attributes }}>
+            <span class="fc-home-story__oval" aria-hidden="true">
+              <img
+                class="fc-home-story__oval-image fc-home-story__oval-image--white"
+                src="{{ 'freshclub-home-ellipse-white.svg' | asset_url }}"
+                alt=""
+                width="1801"
+                height="276"
+                loading="eager"
+              >
+              <img
+                class="fc-home-story__oval-image fc-home-story__oval-image--mint"
+                src="{{ 'freshclub-home-ellipse-mint.svg' | asset_url }}"
+                alt=""
+                width="1801"
+                height="276"
+                loading="eager"
+              >
+            </span>
+
+            <div class="fc-home-story__copy">
+              {%- if block.settings.heading != blank -%}
+                <h3 class="fc-home-story__block-heading">{{ block.settings.heading | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p class="fc-home-story__text">{{ block.settings.text | escape | newline_to_br }}</p>
+              {%- endif -%}
+              {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                {%- if block.settings.button_style == 'secondary' -%}
+                  <a class="button button--secondary" href="{{ block.settings.button_link | escape }}">{{ block.settings.button_label | escape }}</a>
+                {%- else -%}
+                  <a class="button button--primary" href="{{ block.settings.button_link | escape }}">{{ block.settings.button_label | escape }}</a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+
+            <div class="fc-home-story__media">
+              <span class="fc-home-story__decoration" aria-hidden="true"></span>
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1440
+                  | image_tag:
+                    class: 'fc-home-story__image',
+                    widths: '335, 470, 670, 940, 1440',
+                    sizes: '(min-width: 1024px) 470px, (min-width: 750px) 520px, calc(100vw - 70px)',
+                    alt: block.settings.image_alt,
+                    loading: 'eager'
+                }}
+              {%- else -%}
+                <img
+                  class="fc-home-story__image"
+                  src="{{ fallback_asset | asset_url }}"
+                  alt="{{ block.settings.image_alt | escape }}"
+                  width="470"
+                  height="424"
+                  loading="eager"
+                >
+              {%- endif -%}
+
+              <span class="fc-home-story__connector" aria-hidden="true">
+              {%- if block.settings.image_side == 'right' -%}
+                <img
+                  class="fc-home-story__connector-image"
+                  src="{{ 'freshclub-home-story-connector-right-to-left.svg' | asset_url }}"
+                  alt=""
+                  width="398"
+                  height="278"
+                  loading="eager"
+                >
+              {%- else -%}
+                <img
+                  class="fc-home-story__connector-image"
+                  src="{{ 'freshclub-home-story-connector-left-to-right.svg' | asset_url }}"
+                  alt=""
+                  width="402"
+                  height="312"
+                  loading="eager"
+                >
+              {%- endif -%}
+              </span>
+            </div>
+          </article>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home — Story",
+  "tag": "section",
+  "class": "section-fc-home-story",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Transforming the way Sydney food businesses buy fresh produce"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Story",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_alt", "label": "Image alt text", "default": "Fresh produce prepared for a Sydney food business" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Smarter ordering. Better prices. Fresher stock." },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "We've redesigned how restaurants, cafés, and caterers order fruit and veg — making it faster, clearer, and more affordable than ever." },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Learn About Our Guarantee" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "select",
+          "id": "image_side",
+          "label": "Image position on desktop",
+          "options": [
+            { "value": "right", "label": "Right" },
+            { "value": "left", "label": "Left" }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "select",
+          "id": "fallback_asset",
+          "label": "Default image",
+          "options": [
+            { "value": "story_01", "label": "Fresh produce ordering" },
+            { "value": "story_02", "label": "Live stock experience" },
+            { "value": "story_03", "label": "FreshClub value guarantee" }
+          ],
+          "default": "story_01"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home — Story",
+      "blocks": [
+        {
+          "type": "story",
+          "settings": {
+            "image_alt": "Fresh produce selected for restaurant and café orders",
+            "heading": "Smarter ordering. Better prices. Fresher stock.",
+            "text": "We've redesigned how restaurants, cafés, and caterers order fruit and veg — making it faster, clearer, and more affordable than ever. With capped daily orders, live pricing, and transparent stock updates, FreshClub helps your business stay fresh, organised, and profitable.",
+            "button_label": "Learn About Our Guarantee",
+            "button_link": "shopify://pages/how-does-it-work",
+            "button_style": "primary",
+            "image_side": "right",
+            "fallback_asset": "story_01"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "image_alt": "FreshClub live stock and ordering experience",
+            "heading": "A seamless experience for busy businesses",
+            "text": "Say goodbye to calls and quote chasing. With FreshClub, you see live stock photos, accurate pricing, and real-time availability — so you know exactly what’s in stock before you order. Secure your delivery slot in minutes and keep your operations running smoothly.",
+            "button_label": "See How It Works",
+            "button_link": "shopify://pages/how-does-it-work",
+            "button_style": "secondary",
+            "image_side": "left",
+            "fallback_asset": "story_02"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "image_alt": "Fresh produce delivered with transparent pricing",
+            "heading": "Save more. Plan better. Stay in control.",
+            "text": "We cap orders at 50 per day to keep quality high and costs low. You’ll always know the price before you order, with our freshness and value guarantee on every delivery across Metro Sydney.",
+            "button_label": "Learn About Our Guarantee",
+            "button_link": "shopify://pages/how-does-it-work",
+            "button_style": "primary",
+            "image_side": "right",
+            "fallback_asset": "story_03"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "source_template": "templates/index.json",
+  "mapping": {
+    "image_with_text_4Mrbzk": "home_hero",
+    "multicolumn_LKN8ha": "home_benefits",
+    "multirow_pxABUy": "home_story",
+    "rich_text_WmMGLX": "home_cta"
+  },
+  "preserve": [
+    "all displayed copy",
+    "benefit editorial order",
+    "story editorial order",
+    "shopify://collections/all links",
+    "shopify://pages/about-us link",
+    "shopify://pages/how-does-it-work links",
+    "merchant image override capability"
+  ],
+  "fallback_assets": {
+    "hero": ["freshclub-home-hero-base.png", "freshclub-home-hero-overlay.png"],
+    "benefits": ["freshclub-home-benefit-01.png", "freshclub-home-benefit-02.png", "freshclub-home-benefit-03.png", "freshclub-home-benefit-04.png"],
+    "story": ["freshclub-home-story-01.png", "freshclub-home-story-02.png", "freshclub-home-story-03.png"],
+    "cta": ["freshclub-about-cta-bg.png", "freshclub-about-cta-decoration.png"]
+  },
+  "forbidden": [
+    "duplicate page-local header/footer/search/newsletter",
+    "hard-coded storefront URLs",
+    "position-based icon assignment without a block setting",
+    "loss of existing Theme Editor content intent"
+  ]
+}

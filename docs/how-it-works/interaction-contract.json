@@ -1,0 +1,11 @@
+{
+  "hero_actions": "native links using global button variants",
+  "faq": {
+    "element": "details-summary",
+    "keyboard": ["Enter", "Space"],
+    "icons": "CSS plus/minus state, decorative",
+    "javascript_required": false,
+    "theme_editor": "blocks selectable through block.shopify_attributes"
+  },
+  "global": ["native menu", "predictive search", "cart state/count", "newsletter customer form", "global focus-visible", "global button hover"]
+}

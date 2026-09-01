@@ -1,0 +1,62 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "evidence": {
+    "section_map": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/design-architecture/section-map.json",
+    "merchant_inventory": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/design-architecture/merchant-content-inventory.json"
+  },
+  "dynamic_block_title_precedence": ["heading", "title", "text"],
+  "sections": [
+    {
+      "type": "fc-about-hero",
+      "name": "About — Hero",
+      "settings": ["heading", "text", "image", "image_alt"],
+      "blocks": [{"type": "button", "name": "Action", "minimum": 0, "maximum": 2, "settings": ["heading", "link", "style"]}]
+    },
+    {
+      "type": "fc-about-values",
+      "name": "About — Values",
+      "settings": [],
+      "blocks": [{"type": "value_card", "name": "Value card", "minimum": 1, "maximum": 4, "settings": ["icon", "heading", "text"]}]
+    },
+    {
+      "type": "fc-about-metrics",
+      "name": "About — Metrics",
+      "settings": ["eyebrow"],
+      "blocks": [{"type": "metric", "name": "Metric", "minimum": 1, "maximum": 4, "settings": ["value", "heading"]}]
+    },
+    {
+      "type": "fc-about-story",
+      "name": "About — Story",
+      "settings": ["heading", "title", "text", "image", "image_alt", "button_label", "button_link", "button_style"],
+      "blocks": []
+    },
+    {
+      "type": "fc-about-process",
+      "name": "About — Daily process",
+      "settings": ["heading", "intro"],
+      "blocks": [{"type": "process_step", "name": "Process step", "minimum": 1, "maximum": 4, "settings": ["badge", "heading", "text"]}]
+    },
+    {
+      "type": "fc-about-cta",
+      "name": "About — Call to action",
+      "settings": ["heading", "subheading", "text", "background_image", "button_label", "button_link", "button_style"],
+      "blocks": []
+    }
+  ],
+  "ownership_rules": [
+    "Every repeated block renders block.shopify_attributes.",
+    "Every value_card owns its icon; icon alt is blank because the icon repeats the adjacent heading.",
+    "Every action owns its label, link, and closed style value.",
+    "Process badge presentation derives from content; large_badge is not merchant-editable.",
+    "CTA background and side produce images are decorative and do not expose misleading alt settings."
+  ],
+  "editor_rejections": [
+    "implementation-provenance names such as Figma",
+    "combined semantic groups such as Stats and story",
+    "position-coupled icon selection",
+    "page-owned global header or footer settings",
+    "shared URL settings for independent actions",
+    "visual implementation toggles such as Use large badge text"
+  ]
+}

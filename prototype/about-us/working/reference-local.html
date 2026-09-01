@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — FreshClub</title>
+<style data-about-us-local-fonts>
+@font-face { font-family: 'Lexend Deca'; src: url('./assets/lexend-deca-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('./assets/lexend-deca-500.woff2') format('woff2'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('./assets/lexend-deca-600.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Lexend Deca'; src: url('./assets/lexend-deca-700.woff2') format('woff2'); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('./assets/dm-sans-600.woff2') format('woff2'); font-style: normal; font-weight: 600; font-display: swap; }
+</style>
+<style>
+/* =======================================================================
+   FreshClub — About Us
+   Built from Figma "Fresh Club | Website" (hW2EgKV2kCsp1pYLQHSdiR)
+     mobile  frame 81177:209   375 x 4943
+     desktop frame 81154:408  1440 x 4191
+   Mobile-first; desktop rules start at 1024px.
+   ======================================================================= */
+
+:root {
+  --brand-1: #16494A;
+  --brand-2: #EA1A65;
+  --brand-3: #F5FAF3;
+  --gray-50:  #F9FAFB;
+  --gray-200: #EAECF0;
+  --gray-300: #D0D5DD;
+  --gray-400: #98A2B3;
+  --gray-500: #667085;
+  --gray-600: #475467;
+  --gray-800: #182230;
+  --gray-d200: #ECECED;
+  --gray-d300: #CECFD2;
+  --gray-d600: #61646C;
+  --radius-md: 8px;
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+  --shadow-xs: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  --shadow-card: 0 6px 12px rgba(22, 73, 74, 0.08);
+  --font: 'Lexend Deca', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-alt: 'DM Sans', system-ui, sans-serif;
+
+  /* photo assets (Figma-hosted, see asset-manifest.json) */
+  --img-hero-base:  url('./assets/freshclub-about-hero-base.jpg');
+  --img-hero-top:   url('./assets/freshclub-about-hero-overlay.jpg');
+  --img-story:      url('./assets/freshclub-about-story.jpg');
+  --img-cta-bg:     url('./assets/freshclub-about-cta-bg.png');
+  --img-icon-ring:  url('./assets/freshclub-value-ring.png');
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--gray-800);
+  background: #fff;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button { border: none; background: none; cursor: pointer; }
+
+/* ---------- shared layout ---------- */
+.wrap { width: 100%; max-width: 500px; margin-inline: auto; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+.btn--primary   { background: var(--brand-2); border-color: var(--brand-2); color: #fff; }
+.btn--outline   { background: transparent;    border-color: var(--brand-2); color: var(--brand-2); box-shadow: var(--shadow-xs); }
+.btn--on-photo  { background: var(--brand-2); border-color: #fff;           color: #fff; }
+.btn--block     { width: 100%; }
+
+/* =====================================================================
+   HEADER
+   ===================================================================== */
+.site-header { padding: 16px 0; box-shadow: inset 0 -1px 0 var(--gray-200); }
+
+.header-row { display: flex; align-items: center; height: 72px; padding: 12px 20px; }
+.header-row--top {
+  background: var(--brand-3);
+  border-bottom: 1px solid #EDF6E9;
+}
+.header-row--search {
+  background: #fff;
+  border-bottom: 1px solid rgba(237, 246, 233, 0.2);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+
+.logo { width: 133px; height: 32px; object-fit: contain; }
+.nav-desktop { display: none; }
+.header-actions { display: flex; align-items: center; gap: 14px; }
+.menu-btn { width: 24px; height: 24px; flex-shrink: 0; }
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 134px;
+  height: 48px;
+  padding: 12px 28px 12px 24px;
+  background: #fff;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  filter: drop-shadow(0 1px 1px rgba(16, 24, 40, 0.05));
+}
+.cart-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+.cart-btn .price { font-size: 16px; font-weight: 500; line-height: 24px; color: var(--gray-600); }
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  width: 24.18px;
+  height: 24.18px;
+  border-radius: 50%;
+  background: var(--brand-2);
+  color: #fff;
+  font-family: var(--font-alt);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 6px 16px;
+  background: #fff;
+  border: 1px solid var(--gray-d200);
+  border-radius: var(--radius-md);
+}
+.search-field input { flex: 1; min-width: 0; border: none; outline: none; font-size: 16px; line-height: 24px; color: var(--gray-800); background: none; }
+.search-field input::placeholder { color: var(--gray-400); }
+.search-field svg { width: 20px; height: 20px; flex-shrink: 0; }
+.search-group { display: flex; flex: 1; align-items: center; gap: 12px; }
+.header-spacer { display: none; }
+.contact-btn { display: none; }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero { padding: 48px 20px; }
+.hero-inner { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.hero-lede { display: flex; flex-direction: column; align-items: center; gap: 28px; width: 100%; }
+.hero-copy { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; width: 100%; }
+.hero-copy h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+  color: var(--brand-1);
+}
+.hero-copy p {
+  font-size: 15px;
+  line-height: 1.65;
+  letter-spacing: -0.15px;
+  color: var(--gray-d600);
+}
+.hero-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+
+.photo-frame { position: relative; overflow: hidden; border-radius: var(--radius-card); }
+.photo-frame::before, .photo-frame::after { content: ''; position: absolute; inset: 0; }
+.hero-photo { width: 100%; height: 220px; background: var(--img-hero-base) center/cover no-repeat, var(--brand-3); }
+.hero-photo::before { background: rgba(0, 0, 0, 0.08); }
+.hero-photo::after  { background: var(--img-hero-top) center/cover no-repeat; }
+
+/* =====================================================================
+   VALUE CARDS
+   ===================================================================== */
+.values { background: var(--brand-3); padding: 56px 20px; }
+.values-grid { display: flex; flex-direction: column; gap: 16px; }
+.values-row { display: contents; }
+
+.value-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  filter: drop-shadow(var(--shadow-card));
+}
+.value-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--img-icon-ring) center/cover no-repeat, var(--brand-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.value-icon::before {
+  content: '';
+  position: absolute;
+  width: 56.21px;
+  height: 56.21px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--brand-3);
+}
+.value-icon img { position: relative; object-fit: contain; }
+/* leaf sizes are per-icon in the design — keep them distinct */
+.value-icon--1 img { width: 28.52px; height: 29.76px; }
+.value-icon--2 img { width: 24.80px; height: 32.24px; }
+.value-icon--3 img { width: 34.72px; height: 24.80px; }
+.value-icon--4 img { width: 31.62px; height: 27.28px; }
+
+.value-text { display: flex; flex-direction: column; gap: 8px; padding-top: 6px; line-height: 1.55; }
+.value-text h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.7802px; color: #000; }
+.value-text p  { font-size: 13.5px; font-weight: 400; color: var(--gray-600); }
+
+/* =====================================================================
+   STATS BAND
+   ===================================================================== */
+.stats { background: var(--brand-1); padding: 56px 20px; }
+.stats-inner { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.stats-eyebrow { font-size: 13px; font-weight: 600; line-height: normal; letter-spacing: 3px; color: var(--brand-2); text-align: center; }
+.stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 158px)); justify-content: center; column-gap: 16px; row-gap: 32px; }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.stat .stat-num   { font-size: 38px; font-weight: 700; color: #fff; line-height: normal; }
+.stat .stat-label { font-size: 13px; line-height: 1.5; color: rgba(245, 250, 243, 0.85); }
+
+/* =====================================================================
+   STORY
+   ===================================================================== */
+.story { position: relative; padding: 56px 20px; }
+.story-wave { display: none; }
+.story-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.story-heading {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.26px;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--brand-1);
+}
+.story-body { position: relative; display: flex; flex-direction: column; gap: 28px; width: 100%; }
+.story-panel { display: none; }
+.story-photo {
+  position: relative;
+  z-index: 1;
+  order: 1;
+  width: 100%;
+  height: 230px;
+  box-shadow: 8px -8px 0 0 #fff;
+  background: var(--img-story) center 30% / cover no-repeat, var(--brand-3);
+}
+.story-photo::before { background: none; }
+.story-photo::after  { background: rgba(0, 0, 0, 0.1); }
+.story-text { position: relative; z-index: 1; order: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.story-text h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-transform: capitalize;
+  color: var(--gray-800);
+  margin-bottom: 16px;
+}
+.story-text p { font-size: 15px; line-height: 24px; color: var(--gray-500); }
+
+/* =====================================================================
+   A DAY AT FRESHCLUB
+   ===================================================================== */
+.day { background: var(--brand-3); padding: 56px 20px; }
+.day-inner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.day-heading { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.day-heading h2 { font-size: 26px; font-weight: 700; line-height: 34px; color: var(--brand-1); }
+.day-heading p  { font-size: 15px; line-height: normal; color: var(--gray-d600); }
+
+.steps { display: flex; flex-direction: column; gap: 32px; width: 100%; }
+.step { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.step-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px dashed var(--brand-2);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--brand-2);
+}
+.step-badge--time { font-size: 18px; }
+.step h3 { font-size: 17px; font-weight: 600; line-height: normal; color: var(--brand-1); }
+.step p  { font-size: 14px; line-height: 1.5; color: var(--gray-d600); max-width: 295px; }
+
+/* =====================================================================
+   CTA BANNER
+   ===================================================================== */
+.cta-wrap { padding: 32px 20px; }
+.cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--img-cta-bg) center/cover no-repeat;
+  opacity: 0.36;
+}
+.cta::after { content: ''; position: absolute; inset: 0; background: rgba(22, 73, 74, 0.93); }
+.cta > * { position: relative; z-index: 2; }
+.cta-deco { display: none; }
+.cta-copy { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.cta-title { display: flex; flex-direction: column; gap: 12px; color: #fff; }
+.cta-title h2 { font-size: 23px; font-weight: 700; line-height: 30px; }
+.cta-title p  { font-size: 15px; font-weight: 500; line-height: normal; }
+.cta-desc { font-size: 14px; line-height: 24px; color: var(--gray-50); }
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.site-footer { background: var(--brand-1); padding: 44px 20px; color: #fff; }
+.footer-inner { display: flex; flex-direction: column; gap: 28px; }
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 8px;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+.footer-brand { display: flex; flex-direction: column; gap: 32px; }
+.footer-brand .logo-footer { width: 169px; height: 41px; object-fit: contain; }
+.footer-nav { display: flex; gap: 40px; }
+.footer-nav a { font-size: 16px; line-height: 24px; color: var(--gray-300); }
+
+.newsletter h4 { font-size: 18px; font-weight: 500; line-height: 24px; text-transform: capitalize; margin-bottom: 16px; }
+.newsletter-form { display: flex; gap: 16px; }
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  outline: none;
+}
+.newsletter-form input::placeholder { color: var(--gray-400); }
+.newsletter-form .btn { font-weight: 400; padding: 12px 20px; }
+
+.footer-bottom { display: flex; flex-direction: column; gap: 24px; }
+.footer-bottom .copyright { font-size: 16px; line-height: 24px; color: var(--gray-d300); }
+.social { display: flex; gap: 20px; }
+.social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.social svg { fill: currentColor; }
+
+/* very narrow phones (below the 375px design width) — degrade, don't overflow */
+@media (max-width: 359px) {
+  .header-row { padding-inline: 12px; }
+  .cart-btn { width: auto; padding: 12px 20px 12px 16px; }
+  .cart-badge { right: -6px; }
+}
+
+/* =====================================================================
+   DESKTOP  (1440px frame 81154:408)
+   ===================================================================== */
+@media (min-width: 1024px) {
+  .wrap { max-width: 1440px; }
+
+  /* ---- header ---- */
+  .site-header { padding: 0; }
+  .header-row { height: 100px; }
+  .header-row--top { padding: 28px 80px 20px; }
+  .header-row--search { padding: 16px 80px; }
+  .header-inner { max-width: 1280px; margin-inline: auto; }
+  .nav-desktop { display: flex; align-items: center; gap: 34px; }
+  .nav-desktop a { font-size: 16px; font-weight: 500; line-height: 24px; color: var(--gray-500); }
+  .menu-btn { display: none; }
+  .header-actions { gap: 24px; width: 229px; justify-content: flex-end; }
+  .header-spacer { display: block; flex: 0 1 283px; height: 32px; min-width: 0; }
+  .search-group { flex: 0 1 887px; justify-content: space-between; gap: 24px; }
+  .search-field { flex: 1 1 480px; max-width: 480px; }
+  .contact-btn { display: inline-flex; }
+
+  /* ---- hero ---- */
+  .hero { padding: 96px 80px; }
+  .hero-inner { max-width: 1280px; margin-inline: auto; gap: 64px; }
+  .hero-lede { gap: 40px; max-width: 900px; }
+  .hero-copy { gap: 24px; }
+  .hero-copy h1 { font-size: 48px; line-height: 64px; letter-spacing: -0.48px; }
+  .hero-copy p { font-size: 18px; line-height: normal; letter-spacing: -0.18px; max-width: 760px; }
+  .hero-actions { flex-direction: row; justify-content: center; gap: 16px; width: auto; }
+  .hero-actions .btn { width: auto; }
+  .hero-photo { height: 360px; border-radius: var(--radius-card-lg); }
+
+  /* ---- value cards ---- */
+  .values { padding: 96px 80px; }
+  .values-grid { max-width: 1280px; margin-inline: auto; gap: 24px; }
+  .values-row { display: flex; gap: 24px; }
+  .value-card { flex: 1; padding: 28px; gap: 24px; }
+  .value-icon { width: 100px; height: 100px; }
+  .value-icon::before { width: 90.66px; height: 90.66px; }
+  .value-icon--1 img { width: 46px; height: 48px; }
+  .value-icon--2 img { width: 40px; height: 52px; }
+  .value-icon--3 img { width: 56px; height: 40px; }
+  .value-icon--4 img { width: 51px; height: 44px; }
+  .value-text { line-height: normal; }
+  .value-text h3 { line-height: 1.1; }
+  .value-text p  { font-size: 14px; line-height: 26px; }
+
+  /* ---- stats ---- */
+  .stats { padding: 88px 80px; }
+  .stats-inner { gap: 48px; }
+  .stats-eyebrow { font-size: 16px; }
+  .stats-grid { display: flex; justify-content: space-between; width: 100%; max-width: 1280px; }
+  .stat { flex: 0 1 300px; gap: 12px; }
+  .stat .stat-num { font-size: 56px; }
+  .stat .stat-label { font-size: 15px; }
+
+  /* ---- story ---- */
+  .story { padding: 96px 80px 64px; overflow: hidden; }
+  .story-wave {
+    display: block;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1801px;
+    height: 276px;
+    z-index: 0;
+  }
+  .story-inner { gap: 88px; }
+  .story-heading { font-size: 44px; line-height: normal; letter-spacing: -0.44px; max-width: 800px; }
+  .story-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin-inline: auto;
+    gap: 0;
+  }
+  .story-panel {
+    display: block;
+    position: absolute;
+    right: -32px;
+    top: -32px;
+    width: 434px;
+    height: 408px;
+    border-radius: var(--radius-card);
+    background: linear-gradient(229.25deg, #34AEB0 12.7%, #FFFFFF 78.01%);
+    z-index: 0;
+  }
+  .story-text { order: 1; flex: 1 1 648px; max-width: 648px; gap: 40px; }
+  .story-text h2 { font-size: 32px; line-height: 48px; max-width: 493px; }
+  .story-text p { font-size: 16px; }
+  .story-photo { order: 2; flex: 0 1 470px; width: 470px; height: 424px; }
+
+  /* ---- a day at freshclub ---- */
+  .day { padding: 96px 80px; }
+  .day-inner { gap: 64px; }
+  .day-heading h2 { font-size: 40px; line-height: normal; }
+  .day-heading p  { font-size: 18px; }
+  .steps { flex-direction: row; justify-content: space-between; max-width: 1280px; gap: 32px; }
+  .step { flex: 0 1 296px; }
+  .step h3 { font-size: 18px; }
+  .step p  { max-width: 262px; }
+
+  /* ---- cta ---- */
+  .cta-wrap { padding: 40px 80px; }
+  .cta { max-width: 1280px; margin-inline: auto; padding: 48px; border-radius: var(--radius-card-lg); gap: 40px; }
+  .cta-copy { max-width: 966px; gap: 20px; }
+  .cta-title h2 { font-size: 32px; line-height: normal; }
+  .cta-title p  { font-size: 20px; }
+  .cta-desc { font-size: 16px; }
+  .cta-deco {
+    display: flex;
+    position: absolute;
+    top: 131px;
+    width: 165px;
+    height: 206px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .cta-deco img { width: 206px; height: 165px; max-width: none; object-fit: cover; transform: rotate(90deg); }
+  .cta-deco--left  { left: 0; }
+  .cta-deco--left img { transform: rotate(90deg) scaleY(-1); }
+  .cta-deco--right { right: 0; }
+
+  /* ---- footer ---- */
+  .site-footer { padding: 60px 80px; }
+  .footer-inner { max-width: 1280px; margin-inline: auto; gap: 24px; }
+  .footer-top { flex-direction: row; align-items: flex-start; justify-content: space-between; padding-bottom: 60px; }
+  .newsletter { flex: 0 1 375px; }
+  .newsletter-form input { padding: 12px 14px; }
+  .newsletter-form .btn { min-height: 44px; }
+  .footer-bottom { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="header-row header-row--top">
+    <div class="header-inner">
+      <a href="#" aria-label="FreshClub home">
+        <img class="logo" src="./assets/freshclub-logo-header.png" alt="FreshClub">
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="#">About Us</a>
+        <a href="#">View Products</a>
+        <a href="#">How does it work</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="menu-btn" type="button" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="#16494A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="cart-btn" type="button" aria-label="Cart, 0 items, $0.00">
+          <svg viewBox="0 0 512 512" aria-hidden="true">
+            <circle cx="176" cy="416" r="32" fill="#475467"/>
+            <circle cx="400" cy="416" r="32" fill="#475467"/>
+            <path fill="#475467" d="M456.8 120.78H133.34l-6.55-33.78A16 16 0 0 0 111.09 74H56a16 16 0 0 0 0 32h41.79l50.59 261.16A16 16 0 0 0 164.09 380H416a16 16 0 0 0 0-32H177.4l-6.2-32h240.29a24 24 0 0 0 23.34-18.36l35.7-149.31a16 16 0 0 0-13.73-27.55Z"/>
+          </svg>
+          <span class="price">$0.00</span>
+          <span class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-row header-row--search">
+    <div class="header-inner">
+      <div class="header-spacer" aria-hidden="true"></div>
+      <div class="search-group">
+        <label class="search-field">
+          <input type="search" placeholder="Search product here" aria-label="Search product">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M17.5 17.5L14.5834 14.5833M16.6667 9.58333C16.6667 13.4954 13.4954 16.6667 9.58333 16.6667C5.67132 16.6667 2.5 13.4954 2.5 9.58333C2.5 5.67132 5.67132 2.5 9.58333 2.5C13.4954 2.5 16.6667 5.67132 16.6667 9.58333Z" stroke="#98A2B3" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </label>
+        <button class="btn btn--primary contact-btn" type="button">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-inner wrap">
+      <div class="hero-lede">
+        <div class="hero-copy">
+          <h1>The Local Team Making Fresh Produce Simple For Sydney Businesses</h1>
+          <p>FreshClub started with a simple idea: buying wholesale fruit &amp; veg shouldn’t mean 4am market runs, phone tag, or surprise prices. We’re a Sydney-based team connecting food businesses directly to the freshest stock — with honest pricing and delivery you can count on.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="btn btn--primary btn--block">Start Your Order</a>
+          <a href="#" class="btn btn--outline btn--block">View Products</a>
+        </div>
+      </div>
+      <div class="photo-frame hero-photo" role="img" aria-label="Fresh produce at Sydney’s markets"></div>
+    </div>
+  </section>
+
+  <!-- ==================== VALUE CARDS ==================== -->
+  <section class="values">
+    <div class="values-grid wrap">
+      <div class="values-row">
+        <article class="value-card">
+          <div class="value-icon value-icon--1">
+            <img src="./assets/freshclub-value-freshness.png" alt="">
+          </div>
+          <div class="value-text">
+            <h3>Freshness You Can Trust</h3>
+            <p>Every order is packed the same morning it’s delivered — straight from Sydney’s markets to your kitchen door.</p>
+          </div>
+        </article>
+        <article class="value-card">
+          <div class="value-icon value-icon--2">
+            <img src="./assets/freshclub-value-pricing.png" alt="">
+          </div>
+          <div class="value-text">
+            <h3>Honest, Transparent Pricing</h3>
+            <p>Know your price before you order. No hidden fees, no haggling, and no surprises on your invoice.</p>
+          </div>
+        </article>
+      </div>
+      <div class="values-row">
+        <article class="value-card">
+          <div class="value-icon value-icon--3">
+            <img src="./assets/freshclub-value-quality.png" alt="">
+          </div>
+          <div class="value-text">
+            <h3>Quality Over Quantity</h3>
+            <p>We cap orders at 50 a day on purpose, so every box gets checked and no order is ever rushed.</p>
+          </div>
+        </article>
+        <article class="value-card">
+          <div class="value-icon value-icon--4">
+            <img src="./assets/freshclub-value-local.png" alt="">
+          </div>
+          <div class="value-text">
+            <h3>Local &amp; Accountable</h3>
+            <p>We’re Sydney locals who answer our own phones. If something’s not right, we make it right — fast.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BAND ==================== -->
+  <section class="stats">
+    <div class="stats-inner wrap">
+      <p class="stats-eyebrow">FRESHCLUB BY THE NUMBERS</p>
+      <div class="stats-grid">
+        <div class="stat">
+          <p class="stat-num">50</p>
+          <p class="stat-label">Orders capped per day,<br>so nothing gets rushed</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">4AM</p>
+          <p class="stat-label">At Sydney’s markets<br>every single morning</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">$0</p>
+          <p class="stat-label">In hidden fees or<br>surprise charges</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">100%</p>
+          <p class="stat-label">Freshness guarantee<br>on every delivery</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STORY ==================== -->
+  <section class="story">
+    <svg class="story-wave" viewBox="0 0 1801 276" preserveAspectRatio="none" aria-hidden="true">
+      <ellipse cx="900.5" cy="276" rx="900.5" ry="276" fill="#FFFFFF"/>
+    </svg>
+    <div class="story-inner wrap">
+      <h2 class="story-heading">Built by people who know what 4am market runs really cost</h2>
+      <div class="story-body">
+        <div class="story-panel" aria-hidden="true"></div>
+        <div class="story-text">
+          <div>
+            <h2>It started with one question</h2>
+            <p>Why should buying fresh produce be this hard? Our founders spent years inside Sydney’s food scene — running kitchens, managing venues, and buying produce the hard way. We watched good businesses overpay and under-sleep, so we built the service we always wished existed.</p>
+          </div>
+          <a href="#" class="btn btn--on-photo">See How It Works</a>
+        </div>
+        <div class="photo-frame story-photo" role="img" aria-label="The FreshClub crew at the produce markets"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== A DAY AT FRESHCLUB ==================== -->
+  <section class="day">
+    <div class="day-inner wrap">
+      <div class="day-heading">
+        <h2>A day at FreshClub</h2>
+        <p>What happens between the market floor and your kitchen door.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-badge">TONIGHT</div>
+          <h3>You place your order</h3>
+          <p>Browse live stock photos and honest prices, then lock in tomorrow’s delivery slot.</p>
+        </div>
+        <div class="step">
+          <div class="step-badge step-badge--time">4AM</div>
+          <h3>The market run</h3>
+          <p>We’re on the floor at Sydney’s produce markets, hand-picking your stock.</p>
+        </div>
+        <div class="step">
+          <div class="step-badge step-badge--time">6AM</div>
+          <h3>Checked &amp; packed</h3>
+          <p>Our own crew quality-checks and packs every single box — no shortcuts.</p>
+        </div>
+        <div class="step">
+          <div class="step-badge">YOUR SLOT</div>
+          <h3>Delivered fresh</h3>
+          <p>Your order arrives in your chosen window, picked just hours earlier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA BANNER ==================== -->
+  <div class="cta-wrap">
+    <div class="cta">
+      <div class="cta-deco cta-deco--left" aria-hidden="true">
+        <img src="./assets/freshclub-about-cta-decoration.png" alt="">
+      </div>
+      <div class="cta-deco cta-deco--right" aria-hidden="true">
+        <img src="./assets/freshclub-about-cta-decoration.png" alt="">
+      </div>
+      <div class="cta-copy">
+        <div class="cta-title">
+          <h2>Join The Club. Buy Fresher, For Less.</h2>
+          <p>Local team. Honest prices. Market-fresh every day.</p>
+        </div>
+        <p class="cta-desc">Whether you run a restaurant, cafe, catering company, juice bar, grocer, or office — FreshClub delivers the same wholesale access, quality assurance, and simplicity trusted by Sydney’s leading businesses.</p>
+      </div>
+      <a href="#" class="btn btn--primary">Start Ordering Fresh</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="logo-footer" src="./assets/freshclub-logo-footer.png" alt="FreshClub">
+        <nav class="footer-nav">
+          <a href="#">Home</a>
+          <a href="#">Shop Product</a>
+          <a href="#">About Us</a>
+        </nav>
+      </div>
+      <div class="newsletter">
+        <h4>Join our newsletter</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+          <button type="submit" class="btn btn--primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 FreshClub. All rights reserved.</p>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">
+          <svg width="21" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.582 6.186a2.506 2.506 0 0 0-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418a2.506 2.506 0 0 0-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814a2.506 2.506 0 0 0 1.768 1.768C5.746 20 12 20 12 20s6.254 0 7.814-.418a2.506 2.506 0 0 0 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM10 15.464V8.536L16 12l-6 3.464z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

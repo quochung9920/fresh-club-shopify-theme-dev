@@ -1,0 +1,183 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "how_hero": {
+      "type": "fc-how-hero",
+      "blocks": {
+        "hero_primary": {
+          "type": "action",
+          "settings": {
+            "heading": "Start Your Order",
+            "link": "shopify://collections/all",
+            "style": "primary"
+          }
+        },
+        "hero_secondary": {
+          "type": "action",
+          "settings": {
+            "heading": "View Products",
+            "link": "shopify://collections/all",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "hero_primary",
+        "hero_secondary"
+      ],
+      "settings": {
+        "eyebrow": "HOW IT WORKS",
+        "heading": "Order Fresh Produce In Minutes, Not Phone Calls",
+        "text": "Four simple steps between browsing today’s stock and unpacking it in your kitchen. No accounts to chase, no quotes to wait on, no surprises on your invoice."
+      }
+    },
+    "how_steps": {
+      "type": "fc-how-steps",
+      "blocks": {
+        "step_01": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "heading": "Browse today’s live stock",
+            "text": "See real photos of what’s actually on the market floor this morning, with per-kilo pricing and live availability. No out-of-date catalogue, and no guessing what will turn up.",
+            "image_alt": "Fresh produce available on the market floor",
+            "image_side": "right",
+            "fallback_asset": "step_01"
+          }
+        },
+        "step_02": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "heading": "Build your order and lock your slot",
+            "text": "Add what you need, set your quantities, and choose the delivery window that fits your prep. The price you see is the price you pay — locked in the moment you confirm.",
+            "image_alt": "Fresh produce order being prepared",
+            "image_side": "left",
+            "fallback_asset": "step_02"
+          }
+        },
+        "step_03": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "heading": "We hand-pick it at 4am",
+            "text": "Our own crew is on the market floor before dawn, selecting your produce, quality-checking every box, and packing it for your delivery run.",
+            "image_alt": "Fresh produce on the Sydney market floor",
+            "image_side": "right",
+            "fallback_asset": "step_03"
+          }
+        },
+        "step_04": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "heading": "Delivered fresh to your door",
+            "text": "Your order arrives inside the window you chose, picked just hours earlier — not days. Next time, reorder your usuals in a couple of taps.",
+            "image_alt": "FreshClub team member delivering produce",
+            "image_side": "left",
+            "fallback_asset": "step_04"
+          }
+        }
+      },
+      "block_order": [
+        "step_01",
+        "step_02",
+        "step_03",
+        "step_04"
+      ],
+      "settings": {
+        "heading": "From market floor to your kitchen door",
+        "intro": "Here’s exactly what happens after you place an order."
+      }
+    },
+    "how_faq": {
+      "type": "fc-how-faq",
+      "blocks": {
+        "faq_delivery": {
+          "type": "faq",
+          "settings": {
+            "heading": "What areas do you deliver to?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": true
+          }
+        },
+        "faq_minimum": {
+          "type": "faq",
+          "settings": {
+            "heading": "Is there a minimum order?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": false
+          }
+        },
+        "faq_cutoff": {
+          "type": "faq",
+          "settings": {
+            "heading": "When do I need to order by?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": false
+          }
+        },
+        "faq_quality": {
+          "type": "faq",
+          "settings": {
+            "heading": "What happens if something isn’t up to standard?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": false
+          }
+        },
+        "faq_payment": {
+          "type": "faq",
+          "settings": {
+            "heading": "How do I pay for my order?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": false
+          }
+        },
+        "faq_abn": {
+          "type": "faq",
+          "settings": {
+            "heading": "Do I need an ABN to order?",
+            "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_delivery",
+        "faq_minimum",
+        "faq_cutoff",
+        "faq_quality",
+        "faq_payment",
+        "faq_abn"
+      ],
+      "settings": {
+        "heading": "FAQ’s"
+      }
+    },
+    "how_cta": {
+      "type": "fc-how-cta",
+      "settings": {
+        "heading": "Join The Club. Buy Fresher, For Less.",
+        "subheading": "Local team. Honest prices. Market-fresh every day.",
+        "text": "Whether you run a restaurant, cafe, catering company, juice bar, grocer, or office — FreshClub delivers the same wholesale access, quality assurance, and simplicity trusted by Sydney’s leading businesses.",
+        "button_label": "Start Ordering Fresh",
+        "button_link": "shopify://collections/all",
+        "button_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "how_hero",
+    "how_steps",
+    "how_faq",
+    "how_cta"
+  ]
+}

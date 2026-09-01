@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "page": "collection",
+  "contractPaths": [
+    "docs/collection/*"
+  ],
+  "implementation": {
+    "collectionTemplate": "templates/collection.json",
+    "gridLiquid": "sections/main-collection-product-grid.liquid",
+    "collectionStyles": "assets/template-collection.css",
+    "sharedCard": "snippets/card-product.liquid",
+    "sharedCardStyles": "assets/component-card.css",
+    "faq": "sections/collapsible-content.liquid",
+    "validator": "scripts/validate_collection_product_templates.py"
+  },
+  "coordination": {
+    "sharedCardRule": "Prefer parent-scoped CSS; markup changes require product/recommendation regression tests.",
+    "productDetailProtected": [
+      "merchant max-10 rule",
+      "minimum $500 cart rule",
+      "ripeness validity",
+      "selected-variant inventory/sold-out"
+    ]
+  }
+}

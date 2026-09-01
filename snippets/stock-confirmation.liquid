@@ -1,0 +1,51 @@
+{% comment %}
+  Renders the confirmation shown when the requested quantity exceeds available stock.
+
+  Accepts:
+  - confirmation_id: {String} Unique suffix for dialog relationships.
+  - product_title: {String} Product title shown in the message.
+{% endcomment %}
+<dialog
+  class="stock-confirmation"
+  data-stock-confirmation
+  aria-labelledby="StockConfirmationTitle-{{ confirmation_id }}"
+  aria-describedby="StockConfirmationMessage-{{ confirmation_id }}"
+>
+  <div class="stock-confirmation__content">
+    <div class="stock-confirmation__icon" aria-hidden="true">!</div>
+    <h2 id="StockConfirmationTitle-{{ confirmation_id }}" class="stock-confirmation__title h2">
+      Limited quantity available
+    </h2>
+    <div id="StockConfirmationMessage-{{ confirmation_id }}">
+      <p class="stock-confirmation__message" data-stock-confirmation-available>
+        You requested <strong data-stock-confirmation-requested></strong>
+        <span class="visually-hidden">items.</span> Choose how many
+        <strong>{{ product_title | escape }}</strong> items you would like to add instead.
+      </p>
+      <p class="stock-confirmation__message" data-stock-confirmation-empty hidden>
+        You cannot add more <strong>{{ product_title | escape }}</strong> items to your cart.
+      </p>
+      <p class="stock-confirmation__availability">
+        Available now: <strong data-stock-confirmation-remaining></strong>
+      </p>
+      <div class="stock-confirmation__quantity" data-stock-confirmation-quantity-field>
+        <label for="StockConfirmationQuantity-{{ confirmation_id }}">Quantity to add</label>
+        <input
+          id="StockConfirmationQuantity-{{ confirmation_id }}"
+          class="stock-confirmation__quantity-input"
+          type="number"
+          inputmode="numeric"
+          min="1"
+          max="1"
+          step="1"
+          value="1"
+          data-stock-confirmation-quantity
+        >
+      </div>
+    </div>
+    <div class="stock-confirmation__actions">
+      <button type="button" class="button button--secondary" data-stock-confirmation-cancel>Cancel</button>
+      <button type="button" class="button button--primary" data-stock-confirmation-confirm>Add selected items</button>
+    </div>
+  </div>
+</dialog>

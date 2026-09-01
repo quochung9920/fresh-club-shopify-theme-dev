@@ -1,0 +1,207 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_hero": {
+      "type": "fc-about-hero",
+      "blocks": {
+        "hero_primary_action": {
+          "type": "button",
+          "settings": {
+            "heading": "Start Your Order",
+            "link": "shopify://collections/all",
+            "style": "primary"
+          }
+        },
+        "hero_secondary_action": {
+          "type": "button",
+          "settings": {
+            "heading": "View Products",
+            "link": "shopify://collections/all",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "hero_primary_action",
+        "hero_secondary_action"
+      ],
+      "settings": {
+        "heading": "The Local Team Making Fresh Produce Simple For Sydney Businesses",
+        "text": "FreshClub started with a simple idea: buying wholesale fruit & veg shouldn’t mean 4am market runs, phone tag, or surprise prices. We’re a Sydney-based team connecting food businesses directly to the freshest stock — with honest pricing and delivery you can count on.",
+        "image_alt": "Fresh produce at Sydney’s markets"
+      }
+    },
+    "about_values": {
+      "type": "fc-about-values",
+      "blocks": {
+        "value_freshness": {
+          "type": "value_card",
+          "settings": {
+            "icon": "shopify://shop_images/image_13.png",
+            "heading": "Freshness You Can Trust",
+            "text": "Every order is packed the same morning it’s delivered — straight from Sydney’s markets to your kitchen door."
+          }
+        },
+        "value_pricing": {
+          "type": "value_card",
+          "settings": {
+            "icon": "shopify://shop_images/image_14.png",
+            "heading": "Honest, Transparent Pricing",
+            "text": "Know your price before you order. No hidden fees, no haggling, and no surprises on your invoice."
+          }
+        },
+        "value_quality": {
+          "type": "value_card",
+          "settings": {
+            "icon": "shopify://shop_images/image_15.png",
+            "heading": "Quality Over Quantity",
+            "text": "We cap orders at 50 a day on purpose, so every box gets checked and no order is ever rushed."
+          }
+        },
+        "value_local": {
+          "type": "value_card",
+          "settings": {
+            "icon": "shopify://shop_images/image_16.png",
+            "heading": "Local & Accountable",
+            "text": "We’re Sydney locals who answer our own phones. If something’s not right, we make it right — fast."
+          }
+        }
+      },
+      "block_order": [
+        "value_freshness",
+        "value_pricing",
+        "value_quality",
+        "value_local"
+      ],
+      "settings": {}
+    },
+    "about_metrics": {
+      "type": "fc-about-metrics",
+      "blocks": {
+        "stat_orders": {
+          "type": "metric",
+          "settings": {
+            "value": "50",
+            "heading": "Orders capped per day, so nothing gets rushed"
+          }
+        },
+        "stat_market": {
+          "type": "metric",
+          "settings": {
+            "value": "4AM",
+            "heading": "At Sydney’s markets every single morning"
+          }
+        },
+        "stat_fees": {
+          "type": "metric",
+          "settings": {
+            "value": "$0",
+            "heading": "In hidden fees or surprise charges"
+          }
+        },
+        "stat_guarantee": {
+          "type": "metric",
+          "settings": {
+            "value": "100%",
+            "heading": "Freshness guarantee on every delivery"
+          }
+        }
+      },
+      "block_order": [
+        "stat_orders",
+        "stat_market",
+        "stat_fees",
+        "stat_guarantee"
+      ],
+      "settings": {
+        "eyebrow": "FRESHCLUB BY THE NUMBERS"
+      }
+    },
+    "about_story": {
+      "type": "fc-about-story",
+      "settings": {
+        "heading": "Built by people who know what 4am market runs really cost",
+        "title": "It started with one question",
+        "text": "Why should buying fresh produce be this hard? Our founders spent years inside Sydney’s food scene — running kitchens, managing venues, and buying produce the hard way. We watched good businesses overpay and under-sleep, so we built the service we always wished existed.",
+        "image_alt": "The FreshClub crew at the produce markets",
+        "button_label": "See How It Works",
+        "button_link": "shopify://pages/how-does-it-work",
+        "button_style": "secondary"
+      }
+    },
+    "about_process": {
+      "type": "fc-about-process",
+      "blocks": {
+        "step_order": {
+          "type": "process_step",
+          "settings": {
+            "badge": "TONIGHT",
+            "heading": "You place your order",
+            "text": "Browse live stock photos and honest prices, then lock in tomorrow’s delivery slot."
+          }
+        },
+        "step_market": {
+          "type": "process_step",
+          "settings": {
+            "badge": "4AM",
+            "heading": "The market run",
+            "text": "We’re on the floor at Sydney’s produce markets, hand-picking your stock."
+          }
+        },
+        "step_pack": {
+          "type": "process_step",
+          "settings": {
+            "badge": "6AM",
+            "heading": "Checked & packed",
+            "text": "Our own crew quality-checks and packs every single box — no shortcuts."
+          }
+        },
+        "step_delivery": {
+          "type": "process_step",
+          "settings": {
+            "badge": "YOUR SLOT",
+            "heading": "Delivered fresh",
+            "text": "Your order arrives in your chosen window, picked just hours earlier."
+          }
+        }
+      },
+      "block_order": [
+        "step_order",
+        "step_market",
+        "step_pack",
+        "step_delivery"
+      ],
+      "settings": {
+        "heading": "A day at FreshClub",
+        "intro": "What happens between the market floor and your kitchen door."
+      }
+    },
+    "about_cta": {
+      "type": "fc-about-cta",
+      "settings": {
+        "heading": "Join The Club. Buy Fresher, For Less.",
+        "subheading": "Local team. Honest prices. Market-fresh every day.",
+        "text": "Whether you run a restaurant, cafe, catering company, juice bar, grocer, or office — FreshClub delivers the same wholesale access, quality assurance, and simplicity trusted by Sydney’s leading businesses.",
+        "button_label": "Start Ordering Fresh",
+        "button_link": "shopify://collections/all",
+        "button_style": "primary"
+      }
+    }
+  },
+  "order": [
+    "about_hero",
+    "about_values",
+    "about_metrics",
+    "about_story",
+    "about_process",
+    "about_cta"
+  ]
+}

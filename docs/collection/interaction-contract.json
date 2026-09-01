@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "page": "collection",
+  "figmaRoot": "80841:1119",
+  "productCards": {
+    "productLink": "native product.url",
+    "quantity": "Dawn bulk quick-add quantity input when applicable",
+    "add": "native product form and selected/first available variant",
+    "soldOut": "native disabled state",
+    "multiVariant": "native modal/selection path; never assume first variant is purchasable"
+  },
+  "faq": {
+    "semantics": "native details/summary accordion",
+    "keyboard": [
+      "Tab",
+      "Enter",
+      "Space"
+    ],
+    "openFirst": true
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "active",
+    "disabled",
+    "sold-out",
+    "loading",
+    "error",
+    "reduced-motion"
+  ],
+  "wishlist": {
+    "status": "visual-only",
+    "interaction": "non-interactive",
+    "visualAuthority": "Figma heart-outline at 20px",
+    "reason": "no wishlist app, customer-account API, or persisted storefront authority is installed"
+  }
+}

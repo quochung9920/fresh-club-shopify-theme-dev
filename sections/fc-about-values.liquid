@@ -1,0 +1,141 @@
+{{ 'fc-about-values.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-about-values" aria-labelledby="AboutValuesHeading-{{ section.id }}">
+  <h2 id="AboutValuesHeading-{{ section.id }}" class="fc-about-values__section-heading">FreshClub values</h2>
+  <div class="fc-about-values__grid">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'value_card' -%}
+          {% comment %}theme-check-disable BlockIdUsage{% endcomment %}
+          {%- liquid
+            assign icon_identity = 'freshness'
+            assign fallback_icon = 'freshclub-value-freshness.png'
+            assign fallback_width = 1224
+            assign fallback_height = 1276
+            case block.id
+              when 'value_pricing'
+                assign icon_identity = 'pricing'
+                assign fallback_icon = 'freshclub-value-pricing.png'
+                assign fallback_width = 1098
+                assign fallback_height = 1422
+              when 'value_quality'
+                assign icon_identity = 'quality'
+                assign fallback_icon = 'freshclub-value-quality.png'
+                assign fallback_width = 1473
+                assign fallback_height = 1060
+              when 'value_local'
+                assign icon_identity = 'local'
+                assign fallback_icon = 'freshclub-value-local.png'
+                assign fallback_width = 1348
+                assign fallback_height = 1158
+            endcase
+            assign icon_class = 'fc-about-values__icon-image fc-about-values__icon-image--' | append: icon_identity
+          -%}
+          {% comment %}theme-check-enable BlockIdUsage{% endcomment %}
+          <article class="fc-about-values__card" {{ block.shopify_attributes }}>
+            <div class="fc-about-values__icon" aria-hidden="true">
+              <img
+                class="fc-about-values__ring"
+                src="{{ 'freshclub-value-ring.png' | asset_url }}"
+                alt=""
+                width="100"
+                height="100"
+                loading="eager"
+              >
+              {%- if block.settings.icon != blank -%}
+                {{
+                  block.settings.icon
+                  | image_url: width: 112
+                  | image_tag: class: icon_class, widths: '56, 112', sizes: '(min-width: 1024px) 56px, 35px', alt: '', loading: 'eager'
+                }}
+              {%- else -%}
+                <img
+                  class="{{ icon_class }}"
+                  src="{{ fallback_icon | asset_url }}"
+                  alt=""
+                  width="{{ fallback_width }}"
+                  height="{{ fallback_height }}"
+                  loading="eager"
+                >
+              {%- endif -%}
+            </div>
+            <div class="fc-about-values__copy">
+              <h3 class="fc-about-values__heading">{{ block.settings.heading | escape }}</h3>
+              <p class="fc-about-values__text">{{ block.settings.text | escape }}</p>
+            </div>
+          </article>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About — Values",
+  "tag": "section",
+  "class": "section-fc-about-values",
+  "max_blocks": 4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "value_card",
+      "name": "Value card",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Freshness You Can Trust"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Every order is packed the same morning it’s delivered — straight from Sydney’s markets to your kitchen door."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About — Values",
+      "blocks": [
+        {
+          "type": "value_card",
+          "settings": {
+            "heading": "Freshness You Can Trust",
+            "text": "Every order is packed the same morning it’s delivered — straight from Sydney’s markets to your kitchen door."
+          }
+        },
+        {
+          "type": "value_card",
+          "settings": {
+            "heading": "Honest, Transparent Pricing",
+            "text": "Know your price before you order. No hidden fees, no haggling, and no surprises on your invoice."
+          }
+        },
+        {
+          "type": "value_card",
+          "settings": {
+            "heading": "Quality Over Quantity",
+            "text": "We cap orders at 50 a day on purpose, so every box gets checked and no order is ever rushed."
+          }
+        },
+        {
+          "type": "value_card",
+          "settings": {
+            "heading": "Local & Accountable",
+            "text": "We’re Sydney locals who answer our own phones. If something’s not right, we make it right — fast."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

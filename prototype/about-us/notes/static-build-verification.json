@@ -1,0 +1,139 @@
+{
+  "authority_sha256": "730247ac286a7123fcaea2459100e4905801557101aa9a25b433eddee7312329",
+  "local_reference_path": "prototype/about-us/working/reference-local.html",
+  "local_reference_sha256": "d17da87d10f7af7e163ced66b4ab82b18135541d9e0ecee6072a8adce9c37d59",
+  "candidate_path": "prototype/about-us/working/index.html",
+  "candidate_sha256": "5a1fd83f4a92be7bf0f36c21959288467c7429808d8c990a3dfa290bfec85a52",
+  "copied_figma_assets": [
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/b814ef19-40c4-4332-8703-810723858664.png",
+      "source_node_frame": "81154-408",
+      "usage": "FreshClub logo in header",
+      "local_path": "prototype/about-us/working/assets/freshclub-logo-header.png",
+      "bytes": 318408,
+      "sha256": "052d8190491b1a10b49d673489738fb3b6af769b98ffe485bb526b7dc85302e9",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/72bc415d-cd17-4d54-bb61-e9bea0b711c8.png",
+      "source_node_frame": "81154-408",
+      "usage": "icon glyph — 'Freshness You Can Trust' card",
+      "local_path": "prototype/about-us/working/assets/freshclub-value-freshness.png",
+      "bytes": 1174798,
+      "sha256": "cd1b22b78bc0c8e3f6dd2da75ff3320fc7bf7263a8bc71c5a283f292e045870d",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/da1ed561-731c-4f03-a591-67ab8add326c.png",
+      "source_node_frame": "81154-408",
+      "usage": "icon glyph — 'Honest, Transparent Pricing' card",
+      "local_path": "prototype/about-us/working/assets/freshclub-value-pricing.png",
+      "bytes": 879444,
+      "sha256": "b24ad25fb74d8ead2d9d44c1497dbde1d412e3aeddd961b0482bf552f99ae573",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/55e879c6-13af-44df-8d0d-85a31ea36069.png",
+      "source_node_frame": "81154-408",
+      "usage": "icon glyph — 'Quality Over Quantity' card",
+      "local_path": "prototype/about-us/working/assets/freshclub-value-quality.png",
+      "bytes": 1212459,
+      "sha256": "b8f8bc78fc9e4ad749403b1c392616eecc18e9fc85078fcbcfe2a8d7b0b48661",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/3e30c1b5-e1b8-42db-b624-67ee600ef818.png",
+      "source_node_frame": "81154-408",
+      "usage": "icon glyph — 'Local & Accountable' card",
+      "local_path": "prototype/about-us/working/assets/freshclub-value-local.png",
+      "bytes": 1053044,
+      "sha256": "3dd751bf91b73291bbcc5a8103c223987a361f725edfe2f3480ddf72c25cbebc",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/909084d5-4f69-4eaa-a9df-22d31a628f9d.png",
+      "source_node_frame": "81154-408",
+      "usage": "hero image, base photo layer (produce market photo) — same source photo as mobile, byte-identical (6.8MB original upload)",
+      "local_path": "prototype/about-us/working/assets/freshclub-about-hero-base.jpg",
+      "bytes": 6828313,
+      "sha256": "a7e33c9e4f0b7e70747702c413f3b8ead89b1ad6f32f6af1b619dab806e071c2",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/b63097f3-4789-4b0e-b8f7-65e02b97fdc6.png",
+      "source_node_frame": "81154-408",
+      "usage": "hero image, second photo layer composited on top of hero-base",
+      "local_path": "prototype/about-us/working/assets/freshclub-about-hero-overlay.jpg",
+      "bytes": 1476322,
+      "sha256": "ad4f3a26251d68c91253934da8b200855877033238c7f1bc9ec9435d701fece3",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/608d06e6-f679-427d-9888-6291f3e2473d.png",
+      "source_node_frame": "81154-408",
+      "usage": "'Built by people...' section photo",
+      "local_path": "prototype/about-us/working/assets/freshclub-about-story.jpg",
+      "bytes": 168480,
+      "sha256": "2b6f201e669b191d2cf4d444e23f5f250555ee49c473d105cd437920441502fa",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/429a790a-6898-4c86-890f-dd6f5b0db44a.png",
+      "source_node_frame": "81154-408",
+      "usage": "background photo behind 'Join The Club' CTA banner (dark teal overlay applied on top)",
+      "local_path": "prototype/about-us/working/assets/freshclub-about-cta-bg.png",
+      "bytes": 564242,
+      "sha256": "cc78de89e7475bb7e8e16542432ebfb7fb0575cb9393f77b5e3708c84d9815c8",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/79318fa7-25a1-4d0c-a512-f09d97b6ea5c.png",
+      "source_node_frame": "81154-408",
+      "usage": "badge circle background (white, behind each of the 4 value-card icons)",
+      "local_path": "prototype/about-us/working/assets/freshclub-value-ring.png",
+      "bytes": 4483,
+      "sha256": "68c8dc81162a98c3c3b2849016079a3ff83e7e675ee3aacaf4fa87753207848d",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/968925ad-dcb7-4661-a90b-a39dbc2fe8f6.png",
+      "source_node_frame": "81154-408",
+      "usage": "rotated decorative photo strip flanking the CTA banner, desktop only — used twice (once mirrored)",
+      "local_path": "prototype/about-us/working/assets/freshclub-about-cta-decoration.png",
+      "bytes": 1171447,
+      "sha256": "85fbabde7f530953aa6f80e864f12d5ea938aa2bb52e926600c2478c6b431826",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://www.figma.com/api/mcp/asset/ee1fe1a4-ea65-4407-be2f-59f169554851.png",
+      "source_node_frame": "81154-408",
+      "usage": "FreshClub logo in footer (white variant)",
+      "local_path": "prototype/about-us/working/assets/freshclub-logo-footer.png",
+      "bytes": 90365,
+      "sha256": "edcf5e1f4669bbd335dbde74a549e82baf499e24c5536446cbbb6edbf784a253",
+      "content_type": "image/png"
+    }
+  ],
+  "referenced_local_assets": [
+    "dm-sans-600.woff2",
+    "freshclub-about-cta-bg.png",
+    "freshclub-about-cta-decoration.png",
+    "freshclub-about-hero-base.jpg",
+    "freshclub-about-hero-overlay.jpg",
+    "freshclub-about-story.jpg",
+    "freshclub-logo-footer.png",
+    "freshclub-logo-header.png",
+    "freshclub-value-freshness.png",
+    "freshclub-value-local.png",
+    "freshclub-value-pricing.png",
+    "freshclub-value-quality.png",
+    "freshclub-value-ring.png",
+    "gsap-3.13.0.min.js",
+    "lexend-deca-400.woff2",
+    "lexend-deca-500.woff2",
+    "lexend-deca-600.woff2",
+    "lexend-deca-700.woff2"
+  ],
+  "missing_local_assets": [],
+  "forbidden_remote_dependencies": []
+}

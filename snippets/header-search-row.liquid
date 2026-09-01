@@ -1,0 +1,89 @@
+{% comment %}
+  Renders the global secondary header row with native predictive search.
+
+  Accepts:
+  - input_id: unique search input ID
+  - contact_label: merchant-facing contact button label
+  - contact_link: merchant-facing contact button URL
+  - search_placeholder: search input placeholder
+{% endcomment %}
+
+{%- liquid
+  assign resolved_contact_label = contact_label | default: 'Contact Us'
+  assign resolved_contact_link = contact_link
+  if resolved_contact_link == blank
+    assign resolved_contact_link = pages.contact.url | default: routes.root_url
+  endif
+  assign resolved_search_placeholder = search_placeholder | default: 'Search product here'
+  assign use_predictive_search = false
+  if settings.predictive_search_enabled and request.page_type != 'search'
+    assign use_predictive_search = true
+  endif
+-%}
+
+<div class="header-search-row-container" data-fc-header-secondary>
+  <div class="page-width fc-header-search-row">
+    <div class="fc-header-search-actions">
+      {%- if use_predictive_search -%}
+        <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+      {%- else -%}
+        <search-form>
+      {%- endif -%}
+
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+        <div class="field">
+          <input
+            class="search__input field__input"
+            id="{{ input_id }}"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ resolved_search_placeholder | escape }}"
+            aria-label="{{ resolved_search_placeholder | escape }}"
+            {%- if use_predictive_search -%}
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="predictive-search-results"
+              aria-controls="predictive-search-results"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocorrect="off"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+            {%- endif -%}
+          >
+          <label class="field__label" for="{{ input_id }}">{{ resolved_search_placeholder | escape }}</label>
+          <input type="hidden" name="options[prefix]" value="last">
+          <button
+            type="reset"
+            class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+            aria-label="{{ 'general.search.reset' | t }}"
+          >
+            <span class="svg-wrapper">{{- 'icon-reset.svg' | inline_asset_content -}}</span>
+          </button>
+          <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+            <span class="svg-wrapper">{{- 'fc-icon-search-html.svg' | inline_asset_content -}}</span>
+          </button>
+        </div>
+
+        {%- if use_predictive_search -%}
+          <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+            {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+          </div>
+          <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+        {%- endif -%}
+      </form>
+
+      {%- if use_predictive_search -%}
+        </predictive-search>
+      {%- else -%}
+        </search-form>
+      {%- endif -%}
+
+      <a href="{{ resolved_contact_link }}" class="fc-header-contact button button--primary">
+        {{- resolved_contact_label | escape -}}
+      </a>
+    </div>
+  </div>
+</div>

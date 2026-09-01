@@ -1,0 +1,60 @@
+{{ 'fc-how-faq.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-how-faq" aria-labelledby="HowFaqHeading-{{ section.id }}">
+  <div class="fc-how-faq__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 id="HowFaqHeading-{{ section.id }}" class="fc-how-faq__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="fc-how-faq__list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq' and block.settings.heading != blank -%}
+          <details class="fc-how-faq__item"{% if block.settings.open_by_default %} open{% endif %} {{ block.shopify_attributes }}>
+            <summary class="fc-how-faq__summary">
+              <span class="fc-how-faq__question">{{ block.settings.heading | escape }}</span>
+              <span class="fc-how-faq__icon" aria-hidden="true"></span>
+            </summary>
+            {%- if block.settings.answer != blank -%}
+              <div class="fc-how-faq__answer">{{ block.settings.answer | escape | newline_to_br }}</div>
+            {%- endif -%}
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works — FAQ",
+  "tag": "section",
+  "class": "section-fc-how-faq",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "FAQ’s" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Question", "default": "What areas do you deliver to?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address." },
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works — FAQ",
+      "blocks": [
+        { "type": "faq", "settings": { "heading": "What areas do you deliver to?", "answer": "We deliver right across metro Sydney, six mornings a week. Enter your suburb at checkout and you’ll see every delivery window available for your address.", "open_by_default": true } },
+        { "type": "faq", "settings": { "heading": "Is there a minimum order?", "answer": "", "open_by_default": false } },
+        { "type": "faq", "settings": { "heading": "When do I need to order by?", "answer": "", "open_by_default": false } },
+        { "type": "faq", "settings": { "heading": "What happens if something isn’t up to standard?", "answer": "", "open_by_default": false } },
+        { "type": "faq", "settings": { "heading": "How do I pay for my order?", "answer": "", "open_by_default": false } },
+        { "type": "faq", "settings": { "heading": "Do I need an ABN to order?", "answer": "", "open_by_default": false } }
+      ]
+    }
+  ]
+}
+{% endschema %}

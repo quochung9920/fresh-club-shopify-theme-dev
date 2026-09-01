@@ -1,0 +1,70 @@
+{{ 'fc-how-cta.css' | asset_url | stylesheet_tag }}
+
+<section class="fc-how-cta" aria-labelledby="HowCtaHeading-{{ section.id }}">
+  <div class="fc-how-cta__banner">
+    <div class="fc-how-cta__background" aria-hidden="true">
+      {%- if section.settings.background_image != blank -%}
+        {{
+          section.settings.background_image
+          | image_url: width: 1600
+          | image_tag:
+            class: 'fc-how-cta__background-image',
+            widths: '335, 670, 960, 1280, 1600',
+            sizes: '(min-width: 1024px) 1280px, calc(100vw - 40px)',
+            alt: '',
+            loading: 'lazy'
+        }}
+      {%- else -%}
+        <img class="fc-how-cta__background-image" src="{{ 'freshclub-about-cta-bg.png' | asset_url }}" alt="" width="740" height="740" loading="lazy">
+      {%- endif -%}
+    </div>
+    <div class="fc-how-cta__decoration fc-how-cta__decoration--left" aria-hidden="true">
+      <img src="{{ 'freshclub-about-cta-decoration.png' | asset_url }}" alt="" width="206" height="165" loading="lazy">
+    </div>
+    <div class="fc-how-cta__decoration fc-how-cta__decoration--right" aria-hidden="true">
+      <img src="{{ 'freshclub-about-cta-decoration.png' | asset_url }}" alt="" width="206" height="165" loading="lazy">
+    </div>
+
+    <div class="fc-how-cta__copy">
+      <div class="fc-how-cta__title-group">
+        {%- if section.settings.heading != blank -%}<h2 id="HowCtaHeading-{{ section.id }}" class="fc-how-cta__heading">{{ section.settings.heading | escape }}</h2>{%- endif -%}
+        {%- if section.settings.subheading != blank -%}<p class="fc-how-cta__subheading">{{ section.settings.subheading | escape }}</p>{%- endif -%}
+      </div>
+      {%- if section.settings.text != blank -%}<p class="fc-how-cta__text">{{ section.settings.text | escape }}</p>{%- endif -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      {%- assign button_url = section.settings.button_link | default: routes.all_products_collection_url -%}
+      {%- assign button_class = 'button button--primary' -%}
+      {%- if section.settings.button_style == 'secondary' -%}{%- assign button_class = 'button button--secondary' -%}{%- endif -%}
+      <a class="{{ button_class }}" href="{{ button_url }}">{{ section.settings.button_label | escape }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works — CTA",
+  "tag": "section",
+  "class": "section-fc-how-cta",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Join The Club. Buy Fresher, For Less." },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Local team. Honest prices. Market-fresh every day." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Whether you run a restaurant, cafe, catering company, juice bar, grocer, or office — FreshClub delivers the same wholesale access, quality assurance, and simplicity trusted by Sydney’s leading businesses." },
+    { "type": "image_picker", "id": "background_image", "label": "Background image" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start Ordering Fresh" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "primary"
+    }
+  ],
+  "presets": [{ "name": "How It Works — CTA" }]
+}
+{% endschema %}

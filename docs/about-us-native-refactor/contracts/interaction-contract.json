@@ -1,0 +1,60 @@
+{
+  "contract_version": "1.0.0",
+  "status": "frozen",
+  "evidence": {
+    "inventory": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/storefront-systems/homepage-system-inventory.json",
+    "predictive_search": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/storefront-systems/predictive-search-contract.json",
+    "buttons": "E:/Hermes-Secure-Data/fresh-club-shopify-ai-workspace/evidence/storefront-systems/button-state-matrix.json"
+  },
+  "global_shell": {
+    "header_section_group": "header-group",
+    "footer_section_group": "footer-group",
+    "render_exactly_once": true,
+    "about_specific_shell_allowed": false,
+    "desktop_cutover_px": 990,
+    "remove_about_local_components": ["fc-site-header", "fc-site-footer", "fc-search-field", "About-local mobile menu", "About-local cart summary", "About-local newsletter", "About-local social links"]
+  },
+  "predictive_search": {
+    "authority": ["snippets/header-search-row.liquid", "assets/search-form.js", "assets/predictive-search.js", "sections/predictive-search.liquid", "assets/component-predictive-search.css"],
+    "configured": true,
+    "requirements": [
+      "normal GET search submission without JavaScript",
+      "predictive-search custom element and ARIA combobox contract",
+      "custom-element upgrades before descendant parsing wait for the complete prerequisite set, then bind exactly once without partial listeners or throwing",
+      "unique controlled listbox and live status region",
+      "submit and reset controls",
+      "abortable requests and shared cache behavior",
+      "keyboard navigation with ArrowDown, ArrowUp, Enter, reset, focusout, loading, results, no-results, and focus behavior",
+      "live product suggestions for the query apple verified on the authorized unpublished preview before release"
+    ],
+    "runtime_claim_boundary": "Source contract is verified; the audit did not obtain authorized automated apple result titles and release QA must close this item."
+  },
+  "buttons": {
+    "classes": {"base": "button", "primary": "button--primary", "secondary": "button--secondary"},
+    "authority": ["C:/Users/ADMIN/Downloads/about-us_1.html", "Figma 81154:524/529/545", "Figma 81177:324/329/345"],
+    "configured_radius_px": 8,
+    "configured_border_px": 1,
+    "configured_min_height_px": 48,
+    "configured_horizontal_padding_px": 24,
+    "configured_gap_px": 6,
+    "configured_font": {"family": "Lexend Deca", "weight": 500, "size_px": 16, "line_height_px": 24},
+    "desktop_hover_min_width_px": 989,
+    "states": ["default", "hover", "focus-visible", "pointer-focus", "active", "disabled", "loading", "touch", "reduced-motion"],
+    "primary_hover": "translateY(-8px) with the homepage pink shadow",
+    "secondary_hover": "homepage color inversion",
+    "page_specific_button_system_allowed": false,
+    "global_button_overrides_from_about_allowed": false
+  },
+  "motion": {
+    "authority": ["assets/base.css", "assets/animations.js", "layout/theme.liquid"],
+    "content_visible_without_javascript": true,
+    "prefers_reduced_motion_required": true,
+    "shopify_section_load_unload_cleanup_required": true,
+    "about_local_gsap_default_allowed": false,
+    "gsap_exception": "Only an approved interaction not expressible by the shared theme system; scope to one section instance and preserve reduced-motion/no-JS visibility."
+  },
+  "navigation": {
+    "authority": "Shopify global menu, header settings, and section groups",
+    "hardcoded_page_navigation_allowed": false
+  }
+}

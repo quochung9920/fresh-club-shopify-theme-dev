@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "page": "product-detail",
+  "figmaRoot": "80846:250",
+  "nativeTemplate": "templates/product.json",
+  "sections": [
+    {
+      "id": "main",
+      "type": "main-product",
+      "merchantLabel": "Product information",
+      "contentAuthority": "Shopify product and selected variant",
+      "requiredBlocks": [
+        "title",
+        "price",
+        "description",
+        "quantity_selector"
+      ],
+      "editableSettings": [
+        "media_size",
+        "constrain_to_viewport",
+        "media_fit",
+        "gallery_layout",
+        "mobile_thumbnails",
+        "media_position",
+        "image_zoom",
+        "enable_sticky_info",
+        "padding_top",
+        "padding_bottom"
+      ]
+    },
+    {
+      "id": "related-products",
+      "type": "related-products",
+      "merchantLabel": "Product recommendations",
+      "contentAuthority": "Shopify Product Recommendations API",
+      "requiredSettings": {
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_mobile": "1"
+      },
+      "editableSettings": [
+        "heading",
+        "heading_size",
+        "products_to_show",
+        "columns_desktop",
+        "columns_mobile",
+        "image_ratio",
+        "show_secondary_image",
+        "quick_add",
+        "padding_top",
+        "padding_bottom"
+      ]
+    }
+  ],
+  "forbidden": [
+    "hard-coded product title",
+    "hard-coded product price",
+    "hard-coded product description",
+    "hard-coded product image",
+    "duplicate global header",
+    "duplicate global footer",
+    "fake wishlist button"
+  ]
+}

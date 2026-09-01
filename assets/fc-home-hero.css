@@ -1,0 +1,144 @@
+.fc-home-hero {
+  padding: 48px 20px;
+  color: #16494a;
+}
+
+.fc-home-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.fc-home-hero__content,
+.fc-home-hero__copy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fc-home-hero__content {
+  align-items: center;
+  gap: 28px;
+}
+
+.fc-home-hero__copy {
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-home-hero__heading {
+  width: 100%;
+  margin: 0;
+  color: #16494a;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.3px;
+  text-transform: capitalize;
+}
+
+.fc-home-hero__text {
+  width: 100%;
+  margin: 0;
+  color: #61646c;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.15px;
+}
+
+.fc-home-hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(100%, 335px);
+}
+
+.fc-home-hero__action-item,
+.fc-home-hero__action {
+  width: 100%;
+}
+
+.fc-home-hero__media {
+  position: relative;
+  overflow: hidden;
+  width: min(100%, 536px);
+  aspect-ratio: 536 / 448;
+  border-radius: 16px;
+  background: #f5faf3;
+}
+
+.fc-home-hero__image,
+.fc-home-hero__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.fc-home-hero__overlay {
+  pointer-events: none;
+}
+
+@media (min-width: 750px) {
+  .fc-home-hero__actions {
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
+  }
+
+  .fc-home-hero__action-item,
+  .fc-home-hero__action {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fc-home-hero {
+    padding: 80px;
+  }
+
+  .fc-home-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 635fr) minmax(0, 536fr);
+    column-gap: clamp(32px, 7.57vw, 109px);
+    align-items: center;
+  }
+
+  .fc-home-hero__content {
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .fc-home-hero__copy {
+    align-items: flex-start;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .fc-home-hero__heading {
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.48px;
+  }
+
+  .fc-home-hero__text {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.18px;
+  }
+
+  .fc-home-hero__media {
+    width: 100%;
+    max-width: 536px;
+    height: auto;
+    aspect-ratio: 536 / 448;
+  }
+}
